@@ -35,7 +35,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "proxy": "node ./api-server.js",
-    "startServers": "concurrently --kill-others \"npm run proxy\" \"npm run start\""
+    "startServers": "concurrently --kill-others \"npm run proxy\" \"npm run start\"",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
@@ -77,7 +78,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.32.2",
     "hermes-eslint": "^0.9.0",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^13.1.2",
     "postcss": "^8.4.21",
     "prettier": "2.8.4",
