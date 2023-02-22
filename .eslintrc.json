@@ -4,8 +4,9 @@
         "es2021": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "standard-with-typescript"
+        // "plugin:react/recommended",
+        // "standard-with-typescript"
+        "fbjs"
     ],
     "overrides": [
     ],
@@ -15,13 +16,15 @@
         "project": ["./tsconfig.json"]
     },
     "plugins": [
-        "react"
+        // "react"
     ],
     "rules": {
-        "semi": "error", "indent": "error", "no-multiple-empty-lines": "error",
-        "no-multi-spaces": "error", "space-in-parens": "error",
-        "no-var": "error", "prefer-const": "error",
-        "no-use-before-define": "error", "no-console": "error",
-        "no-debugger": "error"
+        "react/react-in-jsx-scope": 0
+        // "semi": "error", "indent": "error", "space-in-parens": 2,
+        // "@typescript-eslint/space-before-function-paren": "off",
+        // "no-multi-spaces": "error", "no-multiple-empty-lines": "error",
+        // "no-var": "error", "prefer-const": "error",
+        // "no-use-before-define": "error", "no-console": "error",
+        // "no-debugger": "error", "react/react-in-jsx-scope": "off"
     }
 }
