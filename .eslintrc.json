@@ -19,7 +19,8 @@
         // "react"
     ],
     "rules": {
-        "react/react-in-jsx-scope": 0
+        "react/react-in-jsx-scope": 0,
+        "no-unused-vars": 2
         // "semi": "error", "indent": "error", "space-in-parens": 2,
         // "@typescript-eslint/space-before-function-paren": "off",
         // "no-multi-spaces": "error", "no-multiple-empty-lines": "error",
