@@ -6,7 +6,7 @@
     "extends": [
         // "plugin:react/recommended",
         // "standard-with-typescript"
-        "plugin:prettier/recommended",
+        // "plugin:prettier/recommended",
         "fbjs"
     ],
     "overrides": [
@@ -18,7 +18,7 @@
     },
     "plugins": [
         // "react"
-        "prettier"
+        // "prettier"
     ],
     "rules": {
         "react/react-in-jsx-scope": 0,
