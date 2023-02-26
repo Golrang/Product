@@ -25,6 +25,7 @@
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "recoil": "^0.7.6",
+    "sharepoint-golrang-design-system": ".\\sharepoint-golrang-design-system-0.0.2.tgz",
     "typescript": "*",
     "web-vitals": "^2.1.0",
     "yup": "^1.0.0"
