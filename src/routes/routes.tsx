@@ -1,6 +1,6 @@
-import { Main } from 'layout/main/Main'
-import { TestStructure } from 'pages/test-structure'
-import { createBrowserRouter } from 'react-router-dom'
+import { Main } from 'layout/main/Main';
+import { TestStructure } from 'pages/test-structure';
+import { createBrowserRouter } from 'react-router-dom';
 
 export const router = createBrowserRouter([
   {
@@ -10,8 +10,8 @@ export const router = createBrowserRouter([
       {
         // index: true,
         path: 'test-structure',
-        element: <TestStructure />
-      }
-    ]
-  }
-])
+        element: <TestStructure />,
+      },
+    ],
+  },
+]);

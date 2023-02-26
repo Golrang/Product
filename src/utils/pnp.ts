@@ -1,12 +1,12 @@
-import { sp } from '@pnp/sp/presets/all'
-const env = process.env
-const fosUrl =
+import { sp } from '@pnp/sp/presets/all';
+const env = process.env;
+const productSuggestionUrl =
   process.env.NODE_ENV == 'development'
-    ? 'http://localhost:8081/fostest'
-    : 'https://sharepointmim.gig.services/fos/'
+    ? 'http://localhost:8081/productsuggestion'
+    : 'https://sharepointmim.gig.services/productsuggestion/';
 sp.setup({
   sp: {
-    baseUrl: fosUrl
-  }
-})
-export default sp
+    baseUrl: productSuggestionUrl,
+  },
+});
+export default sp;
