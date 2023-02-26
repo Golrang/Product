@@ -6,8 +6,8 @@
     "extends": [
         // "plugin:react/recommended",
         // "standard-with-typescript"
-        "fbjs",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "fbjs"
     ],
     "overrides": [
     ],
