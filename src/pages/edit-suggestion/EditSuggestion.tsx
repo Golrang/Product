@@ -1,7 +1,7 @@
 import React from 'react';
 
-function index() {
-  return <>add-suggestion</>;
+function EditSuggestion() {
+  return <>EditSuggestion</>;
 }
 
-export default index;
+export default EditSuggestion;
