@@ -1,5 +1,5 @@
-import { Divider } from 'antd'
-import { Outlet, Link } from 'react-router-dom'
+import { Divider } from 'antd';
+import { Outlet, Link } from 'react-router-dom';
 
 export const Main = () => {
   return (
@@ -8,5 +8,5 @@ export const Main = () => {
       <Divider />
       <Outlet />
     </div>
-  )
-}
+  );
+};
