@@ -1,6 +1,7 @@
+
 import { Main } from 'layout/main/Main';
-import { TestStructure } from 'pages/test-structure';
 import { AddSuggestion } from 'pages/add-suggestion';
+import { TestStructure } from 'pages/test-structure';
 import { createBrowserRouter } from 'react-router-dom';
 
 export const router = createBrowserRouter([
