@@ -22,7 +22,7 @@ export const Recommender = () => {
               key={item.lable}
               disabled
               defaultValue={item.name}
-              style={{ color: 'black' }}
+              className="!text-black"
             />
           );
         })}
