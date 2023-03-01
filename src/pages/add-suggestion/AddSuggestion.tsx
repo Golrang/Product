@@ -1,4 +1,3 @@
-import React from 'react';
 import { Form, FormInput, FormTextArea } from "sharepoint-golrang-design-system"
 import { Col, Row } from 'antd'
 import { Recommender } from './containers/recommender';
@@ -6,10 +5,6 @@ import { Recommender } from './containers/recommender';
 export const AddSuggestion = () => {
   const submit = () => {
   }
-  const data = [
-    { name: 'brandName', lable: 'نام برند اصلی', placeHolder: 'نام برند اصلی' },
-    { name: 'companyName', lable: 'نام شرکت سازنده', placeHolder: 'نام شرکت سازنده' }
-  ]
   return <>
     <Form name='AddSuggestionForm' onSubmit={submit}>
       <Row gutter={24}>
@@ -21,15 +16,16 @@ export const AddSuggestion = () => {
         </Col>
       </Row>
       <Row gutter={24}>
-        {data.map((item) => (
-          <Col md={12} sm={24}>
-            <FormInput label={item.lable} name={item.name} placeholder={item.placeHolder} />
-          </Col>
-        ))}
+        <Col md={12} sm={24}>
+          <FormInput label='نام برند اصلی' name='BrandName' placeholder='نام برند اصلی' />
+        </Col>
+        <Col md={12} sm={24}>
+          <FormInput label='نام شرکت سازنده' name='ManufacturerCompanyName' placeholder='نام شرکت سازنده' />
+        </Col>
       </Row>
       <Row gutter={24}>
         <Col span={24}>
-          <FormTextArea label='مورد مصرف' name='use' placeholder='مورد مصرف' autoSize={{ minRows: 4 }} />
+          <FormTextArea label='مورد مصرف' name='Consumable' placeholder='مورد مصرف' autoSize={{ minRows: 4 }} />
         </Col>
       </Row>
     </Form>
