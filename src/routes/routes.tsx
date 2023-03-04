@@ -1,7 +1,6 @@
-
 import { Main } from 'layout/main/Main';
 import { AddSuggestion } from 'pages/add-suggestion';
-import { TestStructure } from 'pages/test-structure';
+import { Cartable } from 'pages/cartable';
 import { createBrowserRouter } from 'react-router-dom';
 
 export const router = createBrowserRouter([
@@ -17,10 +16,6 @@ export const router = createBrowserRouter([
         path: 'add-Suggestion',
         element: <AddSuggestion />,
       },
-      {
-        path: 'add-Suggestion',
-        element: <AddSuggestion />
-      }
     ],
   },
 ]);
