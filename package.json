@@ -18,6 +18,7 @@
     "antd-jalali": "^1.0.3",
     "concurrently": "^7.6.0",
     "dayjs": "^1.11.7",
+    "eslint-plugin-flowtype": "^8.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^3.1.4",
@@ -25,7 +26,7 @@
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "recoil": "^0.7.6",
-    "sharepoint-golrang-design-system": ".\\sharepoint-golrang-design-system-0.0.2.tgz",
+    "sharepoint-golrang-design-system": ".\\sharepoint-golrang-design-system-0.0.3.tgz",
     "typescript": "*",
     "web-vitals": "^2.1.0",
     "yup": "^1.0.0",
@@ -39,11 +40,12 @@
     "proxy": "node ./api-server.js",
     "startServers": "concurrently --kill-others \"npm run proxy\" \"npm run start\"",
     "prepare": "husky install",
-    "lint": "eslint"
+    "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\""
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "npm run lint"
+      "npx prettier --write",
+      "npx eslint --fix"
     ]
   },
   "eslintConfig": {
@@ -65,6 +67,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
     "@hookform/devtools": "^4.3.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "autoprefixer": "^10.4.13",

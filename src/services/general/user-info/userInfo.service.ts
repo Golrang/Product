@@ -12,6 +12,8 @@ export const getUserInfo = () => {
           nCode: '0310502861',
           displayName: 'Safavi, Somaye (GIG)',
           companyName: 'گلرنگ سیستم',
+          departman: 'توسعه شیرپوینت',
+          position: 'کارشناس توسعه',
         }
       : {
           companyID: sessionStorage.getItem('CompanyID'),
@@ -25,6 +27,8 @@ export const getUserInfo = () => {
           userPersonelCode: sessionStorage.getItem('PID'),
           nCode: sessionStorage.getItem('NCode'),
           displayName: sessionStorage.getItem('PDisplayName'),
+          departman: sessionStorage.getItem('DName'),
+          position: sessionStorage.getItem('PRole'),
         };
 
   return { userInfo };
