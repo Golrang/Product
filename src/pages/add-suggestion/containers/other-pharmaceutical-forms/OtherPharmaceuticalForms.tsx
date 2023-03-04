@@ -1,26 +1,34 @@
-import { FormSelect } from 'sharepoint-golrang-design-system'
-import { useGetPharmaceuticalForms } from '../../hooks/useGetPharmaceuticalForms'
+import { FormSelect, FormInput } from 'components';
+import { useGetPharmaceuticalForms } from '../../hooks/useGetPharmaceuticalForms';
+import { useWatch } from 'react-hook-form';
 
-export const OtherPharmaceuticalForms = () =>  {
-  const { allPharmaceuticalForms } = useGetPharmaceuticalForms()
- 
-  // const selectedPharmaceuticalForm = useWatch({
-  //   name: 'PharmaceuticalFormId',
-  // })
+export const OtherPharmaceuticalForms = () => {
+  const { allPharmaceuticalForms } = useGetPharmaceuticalForms();
 
-  // if(selectedPharmaceuticalForm){
-  //   console.log(selectedPharmaceuticalForm, "jkhdsf")
-  // } 
-  // type TKeyOfForm = keyof TSuggestion
+  const selectedPharmaceuticalForm: number = useWatch({
+    name: 'OtherPharmaceuticalFormId',
+  });
+
   return (
-    <FormSelect
-      name="OtherPharmaceuticalFormId"
-      label= "سایر اشکال دارویی موجود(بازار ایران)"
-      showSearch
-      options={allPharmaceuticalForms}
-      filterOption={(input: any, option: any) =>
-        (option?.label ?? '').includes(input)
-      }
-    />
-  )
-}
+    <>
+      <FormSelect
+        name="OtherPharmaceuticalFormId"
+        label="سایر اشکال دارویی موجود(بازار ایران)"
+        showSearch
+        options={allPharmaceuticalForms}
+        filterOption={(input: any, option: any) =>
+          (option?.label ?? '').includes(input)
+        }
+      />
+
+      {selectedPharmaceuticalForm === 35 && (
+        <FormInput
+          placeholder="سایر اشکال دارویی"
+          name="OtherPharmaceuticalForm"
+          type="string"
+          label="سایر درج شود"
+        />
+      )}
+    </>
+  );
+};
