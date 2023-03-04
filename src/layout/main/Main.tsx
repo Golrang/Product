@@ -4,7 +4,7 @@ import { Outlet, Link } from 'react-router-dom';
 export const Main = () => {
   return (
     <div>
-      <Link to="test-structure">صفحه تست</Link>
+      <Link to="cartable">کارتابل</Link>
       <Divider />
       <Outlet />
     </div>
