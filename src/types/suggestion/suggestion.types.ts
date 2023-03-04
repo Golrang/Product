@@ -1,5 +1,5 @@
 export type TSuggestion = {
-  Id: string;
+  Id: number;
   CompanyId: string;
   EmployeeId: string;
   Material: string;
