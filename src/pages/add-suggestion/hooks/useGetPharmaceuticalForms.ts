@@ -7,8 +7,6 @@ import { getAllPharmaceuticalForms } from 'services/pharmaceutical-forms/allPhar
 import { TpharmaceuticalForm } from 'types/pharmaceutical-form/pharmaceuticalForm.types';
 
 export const useGetPharmaceuticalForms = () => {
-// const setPharmaceuticalFormOther = useSetRecoilState(pharmaceuticalFormOtherState)
-
   const { data: allPharmaceuticalForms } = useQuery<
     TpharmaceuticalForm[],
     any,
@@ -19,19 +17,13 @@ export const useGetPharmaceuticalForms = () => {
     select: (items) =>
       items.map((item) => ({
         label: item.Title,
-        value: item.Title,
+        value: item.Id,
       })),
   });
 
-  const onChangeHandler = (e: string) => {
-    if (e === 'سایر') {
-        // setPharmaceuticalFormOther({ isOpen: true })
-    }
-  };
 
   return {
     allPharmaceuticalForms,
-    onChangeHandler,
   };
 };
  
