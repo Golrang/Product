@@ -1,4 +1,4 @@
-import { TableError } from 'components/table-error';
+import { TableError } from 'general-components/table-error';
 import { Table, TColumn } from 'sharepoint-golrang-design-system';
 import { TSuggestionTable } from 'types/suggestion/suggestionTable.types';
 
