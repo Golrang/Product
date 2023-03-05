@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { AndroidOutlined, AppleOutlined } from '@ant-design/icons';
 import { Tabs } from 'antd';
 import { SuggestionTable } from '../suggestion-table';
-import { TableLoading } from 'components/table-loading';
+import { TableLoading } from 'general-components/table-loading';
 import { useGetContractors } from 'pages/cartable/hooks/useCartable';
 import { columns } from '../suggestion-table/suggestionTableColumn';
 import { getUserInfo } from 'services/general/user-info/userInfo.service';

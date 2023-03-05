@@ -1,18 +1,16 @@
 import { Col, Row } from 'antd';
-import {
-  Form,
-  FormInput,
-  FormTextArea,
-} from 'sharepoint-golrang-design-system';
+import { Form, FormInput, FormTextArea } from 'components';
+import { PharmaceuticalForms } from './containers/pharmaceutical-forms';
 import { Recommender } from './containers/recommender';
 
 export const AddSuggestion = () => {
   return (
     <>
-      <Form name="AddSuggestionForm">
+      <Form name="AddSuggestionForm" onSubmit={() => {}}>
         <Row gutter={24}>
           <Col md={24} sm={24}>
             <Recommender />
+            <PharmaceuticalForms />
           </Col>
           <Col md={12} sm={24}>
             <FormInput

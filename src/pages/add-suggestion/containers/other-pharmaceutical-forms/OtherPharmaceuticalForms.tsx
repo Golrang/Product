@@ -1,7 +1,34 @@
-import React from 'react';
+import { FormSelect, FormInput } from 'components';
+import { useGetPharmaceuticalForms } from '../../hooks/useGetPharmaceuticalForms';
+import { useWatch } from 'react-hook-form';
 
-function OtherPharmaceuticalForms() {
-  return <>OtherPharmaceuticalForms</>;
-}
+export const OtherPharmaceuticalForms = () => {
+  const { allPharmaceuticalForms } = useGetPharmaceuticalForms();
 
-export default OtherPharmaceuticalForms;
+  const selectedPharmaceuticalForm: number = useWatch({
+    name: 'OtherPharmaceuticalFormId',
+  });
+
+  return (
+    <>
+      <FormSelect
+        name="OtherPharmaceuticalFormId"
+        label="سایر اشکال دارویی موجود(بازار ایران)"
+        showSearch
+        options={allPharmaceuticalForms}
+        filterOption={(input: any, option: any) =>
+          (option?.label ?? '').includes(input)
+        }
+      />
+
+      {selectedPharmaceuticalForm === 35 && (
+        <FormInput
+          placeholder="سایر اشکال دارویی"
+          name="OtherPharmaceuticalForm"
+          type="string"
+          label="سایر درج شود"
+        />
+      )}
+    </>
+  );
+};

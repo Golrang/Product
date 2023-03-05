@@ -1,4 +1,4 @@
-import { FormInput } from 'sharepoint-golrang-design-system';
+import { FormInput } from 'components';
 import { getUserInfo } from '../../../../services/general/user-info/userInfo.service';
 
 const { userInfo } = getUserInfo();
@@ -18,10 +18,10 @@ export const Recommender = () => {
           return (
             <FormInput
               label={item.lable}
-              name={item.name}
+              name={item.name ?? ''}
               key={item.lable}
               disabled
-              defaultValue={item.name}
+              // defaultValue={item.name}
               className="!text-black"
             />
           );
