@@ -1,6 +1,6 @@
 import { Main } from 'layout/main/Main';
-import AddSuggestion from 'pages/add-suggestion/AddSuggestion';
-import { TestStructure } from 'pages/test-structure';
+import { AddSuggestion } from 'pages/add-suggestion';
+import { Cartable } from 'pages/cartable';
 import { createBrowserRouter } from 'react-router-dom';
 
 export const router = createBrowserRouter([
@@ -9,12 +9,10 @@ export const router = createBrowserRouter([
     element: <Main />,
     children: [
       {
-        // index: true,
-        path: 'test-structure',
-        element: <TestStructure />,
+        path: 'cartable',
+        element: <Cartable />,
       },
       {
-        // index: true,
         path: 'add-Suggestion',
         element: <AddSuggestion />,
       },

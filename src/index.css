@@ -86,3 +86,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.orderer {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}

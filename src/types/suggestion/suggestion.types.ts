@@ -1,23 +1,25 @@
 export type TSuggestion = {
-  Id: string;
+  Id: number;
   CompanyId: string;
   EmployeeId: string;
-  Material: string;
-  PharmaceuticalFormId: number;
-  OtherPharmaceuticalFormId: number;
+  Material: string; //ماده موثره
+  PharmaceuticalFormId: number; //شکل دارویی
+  OtherPharmaceuticalFormId: number; //سایر اشکال دارویی
   PharmaceuticalForm_Other: string;
   OtherPharmaceuticalForm_Other: string;
-  BrandName: string;
-  ManufacturerCompanyName: string;
-  Consumable: string;
-  TherapeuticFieldId: number;
+  BrandName: string; //برند
+  ManufacturerCompanyName: string; // شرکت سازنده
+  Consumable: string; //مورد مصرف
+  TherapeuticFieldId: number; //حوزه درمانی
   TherapeuticFieldComment: string;
-  OfferReasonId: number;
+  OfferReasonId: number; //دلیل پیشنهاد
   OfferReasonComment: string;
-  ProductAdvatage: string;
-  ProductWeaknesses: string;
-  SimilarPharmaceuticalForm: boolean;
-  SimilarTherapeuticField: boolean;
-  SimilarConsumable: boolean;
-  Comment: string;
+  ProductAdvatage: string; //مزیت محصول
+  ProductWeaknesses: string; //معایب محصول
+  SimilarPharmaceuticalForm: boolean; //سوال فرم
+  SimilarTherapeuticField: boolean; //سوال حوزه درمانی
+  SimilarConsumable: boolean; //سوال مورد مصرف
+  Comment: string; //توضیحات
+  Created: string; //تاریخ ایجاد
+  Modified: string; //تاریخ ایجاد
 };

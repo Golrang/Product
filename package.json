@@ -29,7 +29,8 @@
     "sharepoint-golrang-design-system": ".\\sharepoint-golrang-design-system-0.0.3.tgz",
     "typescript": "*",
     "web-vitals": "^2.1.0",
-    "yup": "^1.0.0"
+    "yup": "^1.0.0",
+    "axios": "^1.1.3"
   },
   "scripts": {
     "start": "react-scripts start",

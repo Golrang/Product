@@ -2,8 +2,8 @@ export const getUserInfo = () => {
   const userInfo =
     process.env.NODE_ENV == 'development'
       ? {
-          CompanyID: '445',
-          WorkPlaceId: '4',
+          companyID: '445',
+          workPlaceId: '4',
           userEmail: 'safavi.somaye@golrang.com',
           userFarsiName: 'سیده سمیه صفوی',
           userNameId: '1278',
@@ -12,10 +12,12 @@ export const getUserInfo = () => {
           nCode: '0310502861',
           displayName: 'Safavi, Somaye (GIG)',
           companyName: 'گلرنگ سیستم',
+          departman: 'توسعه شیرپوینت',
+          position: 'کارشناس توسعه',
         }
       : {
-          CompanyID: sessionStorage.getItem('CompanyID'),
-          WorkPlaceId: sessionStorage.getItem('WPID'),
+          companyID: sessionStorage.getItem('CompanyID'),
+          workPlaceId: sessionStorage.getItem('WPID'),
           userEmail: sessionStorage.getItem('PEmail'),
           userFarsiName: sessionStorage.getItem('PFName'),
           userNameId: sessionStorage.getItem('USID'),
@@ -25,6 +27,8 @@ export const getUserInfo = () => {
           userPersonelCode: sessionStorage.getItem('PID'),
           nCode: sessionStorage.getItem('NCode'),
           displayName: sessionStorage.getItem('PDisplayName'),
+          departman: sessionStorage.getItem('DName'),
+          position: sessionStorage.getItem('PRole'),
         };
 
   return { userInfo };
