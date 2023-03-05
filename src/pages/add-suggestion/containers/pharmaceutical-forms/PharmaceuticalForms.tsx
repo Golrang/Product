@@ -7,6 +7,7 @@ export const PharmaceuticalForms = () => {
   const selectedPharmaceuticalForm = useWatch({
     name: 'PharmaceuticalFormId',
   });
+  console.log('first', selectedPharmaceuticalForm);
 
   return (
     <>

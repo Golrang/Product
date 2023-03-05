@@ -1,10 +1,10 @@
-import { useForm, FormProvider } from 'react-hook-form'
-import { Form as AntFrom } from 'antd'
-import { DevTool } from '@hookform/devtools'
-import { yupResolver } from '@hookform/resolvers/yup'
-import type { TForm } from './form.types'
+import { useForm, FormProvider } from 'react-hook-form';
+import { Form as AntFrom } from 'antd';
+// import { DevTool } from '@hookform/devtools'
+import { yupResolver } from '@hookform/resolvers/yup';
+import type { TForm } from './form.types';
 
-const Provider = FormProvider as any
+const Provider = FormProvider as any;
 
 export const Form = <T extends Record<string, any>>({
   children,
@@ -16,7 +16,7 @@ export const Form = <T extends Record<string, any>>({
   const { control, handleSubmit, setValue } = useForm<T>({
     defaultValues,
     ...(schema && { resolver: yupResolver(schema) }),
-  })
+  });
 
   return (
     <>
@@ -25,7 +25,7 @@ export const Form = <T extends Record<string, any>>({
           {children}
         </AntFrom>
       </Provider>
-      <DevTool control={control} />
+      {/* <DevTool control={control} /> */}
     </>
-  )
-}
+  );
+};

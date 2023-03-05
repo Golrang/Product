@@ -1,5 +1,6 @@
 import { TableError } from 'general-components/table-error';
-import { Table, TColumn } from 'sharepoint-golrang-design-system';
+import { Table } from 'components';
+import { TColumn } from 'components/table';
 import { TSuggestionTable } from 'types/suggestion/suggestionTable.types';
 
 export const SuggestionTable = ({

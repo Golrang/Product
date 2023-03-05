@@ -21,9 +21,7 @@ export const useGetPharmaceuticalForms = () => {
       })),
   });
 
-
   return {
     allPharmaceuticalForms,
   };
 };
- 

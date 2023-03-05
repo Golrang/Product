@@ -1,9 +1,8 @@
-import { TextAreaProps } from 'rc-textarea'
+import { TextAreaProps } from 'rc-textarea';
 
-export type TFormTextarea<G> = Omit<
-  TextAreaProps,
-  'size' | 'ref' | 'name'
-> & {
-  label?: `${Capitalize<G & string>}`
-  name: G
-}
+export type TFormTextarea<G> = Omit<TextAreaProps, 'size' | 'ref' | 'name'> & {
+  // it should be decided
+  // label?: `${Capitalize<G & string>}`
+  label?: string;
+  name: G;
+};
