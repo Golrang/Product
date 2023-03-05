@@ -1,1 +1,4 @@
-export const queryKeys = {}
+export const queryKeys = {
+  getPharmaceuticalForms: '',
+  getTherapeuticField: 'getTherapeuticField',
+};
