@@ -20,7 +20,7 @@ export const Material = () => {
           </Button>
 
           {fields.map((item, index) => (
-            <Row gutter={24}>
+            <Row key={item.id} gutter={24}>
               <Col md={6}>
                 <FormInput
                   type="string"
