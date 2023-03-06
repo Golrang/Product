@@ -4,6 +4,7 @@ import { Material } from './containers/material';
 import { OtherPharmaceuticalForms } from './containers/other-pharmaceutical-forms';
 import { PharmaceuticalForms } from './containers/pharmaceutical-forms';
 import { Recommender } from './containers/recommender';
+import { TherapeuticField } from './containers/therapeutic-field';
 
 export const AddSuggestion = () => {
   return (
@@ -59,6 +60,11 @@ export const AddSuggestion = () => {
               placeholder="مورد مصرف"
               autoSize={{ minRows: 4 }}
             />
+          </Col>
+        </Row>
+        <Row gutter={24}>
+          <Col md={24} sm={24}>
+            <TherapeuticField />
           </Col>
         </Row>
       </Form>

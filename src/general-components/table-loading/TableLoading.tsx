@@ -1,4 +1,4 @@
-import { Skeleton, Divider } from 'antd'
+import { Skeleton, Divider } from 'antd';
 
 export const TableLoading = () => {
   return (
@@ -15,5 +15,5 @@ export const TableLoading = () => {
         />
       ))}
     </div>
-  )
-}
+  );
+};
