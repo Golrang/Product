@@ -15,7 +15,7 @@ export const Material = () => {
     <>
       <Collapse>
         <Panel header="اجزاء ثانویه" key="1">
-          <Button htmlType="button" onClick={() => append({})}>
+          <Button className='!inline-flex !items-center btn btn-danger' htmlType="button" onClick={() => append({})}>
             <ICPlus className="w-4" />
           </Button>
 
@@ -30,7 +30,7 @@ export const Material = () => {
               </Col>
 
               <Col md={2}>
-                <Button htmlType="button" onClick={() => remove(index)}>
+                <Button className='!inline-flex !items-center btn btn-danger' htmlType="button" onClick={() => remove(index)}>
                   <ICDelete className="w-4" />
                 </Button>
               </Col>
