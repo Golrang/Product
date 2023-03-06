@@ -9,5 +9,3 @@ export const TherapeuticFieldRadio = () => {
     return <Radio name="TherapeuticFieldId" options={data} />;
   return null;
 };
-
-export default TherapeuticFieldRadio;

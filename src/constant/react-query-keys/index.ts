@@ -1,5 +1,5 @@
 export const queryKeys = {
-  getPharmaceuticalForms: '',
+  getPharmaceuticalForms: 'getPharmaceuticalForms',
   getTherapeuticField: 'getTherapeuticField',
   allEmployee: 'allEmployee',
   getAllSuggestion: 'getAllSuggestion',

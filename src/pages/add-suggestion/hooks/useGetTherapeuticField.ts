@@ -1,13 +1,12 @@
 import { message } from 'antd';
 import { useQuery } from '@tanstack/react-query';
-import { getTherapeuticField } from 'services/therapeutic-field/TherapeuticField.services';
+import { getTherapeuticField } from 'services/therapeutic-field/therapeuticField.services';
 import { TTherapeuticField } from 'types/TherapeuticField/TherapeuticField.types';
 
 export const useGetTherapeuticField = () => {
-  debugger;
   const { data, isLoading, error } = useQuery<
     TTherapeuticField[],
-    any,
+    unknown,
     { label: string; value: string }[]
   >([getTherapeuticField], getTherapeuticField, {
     refetchOnWindowFocus: false,

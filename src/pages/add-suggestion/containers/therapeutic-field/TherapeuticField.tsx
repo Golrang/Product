@@ -13,5 +13,3 @@ export const TherapeuticField = () => {
     </>
   );
 };
-
-export default TherapeuticField;
