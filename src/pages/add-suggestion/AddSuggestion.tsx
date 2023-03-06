@@ -1,5 +1,6 @@
 import { Col, Row } from 'antd';
 import { Form, FormInput, FormTextArea } from 'components';
+import { Material } from './containers/material';
 import { PharmaceuticalForms } from './containers/pharmaceutical-forms';
 import { Recommender } from './containers/recommender';
 
@@ -10,7 +11,6 @@ export const AddSuggestion = () => {
         <Row gutter={24}>
           <Col md={24} sm={24}>
             <Recommender />
-            <PharmaceuticalForms />
           </Col>
           <Col md={12} sm={24}>
             <FormInput
@@ -19,6 +19,11 @@ export const AddSuggestion = () => {
               label="نام ماده یا مواد موثره"
               placeholder="ماده موثره اصلی"
             />
+          </Col>
+        </Row>
+        <Row gutter={24}>
+          <Col md={24} sm={24}>
+            <Material />
           </Col>
         </Row>
         <Row gutter={24}>
