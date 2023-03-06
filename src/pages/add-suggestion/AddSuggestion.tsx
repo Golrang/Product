@@ -1,16 +1,14 @@
 import { Col, Row } from 'antd';
-import {
-  Form,
-  FormInput,
-  FormTextArea,
-} from 'sharepoint-golrang-design-system';
+import { Form, FormInput, FormTextArea } from 'components';
+import { OtherPharmaceuticalForms } from './containers/other-pharmaceutical-forms';
+import { PharmaceuticalForms } from './containers/pharmaceutical-forms';
 import { Recommender } from './containers/recommender';
 import { TherapeuticField } from './containers/therapeutic-field';
 
 export const AddSuggestion = () => {
   return (
     <>
-      <Form name="AddSuggestionForm">
+      <Form name="AddSuggestionForm" onSubmit={() => {}}>
         <Row gutter={24}>
           <Col md={24} sm={24}>
             <Recommender />
@@ -22,6 +20,14 @@ export const AddSuggestion = () => {
               label="نام ماده یا مواد موثره"
               placeholder="ماده موثره اصلی"
             />
+          </Col>
+        </Row>
+        <Row gutter={24}>
+          <Col md={12} sm={24}>
+            <PharmaceuticalForms />
+          </Col>
+          <Col md={12} sm={24}>
+            <OtherPharmaceuticalForms />
           </Col>
         </Row>
         <Row gutter={24}>

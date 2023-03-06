@@ -1,4 +1,5 @@
-import { Button, ICPlus } from 'sharepoint-golrang-design-system';
+// import { ICPlus } from 'sharepoint-golrang-design-system';
+import { Button } from 'components';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -8,7 +9,7 @@ export default function AddSuggestionButton() {
 
   return (
     <Button
-      icon={<ICPlus className="w-6" />}
+      // icon={<ICPlus className="w-6" />}
       className="!flex !items-center btn btn-orange"
       onClick={onAddHandler}
     >
