@@ -24,7 +24,7 @@ export const OtherPharmaceuticalForms = () => {
       {selectedPharmaceuticalForm === 35 && (
         <FormInput
           placeholder="سایر اشکال دارویی"
-          name="OtherPharmaceuticalForm"
+          name="OtherPharmaceuticalForms"
           type="string"
           label="سایر درج شود"
         />
