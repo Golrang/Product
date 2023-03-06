@@ -1,4 +1,4 @@
-import { FormRadio } from 'sharepoint-golrang-design-system';
+import { Radio } from 'components';
 
 import { useGetTherapeuticField } from '../../hooks/useGetTherapeuticField';
 
@@ -6,7 +6,7 @@ export const TherapeuticFieldRadio = () => {
   const { data } = useGetTherapeuticField();
 
   if (data && data !== undefined)
-    return <FormRadio name="TherapeuticFieldId" options={data} />;
+    return <Radio name="TherapeuticFieldId" options={data} />;
   return null;
 };
 

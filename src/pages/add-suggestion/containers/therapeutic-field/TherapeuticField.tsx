@@ -1,4 +1,4 @@
-import { FormTextArea } from 'sharepoint-golrang-design-system';
+import { FormTextArea } from 'components';
 import { TherapeuticFieldRadio } from './TherapeuticFieldRadio';
 
 export const TherapeuticField = () => {
