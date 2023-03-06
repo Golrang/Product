@@ -2,6 +2,7 @@ import React from 'react';
 import { useFieldArray } from 'react-hook-form';
 import { Col, Row, Collapse } from 'antd';
 import { Button, FormInput } from 'components';
+import { ICDelete, ICPlus } from 'icons'
 
 export const Material = () => {
   const { fields, append, remove } = useFieldArray({
@@ -15,7 +16,7 @@ export const Material = () => {
       <Collapse>
         <Panel header="اجزاء ثانویه" key="1">
           <Button htmlType="button" onClick={() => append({})}>
-            add
+            <ICPlus className="w-4" />
           </Button>
 
           {fields.map((item, index) => (
@@ -30,7 +31,7 @@ export const Material = () => {
 
               <Col md={2}>
                 <Button htmlType="button" onClick={() => remove(index)}>
-                  remove
+                  <ICDelete className="w-4" />
                 </Button>
               </Col>
             </Row>
