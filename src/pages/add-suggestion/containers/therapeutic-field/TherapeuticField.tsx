@@ -1,7 +1,15 @@
-import React from 'react';
+import { FormTextArea } from 'components';
+import { TherapeuticFieldRadio } from './TherapeuticFieldRadio';
 
-function TherapeuticField() {
-  return <>TherapeuticField</>;
-}
-
-export default TherapeuticField;
+export const TherapeuticField = () => {
+  return (
+    <>
+      <TherapeuticFieldRadio />
+      <FormTextArea
+        name="TherapeuticFieldComment"
+        label="توضیحات"
+        placeholder="توضیحات حوزه درمانی"
+      />
+    </>
+  );
+};
