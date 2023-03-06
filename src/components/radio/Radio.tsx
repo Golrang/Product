@@ -1,11 +1,8 @@
 import { Radio as AntRadio } from 'antd'
-import { RadioButtonProps } from 'antd/lib/radio/radioButton'
 import { forwardRef } from 'react'
+import { TRadio } from './radio.types'
 
-export type TRadio = {
-  className?: string
-  options: { value: string; disabled?: boolean; label: string }[]
-} & Partial<RadioButtonProps>
+
 
 export const Radio = forwardRef(({ options, ...rest }: TRadio, ref?: any) => (
   <AntRadio.Group {...rest} {...{ ref }}>
