@@ -31,11 +31,6 @@ export const AddSuggestion = () => {
         </Row>
         <Row gutter={24}>
           <Col md={12} sm={24}>
-            <TherapeuticFieldComment />
-          </Col>
-        </Row>
-        <Row gutter={24}>
-          <Col md={12} sm={24}>
             <PharmaceuticalForms />
           </Col>
           <Col md={12} sm={24}>
@@ -71,6 +66,11 @@ export const AddSuggestion = () => {
         <Row gutter={24}>
           <Col span={12}>
             <TherapeuticField />
+          </Col>
+        </Row>
+        <Row gutter={24}>
+          <Col md={12} sm={24}>
+            <TherapeuticFieldComment />
           </Col>
         </Row>
       </Form>
