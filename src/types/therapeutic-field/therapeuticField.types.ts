@@ -1,4 +1,4 @@
-export type TtherapeuticField = {
+export type TTherapeuticField = {
     Id: number;
     Title: string
 };

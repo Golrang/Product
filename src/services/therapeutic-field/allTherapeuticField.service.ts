@@ -1,11 +1,11 @@
 // import { listName } from 'constant';
 // import { getListItemByFilter } from '../general/pnp/pnpjs';
-// import { TtherapeuticField } from 'types/therapeutic-field/therapeuticField.types';
+// import { TTherapeuticField } from 'types/therapeutic-field/therapeuticField.types';
 
 // export const getAllTherapeuticField = async (): Promise<
-//   TtherapeuticField[]
+//   TTherapeuticField[]
 // > => {
-//   const data = await getListItemByFilter<TtherapeuticField[]>(
+//   const data = await getListItemByFilter<TTherapeuticField[]>(
 //     listName.therapeuticField,
 //     {
 //       filter: '',
