@@ -104,6 +104,16 @@ export const AddSuggestion = () => {
             />
           </Col>
         </Row>
+        <Row gutter={24}>
+          <Col md={24} sm={24}>
+            <FormTextArea<TKeyOfForm>
+              label="توضیحات"
+              name="Comment"
+              placeholder="توضیحات"
+              autoSize={{ minRows: 4 }}
+            />
+          </Col>
+        </Row>
       </Form>
     </>
   );
