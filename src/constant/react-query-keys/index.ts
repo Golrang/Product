@@ -3,4 +3,5 @@ export const queryKeys = {
   getTherapeuticField: 'getTherapeuticField',
   allEmployee: 'allEmployee',
   getAllSuggestion: 'getAllSuggestion',
+  getOfferReason: 'getOfferReason',
 };
