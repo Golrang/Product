@@ -5,6 +5,7 @@ import { OtherPharmaceuticalForms } from './containers/other-pharmaceutical-form
 import { PharmaceuticalForms } from './containers/pharmaceutical-forms';
 import { Recommender } from './containers/recommender';
 import { TherapeuticField } from './containers/therapeutic-field';
+import { TherapeuticFieldComment } from './containers/therapeutic-field-comment';
 
 export const AddSuggestion = () => {
   return (
@@ -24,8 +25,13 @@ export const AddSuggestion = () => {
           </Col>
         </Row>
         <Row gutter={24}>
-          <Col md={24} sm={24}>
+          <Col md={12} sm={24}>
             <Material />
+          </Col>
+        </Row>
+        <Row gutter={24}>
+          <Col md={12} sm={24}>
+            <TherapeuticFieldComment />
           </Col>
         </Row>
         <Row gutter={24}>
