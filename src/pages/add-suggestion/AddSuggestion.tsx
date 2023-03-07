@@ -6,6 +6,7 @@ import { PharmaceuticalForms } from './containers/pharmaceutical-forms';
 import { Recommender } from './containers/recommender';
 import { TherapeuticField } from './containers/therapeutic-field';
 import { TherapeuticFieldComment } from './containers/therapeutic-field-comment';
+import { TKeyOfForm } from 'types/suggestion/suggestion.types'
 
 export const AddSuggestion = () => {
   return (
@@ -71,6 +72,36 @@ export const AddSuggestion = () => {
         <Row gutter={24}>
           <Col md={12} sm={24}>
             <TherapeuticFieldComment />
+          </Col>
+        </Row>
+        <Row gutter={24}>
+          <Col md={24} sm={24}>
+            <FormTextArea<TKeyOfForm>
+              label="توضیحات"
+              name="OfferReasonComment"
+              placeholder="توضیحات علت پیشنهاد"
+              autoSize={{ minRows: 4 }}
+            />
+          </Col>
+        </Row>
+        <Row gutter={24}>
+          <Col md={24} sm={24}>
+            <FormTextArea<TKeyOfForm>
+              label="مزیت محصول پیشنهادی نسبت به محصول موجود در بازار"
+              name="ProductAdvatage"
+              placeholder="مزیت محصول پیشنهادی نسبت به محصول موجود در بازار"
+              autoSize={{ minRows: 4 }}
+            />
+          </Col>
+        </Row>
+        <Row gutter={24}>
+          <Col md={24} sm={24}>
+            <FormTextArea<TKeyOfForm>
+              label="نقاط ضعف احتمالی محصول پیشنهادی نسبت به محصول موجود در بازار"
+              name="ProductWeaknesses"
+              placeholder="نقاط ضعف احتمالی محصول پیشنهادی نسبت به محصول موجود در بازار"
+              autoSize={{ minRows: 4 }}
+            />
           </Col>
         </Row>
       </Form>
