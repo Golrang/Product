@@ -75,7 +75,7 @@ export const AddSuggestion = () => {
           </Col>
         </Row>
         <Row gutter={24}>
-          <Col md={24} sm={24}>
+          <Col sm={24}>
             <FormTextArea<TKeyOfForm>
               label="توضیحات"
               name="OfferReasonComment"
@@ -85,7 +85,7 @@ export const AddSuggestion = () => {
           </Col>
         </Row>
         <Row gutter={24}>
-          <Col md={24} sm={24}>
+          <Col sm={24}>
             <FormTextArea<TKeyOfForm>
               label="مزیت محصول پیشنهادی نسبت به محصول موجود در بازار"
               name="ProductAdvatage"
@@ -95,7 +95,7 @@ export const AddSuggestion = () => {
           </Col>
         </Row>
         <Row gutter={24}>
-          <Col md={24} sm={24}>
+          <Col sm={24}>
             <FormTextArea<TKeyOfForm>
               label="نقاط ضعف احتمالی محصول پیشنهادی نسبت به محصول موجود در بازار"
               name="ProductWeaknesses"
@@ -105,7 +105,7 @@ export const AddSuggestion = () => {
           </Col>
         </Row>
         <Row gutter={24}>
-          <Col md={24} sm={24}>
+          <Col sm={24}>
             <FormTextArea<TKeyOfForm>
               label="توضیحات"
               name="Comment"
