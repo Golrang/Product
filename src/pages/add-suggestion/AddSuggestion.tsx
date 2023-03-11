@@ -10,7 +10,7 @@ import { Material } from './containers/material';
 import { OfferReason } from './containers/offer-reason';
 import { OtherPharmaceuticalForms } from './containers/other-pharmaceutical-forms';
 import { PharmaceuticalForms } from './containers/pharmaceutical-forms';
-import Questions from './containers/questions/Questions';
+import { Questions } from './containers/questions/Questions';
 import { Recommender } from './containers/recommender';
 import { TherapeuticField } from './containers/therapeutic-field';
 import { TherapeuticFieldComment } from './containers/therapeutic-field-comment';

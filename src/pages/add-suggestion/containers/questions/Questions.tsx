@@ -3,7 +3,7 @@ import { ConsumableQuestion } from './ConsumableQuestion';
 import { PharmaceuticalFormsQuestion } from './PharmaceuticalFormsQuestion';
 import { TherapeuticFieldQuestion } from './TherapeuticFieldQuestion';
 
-function Questions() {
+export const Questions = () => {
   return (
     <>
       <PharmaceuticalFormsQuestion />
@@ -11,6 +11,4 @@ function Questions() {
       <ConsumableQuestion />
     </>
   );
-}
-
-export default Questions;
+};
