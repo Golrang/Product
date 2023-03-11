@@ -1,6 +1,7 @@
 import { FormSelect, FormInput } from 'components';
 import { useGetPharmaceuticalForms } from '../../hooks/useGetPharmaceuticalForms';
 import { useWatch } from 'react-hook-form';
+import { TKeyOfForm } from 'types/suggestion/suggestion.types'
 
 export const PharmaceuticalForms = () => {
   const { allPharmaceuticalForms } = useGetPharmaceuticalForms();
@@ -10,21 +11,20 @@ export const PharmaceuticalForms = () => {
 
   return (
     <>
-      <FormSelect
+      <FormSelect<TKeyOfForm>
         name="PharmaceuticalFormId"
         label="شکل دارویی"
         showSearch
         options={allPharmaceuticalForms}
-        filterOption={(input: any, option: any) =>
-          (option?.label ?? '').includes(input)
+        filterOption={(input, option) =>
+          (option?.label ?? '').toString().includes(input)
         }
       />
 
       {selectedPharmaceuticalForm === 35 && (
-        <FormInput
+        <FormInput<TKeyOfForm>
           placeholder="سایر اشکال دارویی"
-          name="OtherPharmaceuticalForm"
-          type="string"
+          name="PharmaceuticalForm_Other"
           label="سایر درج شود"
         />
       )}

@@ -1,17 +1,14 @@
-// import { message } from 'antd';
 import { useQuery } from '@tanstack/react-query';
-// import { useSetRecoilState } from 'recoil';
-// import { FormInput } from 'sharepoint-golrang-design-system';
-// import { pharmaceuticalFormOtherState } from 'recoil-store/add-suggestion/pharmaceuticalFormsState';
 import { getAllPharmaceuticalForms } from 'services/pharmaceutical-forms/allPharmaceuticalForms.service';
 import { TpharmaceuticalForm } from 'types/pharmaceutical-form/pharmaceuticalForm.types';
+import { queryKeys } from 'constant/react-query-keys';
 
 export const useGetPharmaceuticalForms = () => {
   const { data: allPharmaceuticalForms } = useQuery<
     TpharmaceuticalForm[],
     any,
     { label: any; value: any }[]
-  >(['allPharmaceuticalForms'], getAllPharmaceuticalForms, {
+  >([queryKeys.getPharmaceuticalForms], getAllPharmaceuticalForms, {
     refetchOnWindowFocus: false,
     suspense: true,
     select: (items) =>
