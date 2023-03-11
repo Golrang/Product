@@ -1,11 +1,5 @@
-import { Col, Row } from 'antd';
-import {
-  Form,
-  FormInput,
-  FormTextArea,
-  FormUploader,
-  Button,
-} from 'components';
+import { Col, Divider, Row } from 'antd';
+import { Form, FormInput, FormTextArea } from 'components';
 import { Material } from './containers/material';
 import { OfferReason } from './containers/offer-reason';
 import { OtherPharmaceuticalForms } from './containers/other-pharmaceutical-forms';
@@ -141,6 +135,7 @@ export const AddSuggestion = () => {
             <Questions />
           </Col>
         </Row>
+        <Divider />
         <Row gutter={24}>
           <Col sm={24}>
             <FormTextArea<TKeyOfForm>
