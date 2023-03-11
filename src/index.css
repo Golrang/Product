@@ -94,12 +94,13 @@ code {
 
 /* *********************************table*********************************** */
 .ant-table-thead > tr > th {
-  background-color: #fff2e8 !important;
+  background-color: #4f46e5 !important;
+  color: #fff !important;
 }
 
 .pagination-bx .pagination.pagination-gutter .page-item .page-link:hover,
 .pagination-bx .pagination.pagination-gutter .page-item.active .page-link {
-  background-color: #fc8019;
+  background-color: #4f46e5;
   background-color: var(--primary);
 }
 
@@ -107,7 +108,7 @@ code {
   border: none !important;
   border-radius: 0.5rem;
   box-shadow: none;
-  background-color: #fc8019 !important;
+  background-color: #4f46e5 !important;
   color: #fff !important;
   outline: none !important;
 }
@@ -116,7 +117,7 @@ code {
   border: none !important;
   border-radius: 0.5rem;
   box-shadow: none;
-  background-color: #fff2e8 !important;
+  background-color: #4f46e5 !important;
   color: #7e808c !important;
   outline: none !important;
 }
@@ -126,8 +127,8 @@ code {
 }
 
 .ant-pagination-item {
-  --headerbg: #fc8019;
-  --nav-headbg: #fc8019;
+  --headerbg: #b8c3fc;
+  --nav-headbg: #a5b4fc;
 }
 
 .ant-pagination .ant-pagination-item-active {
@@ -140,7 +141,7 @@ code {
 }
 
 .ant-pagination .ant-pagination-item a:hover {
-  background-color: #fc8019 !important;
+  background-color: #a5b4fc !important;
   color: #fff !important;
   transition: 0.5s;
 }
@@ -174,7 +175,7 @@ code {
 }
 
 .ant-btn-primary.ant-btn-dangerous:disabled {
-  border-color: #d9d9d9 !important;
+  border-color: #e0e7ff !important;
 }
 
 .ant-divider-horizontal {
