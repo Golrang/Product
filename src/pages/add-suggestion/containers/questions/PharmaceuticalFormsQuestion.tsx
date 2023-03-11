@@ -1,19 +1,19 @@
 import { FormRadio } from 'components';
 
+const data = [
+  {
+    value: 'true',
+    label: 'بله',
+  },
+  {
+    value: 'false',
+    label: 'خیر',
+  },
+];
 export const PharmaceuticalFormsQuestion = () => {
-  let data = [
-    {
-      value: 'true',
-      label: 'بله',
-    },
-    {
-      value: 'false',
-      label: 'خیر',
-    },
-  ];
   return (
     <FormRadio
-      label="آیا محصول با فرم دارویی مشابه تولید شده است؟"
+      label="آیا محصول با فرم دارویی مشابه توسط شرکت تولید شده است؟"
       name="SimilarPharmaceuticalForm"
       options={data}
     />
