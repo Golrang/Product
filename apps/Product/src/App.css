@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@font-face {
+    font-family: 'IRANSansFaNum';
+    src: local('IRANSansFaNum'), url(./assets/fonts/IRANSansFaNum.eot);
+    src: local('IRANSansFaNum'),
+      url(./assets/fonts/IRANSansFaNum.eot?#iefix) format('embedded-opentype'),
+      url(./assets/fonts/IRANSansFaNum.woff) format('woff'),
+      url(./assets/fonts/IRANSansFaNum.eot) format('woff'),
+      url(./assets/fonts/IRANSansFaNum.ttf) format('truetype'),
+      url(./assets/fonts/IRANSansFaNum.svg#IRANSansFaNum) format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'IRANSansFaNum-Bold';
+    src: local('IRANSansFaNum-Bold'), url(./assets/fonts/IRANSansFaNum-Bold.eot);
+    src: local('IRANSansFaNum-Bold'),
+      url(./assets/fonts/IRANSansFaNum-Bold.eot?#iefix)
+        format('embedded-opentype'),
+      url(./assets/fonts/IRANSansFaNum-Bold.woff) format('woff'),
+      url(./assets/fonts/IRANSansFaNum-Bold.eot) format('woff'),
+      url(./assets/fonts/IRANSansFaNum-Bold.ttf) format('truetype'),
+      url(./assets/fonts/IRANSansFaNum-Bold.svg#IRANSansFaNum) format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'IRANSansFaNum';
+    src: local('IRANSansFaNum'), url(./assets/fonts/IRANSansFaNum-Black.eot);
+    src: local('IRANSansFaNum'),
+      url(./assets/fonts/IRANSansFaNum-Black.eot?#iefix)
+        format('embedded-opentype'),
+      url(./assets/fonts/IRANSansFaNum-Black.woff) format('woff'),
+      url(./assets/fonts/IRANSansFaNum-Black.eot) format('woff'),
+      url(./assets/fonts/IRANSansFaNum-Black.ttf) format('truetype'),
+      url(./assets/fonts/IRANSansFaNum-Black.svg#IRANSansFaNum) format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'IRANSansFaNum-Medium';
+    src: local('IRANSansFaNum-Medium'),
+      url(./assets/fonts/IRANSansFaNum-Medium.eot);
+    src: local('IRANSansFaNum-Medium'),
+      url(./assets/fonts/IRANSansFaNum-Medium.eot?#iefix)
+        format('embedded-opentype'),
+      url(./assets/fonts/IRANSansFaNum-Medium.woff) format('woff'),
+      url(./assets/fonts/IRANSansFaNum-Medium.eot) format('woff'),
+      url(./assets/fonts/IRANSansFaNum-Medium.ttf) format('truetype'),
+      url(./assets/fonts/IRANSansFaNum-Medium.svg#IRANSansFaNum) format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'IRANSansFaNum';
+    src: local('IRANSansFaNum'), url(./assets/fonts/IRANSansFaNum-Light.eot);
+    src: local('IRANSansFaNum'),
+      url(./assets/fonts/IRANSansFaNum-Light.eot?#iefix)
+        format('embedded-opentype'),
+      url(./assets/fonts/IRANSansFaNum-Light.woff) format('woff'),
+      url(./assets/fonts/IRANSansFaNum-Light.eot) format('woff'),
+      url(./assets/fonts/IRANSansFaNum-Light.ttf) format('truetype'),
+      url(./assets/fonts/IRANSansFaNum-Light.svg#IRANSansFaNum) format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
