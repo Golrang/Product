@@ -1,7 +1,13 @@
-import React from 'react';
+import { ConsumableQuestion } from '../consumable-question/ConsumableQuestion';
+import { PharmaceuticalFormsQuestion } from '../pharmaceutical-forms-question/PharmaceuticalFormsQuestion';
+import { TherapeuticFieldQuestion } from '../therapeutic-field-question/TherapeuticFieldQuestion';
 
-function Questions() {
-  return <>Questions</>;
-}
-
-export default Questions;
+export const Questions = () => {
+  return (
+    <>
+      <PharmaceuticalFormsQuestion />
+      <TherapeuticFieldQuestion />
+      <ConsumableQuestion />
+    </>
+  );
+};

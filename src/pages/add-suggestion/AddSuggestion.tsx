@@ -1,14 +1,21 @@
 import { Col, Row } from 'antd';
-import { Form, FormInput, FormTextArea, FormUploader, Button } from 'components';
+import {
+  Form,
+  FormInput,
+  FormTextArea,
+  FormUploader,
+  Button,
+} from 'components';
 import { Material } from './containers/material';
 import { OfferReason } from './containers/offer-reason';
 import { OtherPharmaceuticalForms } from './containers/other-pharmaceutical-forms';
 import { PharmaceuticalForms } from './containers/pharmaceutical-forms';
+import { Questions } from './containers/questions/Questions';
 import { Recommender } from './containers/recommender';
 import { TherapeuticField } from './containers/therapeutic-field';
 import { TherapeuticFieldComment } from './containers/therapeutic-field-comment';
-import { TKeyOfForm } from 'types/suggestion/suggestion.types'
-import { UploadFile } from './containers/upload-file'
+import { TKeyOfForm } from 'types/suggestion/suggestion.types';
+import { UploadFile } from './containers/upload-file';
 
 export const AddSuggestion = () => {
   return (
@@ -109,6 +116,11 @@ export const AddSuggestion = () => {
               placeholder="نقاط ضعف احتمالی محصول پیشنهادی نسبت به محصول موجود در بازار"
               autoSize={{ minRows: 4 }}
             />
+          </Col>
+        </Row>
+        <Row gutter={24}>
+          <Col sm={24}>
+            <Questions />
           </Col>
         </Row>
         <Row gutter={24}>
