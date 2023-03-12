@@ -38,8 +38,6 @@ const columns: TColumn<TTableLog>[] = [
 
 export const HistoryOfActions = () => {
     const {  data, error, isLoading  } = useGetHistoryOfActions();
-    console.log(data)
-    debugger
     if (isLoading) {
         return <TableLoading />
     }
