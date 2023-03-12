@@ -3,7 +3,7 @@ const env = process.env;
 const productSuggestionUrl =
   process.env.NODE_ENV == 'development'
     ? 'http://localhost:8081/psstest'
-    : 'https://sharepointmim.gig.services/psstest/';
+    : 'https://sharepointmim.gig.services/productsuggestion/';
 sp.setup({
   sp: {
     baseUrl: productSuggestionUrl,
