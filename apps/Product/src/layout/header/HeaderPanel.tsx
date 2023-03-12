@@ -1,8 +1,8 @@
 import { Image } from 'antd';
-import { ICMenuUp } from 'icons/MenuUpIcon';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/img/gig-logo-small.png';
+import { ICMenuUp } from 'sharepoint-golrang-design-system';
+// import logo from '../../assets/img/gig-logo-small.png';
 export const HeaderPanel = () => {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -34,7 +34,7 @@ export const HeaderPanel = () => {
           <div className="flex justify-between items-center">
             <Image
               width={200}
-              src={logo}
+              // src={logo}
               preview={false}
               className="!w-[50px] font-bold text-xl text-indigo-600"
             />

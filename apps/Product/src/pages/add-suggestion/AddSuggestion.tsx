@@ -1,5 +1,9 @@
 import { Col, Divider, Row } from 'antd';
-import { Form, FormInput, FormTextArea } from 'components';
+import {
+  Form,
+  FormInput,
+  FormTextArea,
+} from 'sharepoint-golrang-design-system';
 import { Material } from './containers/material';
 import { OfferReason } from './containers/offer-reason';
 import { OtherPharmaceuticalForms } from './containers/other-pharmaceutical-forms';
@@ -16,7 +20,7 @@ export const AddSuggestion = () => {
     <>
       <Form
         name="AddSuggestionForm"
-        onSubmit={() => {
+        onFinish={() => {
           console.log('ok');
         }}
       >

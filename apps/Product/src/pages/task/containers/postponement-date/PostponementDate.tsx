@@ -1,11 +1,11 @@
-import { DatePicker } from 'components/datepicker';
+import { JalaliDatePicker } from 'sharepoint-golrang-design-system';
 
 export const PostponementDate = () => {
   const dateFormat = 'YYYY/MM/DD';
   return (
     <>
       <p>تاریخ تعویق</p>
-      <DatePicker
+      <JalaliDatePicker
         placeholder="تاریخ تعویق"
         format={dateFormat}
         name="PostponementDate"

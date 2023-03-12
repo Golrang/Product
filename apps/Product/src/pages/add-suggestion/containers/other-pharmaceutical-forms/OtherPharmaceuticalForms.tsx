@@ -1,7 +1,7 @@
-import { FormSelect, FormInput } from 'components';
+import { FormSelect, FormInput } from 'sharepoint-golrang-design-system';
 import { useGetPharmaceuticalForms } from '../../hooks/useGetPharmaceuticalForms';
 import { useWatch } from 'react-hook-form';
-import { TKeyOfForm } from 'types/suggestion/suggestion.types'
+import { TKeyOfForm } from 'types/suggestion/suggestion.types';
 
 export const OtherPharmaceuticalForms = () => {
   const { allPharmaceuticalForms } = useGetPharmaceuticalForms();

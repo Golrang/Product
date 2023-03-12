@@ -1,5 +1,5 @@
 // import { ICPlus } from 'sharepoint-golrang-design-system';
-import { Button } from 'components';
+import { Button } from 'sharepoint-golrang-design-system';
 
 import { useNavigate } from 'react-router-dom';
 

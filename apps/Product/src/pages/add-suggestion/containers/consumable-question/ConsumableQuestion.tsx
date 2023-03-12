@@ -1,4 +1,4 @@
-import { FormRadio } from 'components';
+import { FormRadio } from 'sharepoint-golrang-design-system';
 
 const data = [
   {

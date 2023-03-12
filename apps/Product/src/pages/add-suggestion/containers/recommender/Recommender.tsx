@@ -1,5 +1,5 @@
 import { Col } from 'antd';
-import { FormInput } from 'components';
+import { FormInput } from 'sharepoint-golrang-design-system';
 import { getUserInfo } from '../../../../services/general/user-info/userInfo.service';
 
 const { userInfo } = getUserInfo();

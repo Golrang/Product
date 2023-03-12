@@ -33,7 +33,8 @@
     "react-router-dom": "^6.9.0",
     "recoil": "^0.7.6",
     "sharepoint-golrang-design-system": "*",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "axios": "^1.1.4"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [

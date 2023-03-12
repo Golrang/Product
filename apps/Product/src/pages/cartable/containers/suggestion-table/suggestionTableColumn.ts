@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { TColumn } from 'components/table';
+import { TColumn } from 'sharepoint-golrang-design-system';
 import { TSuggestionTable } from 'types/suggestion/suggestionTable.types';
 
 export const columns = () => {

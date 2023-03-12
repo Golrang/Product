@@ -1,7 +1,11 @@
 import { useFieldArray } from 'react-hook-form';
 import { Col, Row, Collapse } from 'antd';
-import { Button, FormInput } from 'components';
-import { ICDelete, ICPlus } from 'icons';
+import {
+  Button,
+  FormInput,
+  ICDelete,
+  ICPlus,
+} from 'sharepoint-golrang-design-system';
 
 export const Material = () => {
   const { fields, append, remove } = useFieldArray({

@@ -1,4 +1,4 @@
-import { FormSelect } from 'components';
+import { FormSelect } from 'sharepoint-golrang-design-system';
 import { TKeyOfForm } from 'types/priority/priority.types';
 import { useGetPriority } from '../../hooks/useGetPriority';
 export const Priority = () => {
