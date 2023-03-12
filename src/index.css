@@ -91,3 +91,101 @@ code {
   display: grid;
   grid-template-columns: auto auto auto auto;
 }
+
+/* *********************************table*********************************** */
+.ant-table-thead > tr > th {
+  background-color: #4f46e5 !important;
+  color: #fff !important;
+}
+
+.pagination-bx .pagination.pagination-gutter .page-item .page-link:hover,
+.pagination-bx .pagination.pagination-gutter .page-item.active .page-link {
+  background-color: #4f46e5;
+  background-color: var(--primary);
+}
+
+.ant-pagination .ant-pagination-item-active a {
+  border: none !important;
+  border-radius: 0.5rem;
+  box-shadow: none;
+  background-color: #4f46e5 !important;
+  color: #fff !important;
+  outline: none !important;
+}
+
+.ant-pagination a {
+  border: none !important;
+  border-radius: 0.5rem;
+  box-shadow: none;
+  background-color: #4f46e5 !important;
+  color: #7e808c !important;
+  outline: none !important;
+}
+
+.ant-pagination .ant-pagination-item-active:hover {
+  border-color: transparent;
+}
+
+.ant-pagination-item {
+  --headerbg: #b8c3fc;
+  --nav-headbg: #a5b4fc;
+}
+
+.ant-pagination .ant-pagination-item-active {
+  border-color: transparent;
+}
+
+.ant-pagination .ant-pagination-disabled .ant-pagination-item-link,
+.ant-pagination .ant-pagination-disabled:hover .ant-pagination-item-link {
+  color: #7e808c !important;
+}
+
+.ant-pagination .ant-pagination-item a:hover {
+  background-color: #a5b4fc !important;
+  color: #fff !important;
+  transition: 0.5s;
+}
+
+/* *********************************form*********************************** */
+.ant-upload-drag .ant-upload-btn {
+  padding: 0 !important;
+  display: block;
+  justify-content: center;
+  border: none !important;
+  margin-top: -5px;
+}
+
+.ant-upload-drag {
+  background: transparent;
+  border: 1px dashed transparent;
+}
+
+.ant-upload-drag:hover {
+  background: transparent;
+  border: 1px dashed transparent;
+}
+
+.ant-form-item-label > label {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+.direction {
+  direction: rtl !important;
+}
+
+.ant-btn-primary.ant-btn-dangerous:disabled {
+  border-color: #e0e7ff !important;
+}
+
+.ant-divider-horizontal {
+  padding-bottom: 10px !important;
+  /* margin: 0 !important;
+  padding-top: 0 !important; */
+}
+.ant-form-item {
+  margin-bottom: 8px !important;
+}
+a {
+  text-decoration: none;
+}
