@@ -4,5 +4,6 @@ export const queryKeys = {
   allEmployee: 'allEmployee',
   getAllSuggestion: 'getAllSuggestion',
   getOfferReason: 'getOfferReason',
+  getPriority: 'getPriority',
   getHistoryOfActions: 'getAllLogs'
 };

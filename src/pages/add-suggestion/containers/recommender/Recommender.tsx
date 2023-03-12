@@ -1,3 +1,4 @@
+import { Col } from 'antd';
 import { FormInput } from 'components';
 import { getUserInfo } from '../../../../services/general/user-info/userInfo.service';
 
@@ -12,21 +13,23 @@ const lable = [
 
 export const Recommender = () => {
   return (
-    <>
-      <div className="orderer">
-        {lable.map((item) => {
-          return (
-            <FormInput
-              label={item.lable}
-              name={item.name ?? ''}
-              key={item.lable}
-              disabled
-              // defaultValue={item.name}
-              className="!text-black"
-            />
-          );
-        })}
-      </div>
-    </>
+    <div className="md:flex sm:block">
+      {lable.map((item) => {
+        return (
+          <>
+            <Col md={6} sm={24}>
+              <FormInput
+                label={item.lable}
+                name={item.name ?? ''}
+                key={item.lable}
+                disabled
+                // defaultValue={item.name}
+                className="!text-black "
+              />
+            </Col>
+          </>
+        );
+      })}
+    </div>
   );
 };
