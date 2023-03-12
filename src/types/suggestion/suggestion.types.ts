@@ -1,5 +1,5 @@
 export type TSuggestion = {
-  Id: number;
+  Id?: number;
   CompanyId: string;
   EmployeeId: string;
   Material: string; //ماده موثره
@@ -20,8 +20,8 @@ export type TSuggestion = {
   SimilarTherapeuticField: boolean; //سوال حوزه درمانی
   SimilarConsumable: boolean; //سوال مورد مصرف
   Comment: string; //توضیحات
-  Created: string; //تاریخ ایجاد
-  Modified: string; //تاریخ ایجاد
+  Created?: string; //تاریخ ایجاد
+  Modified?: string; //تاریخ ایجاد
 };
 
 export type TKeyOfForm = keyof TSuggestion

@@ -1,7 +1,8 @@
 import { FormSelect, FormInput } from 'components';
 import { useGetPharmaceuticalForms } from '../../hooks/useGetPharmaceuticalForms';
 import { useWatch } from 'react-hook-form';
-import { TKeyOfForm } from 'types/suggestion/suggestion.types'
+import { TKeyOfForm } from 'types/suggestion/suggestion.types';
+import { pharmaceuticalFormsOtherId } from 'constant';
 
 export const OtherPharmaceuticalForms = () => {
   const { allPharmaceuticalForms } = useGetPharmaceuticalForms();
@@ -22,7 +23,7 @@ export const OtherPharmaceuticalForms = () => {
         }
       />
 
-      {selectedPharmaceuticalForm === 35 && (
+      {selectedPharmaceuticalForm === pharmaceuticalFormsOtherId && (
         <FormInput<TKeyOfForm>
           placeholder="سایر اشکال دارویی"
           name="OtherPharmaceuticalForm_Other"

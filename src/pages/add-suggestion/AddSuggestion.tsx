@@ -1,5 +1,5 @@
 import { Col, Divider, Row } from 'antd';
-import { Form, FormInput, FormTextArea } from 'components';
+import { Button, Form, FormInput, FormTextArea } from 'components';
 import { Material } from './containers/material';
 import { OfferReason } from './containers/offer-reason';
 import { OtherPharmaceuticalForms } from './containers/other-pharmaceutical-forms';
@@ -10,16 +10,27 @@ import { TherapeuticField } from './containers/therapeutic-field';
 import { TherapeuticFieldComment } from './containers/therapeutic-field-comment';
 import { TKeyOfForm } from 'types/suggestion/suggestion.types';
 import { UploadFile } from './containers/upload-file';
+import { useSubmitSuggestion } from './hooks/useSubmitSuggestion';
+import { submitLoadingState } from 'recoil-store/general/submitLoading';
+import { useRecoilState } from 'recoil';
+import { useEffect } from 'react';
 
 export const AddSuggestion = () => {
+  const { onSubmit } = useSubmitSuggestion();
+  const [isLoading, setLoading] = useRecoilState(submitLoadingState);
+
+  const onCancelHandler = () => {
+    console.log('first');
+  };
+
+  useEffect(() => {
+    return () => {
+      setLoading(false);
+    };
+  }, []);
   return (
     <>
-      <Form
-        name="AddSuggestionForm"
-        onSubmit={() => {
-          console.log('ok');
-        }}
-      >
+      <Form name="AddSuggestionForm" onSubmit={onSubmit}>
         <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
           پیشنهاد دهنده
         </span>
@@ -71,7 +82,6 @@ export const AddSuggestion = () => {
             />
           </Col>
         </Row>
-
         <Divider />
         <Row gutter={24}>
           <Col md={24} sm={24}>
@@ -108,7 +118,6 @@ export const AddSuggestion = () => {
             />
           </Col>
         </Row>
-
         <Divider />
         <Row gutter={24}>
           <Col md={24} sm={24}>
@@ -152,6 +161,23 @@ export const AddSuggestion = () => {
             <UploadFile />
           </Col>
         </Row>
+        <Button
+          className="!inline-flex !items-center"
+          key="cancel"
+          onClick={onCancelHandler}
+          disabled={isLoading}
+        >
+          انصراف
+        </Button>
+
+        <Button
+          className="!inline-flex !items-center "
+          key="submit"
+          htmlType="submit"
+          disabled={isLoading}
+        >
+          ثبت
+        </Button>
       </Form>
     </>
   );
