@@ -4,4 +4,5 @@ export const listName = {
   productSuggestion: 'GPI_PS_ProductSuggestion',
   therapeuticField: 'GPI_PS_TherapeuticField ',
   offerReason: 'GPI_PS_OfferReason',
+  priority: 'GPI_PS_Priority',
 };
