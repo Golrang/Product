@@ -1,11 +1,14 @@
-export const getPriority = () => {
-  const data = [
-    { Id: 1, Title: 'p1' },
-    { Id: 2, Title: 'p2' },
-    { Id: 3, Title: 'p3' },
-    { Id: 4, Title: 'p4' },
-    { Id: 5, Title: 'p5' },
-    { Id: 6, Title: 'p6' },
-  ];
+import { listName } from 'constant';
+import { getListItemByFilter } from '../general/pnp/pnpjs';
+import { TPriority } from 'types/priority/priority.types';
+
+export const getPriority = async (): Promise<TPriority[]> => {
+  const data = await getListItemByFilter<TPriority[]>(listName.priority, {
+    filter: '',
+    select: '*',
+    expand: '',
+  });
+  console.log(data);
+  debugger;
   return data;
 };
