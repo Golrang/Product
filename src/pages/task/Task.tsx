@@ -1,5 +1,10 @@
 import React from "react";
+import { HistoryOfActions } from "./containers/history-of-actions";
 
 export const Task = () => {
-    return <div>Task</div>
+    return (
+        <>
+            <HistoryOfActions />
+        </>
+    )
 }
