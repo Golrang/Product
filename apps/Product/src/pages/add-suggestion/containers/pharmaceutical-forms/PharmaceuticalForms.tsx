@@ -1,7 +1,33 @@
-import React from 'react';
+import { FormSelect, FormInput } from 'components';
+import { useGetPharmaceuticalForms } from '../../hooks/useGetPharmaceuticalForms';
+import { useWatch } from 'react-hook-form';
+import { TKeyOfForm } from 'types/suggestion/suggestion.types'
 
-function PharmaceuticalForms() {
-  return <>PharmaceuticalForms</>;
-}
+export const PharmaceuticalForms = () => {
+  const { allPharmaceuticalForms } = useGetPharmaceuticalForms();
+  const selectedPharmaceuticalForm = useWatch({
+    name: 'PharmaceuticalFormId',
+  });
 
-export default PharmaceuticalForms;
+  return (
+    <>
+      <FormSelect<TKeyOfForm>
+        name="PharmaceuticalFormId"
+        label="شکل دارویی"
+        showSearch
+        options={allPharmaceuticalForms}
+        filterOption={(input, option) =>
+          (option?.label ?? '').toString().includes(input)
+        }
+      />
+
+      {selectedPharmaceuticalForm === 35 && (
+        <FormInput<TKeyOfForm>
+          placeholder="سایر اشکال دارویی"
+          name="PharmaceuticalForm_Other"
+          label="سایر درج شود"
+        />
+      )}
+    </>
+  );
+};
