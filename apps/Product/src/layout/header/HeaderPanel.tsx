@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ICMenuUp } from "~/../../../packages/design-system/src";
+import { ICMenuUp } from "sharepoint-golrang-design-system";
 // import logo from "../../assets/img/gig-logo-small.png";
 export const HeaderPanel = () => {
   const [collapsed, setCollapsed] = useState(false);
