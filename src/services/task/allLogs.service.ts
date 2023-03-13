@@ -3,7 +3,7 @@ export const getAllLogs = () => {
     {
       Id: 1,
       Actioner: 'فرناز کلانتر',
-      ActionDate: '1401/08/15',
+      ActionDate: '2023-03-22T14:49:29Z',
       Step: 'تعویق',
       Result: 'تعویق',
       Description: 'جهت بررسی بیشتر',
@@ -11,7 +11,7 @@ export const getAllLogs = () => {
     {
       Id: 2,
       Actioner: 'زهرا شرین پور',
-      ActionDate: '1401/12/01',
+      ActionDate: '2023-03-22T14:49:29Z',
       Step: 'تعویق',
       Result: 'تعویق',
       Description: 'جهت بررسی بیشتر',

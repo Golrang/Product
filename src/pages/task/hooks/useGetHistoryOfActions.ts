@@ -3,6 +3,8 @@ import { message } from 'antd';
 import { getAllLogs } from 'services/task/allLogs.service';
 import { TTableLog } from 'types/task/historyOfActions.types';
 import { queryKeys } from 'constant/react-query-keys';
+import { dateFormat } from 'constant';
+import dayjs from 'dayjs';
 
 export const useGetHistoryOfActions = () => {
   const { data, error, isLoading } = useQuery(
@@ -17,7 +19,7 @@ export const useGetHistoryOfActions = () => {
             key: item.Id!.toString(),
             Id: item.Id,
             Actioner: item?.Actioner ?? '',
-            ActionDate: item?.ActionDate ?? '',
+            ActionDate: dayjs(item.ActionDate).format(dateFormat),
             Step: item?.Step ?? '',
             Result: item?.Result ?? '',
             Description: item?.Description ?? '',
