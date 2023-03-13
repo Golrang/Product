@@ -10,7 +10,8 @@ import { TherapeuticFieldComment } from "./containers/therapeutic-field-comment"
 import { TKeyOfForm } from "types/suggestion/suggestion.types";
 import { UploadFile } from "./containers/upload-file";
 import { useSubmitSuggestion } from "./hooks/useSubmitSuggestion";
-import { useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
+import { useEffect } from "react";
 import {
   Form,
   FormInput,
@@ -20,17 +21,17 @@ import { submitLoadingState } from "~/recoil-store/general/submitLoading";
 
 export const AddSuggestion = () => {
   const { onSubmit } = useSubmitSuggestion();
-  const isLoading = useRecoilValue(submitLoadingState);
+  const [isLoading, setLoading] = useRecoilState(submitLoadingState);
 
   const onCancelHandler = () => {
     return;
   };
 
-  // useEffect(() => {
-  //   return () => {
-  //     setLoading(false);
-  //   };
-  // }, []);
+  useEffect(() => {
+    return () => {
+      setLoading(false);
+    };
+  }, [setLoading]);
   return (
     <>
       <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
