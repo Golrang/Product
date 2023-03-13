@@ -1,3 +1,15 @@
+import { DatePicker } from "components/datepicker";
+
 export const PostponementDate = () => {
-    return <div>PostponementDate</div>
-}
+  const dateFormat = "YYYY/MM/DD";
+  return (
+    <>
+      <p>تاریخ تعویق</p>
+      <DatePicker
+        placeholder="تاریخ تعویق"
+        format={dateFormat}
+        name="PostponementDate"
+      />
+    </>
+  );
+};
