@@ -20,7 +20,7 @@ export const AddSuggestion = () => {
   const [isLoading, setLoading] = useRecoilState(submitLoadingState);
 
   const onCancelHandler = () => {
-    console.log('first');
+    return;
   };
 
   useEffect(() => {
@@ -30,21 +30,21 @@ export const AddSuggestion = () => {
   }, []);
   return (
     <>
+      <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
+        پیشنهاد دهنده
+      </span>
+      <Row gutter={24}>
+        <Col md={24} sm={24}>
+          <Recommender />
+        </Col>
+      </Row>
+      <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
+        مشخصات محصول
+      </span>
       <Form name="AddSuggestionForm" onSubmit={onSubmit}>
-        <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
-          پیشنهاد دهنده
-        </span>
-        <Row gutter={24}>
-          <Col md={24} sm={24}>
-            <Recommender />
-          </Col>
-        </Row>
-        <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
-          مشخصات محصول
-        </span>
         <Row gutter={24} className="mb-5">
           <Col md={12} sm={24}>
-            <FormInput
+            <FormInput<TKeyOfForm>
               name="Material"
               type="text"
               label="نام ماده یا مواد موثره"
@@ -68,14 +68,14 @@ export const AddSuggestion = () => {
         <Divider />
         <Row gutter={24}>
           <Col md={12} sm={24}>
-            <FormInput
+            <FormInput<TKeyOfForm>
               label="نام برند اصلی"
               name="BrandName"
               placeholder="نام برند اصلی"
             />
           </Col>
           <Col md={12} sm={24}>
-            <FormInput
+            <FormInput<TKeyOfForm>
               label="نام شرکت سازنده"
               name="ManufacturerCompanyName"
               placeholder="نام شرکت سازنده"
@@ -85,7 +85,7 @@ export const AddSuggestion = () => {
         <Divider />
         <Row gutter={24}>
           <Col md={24} sm={24}>
-            <FormTextArea
+            <FormTextArea<TKeyOfForm>
               label="مورد مصرف"
               name="Consumable"
               placeholder="مورد مصرف"

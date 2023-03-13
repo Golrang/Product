@@ -5,7 +5,7 @@ import { ICDelete, ICPlus } from 'icons';
 
 export const Material = () => {
   const { fields, append, remove } = useFieldArray({
-    name: 'materials',
+    name: 'Materials',
   });
 
   const { Panel } = Collapse;
@@ -27,7 +27,7 @@ export const Material = () => {
               <Col md={6}>
                 <FormInput
                   type="string"
-                  name={`materials.${index}`}
+                  name={`Materials.${index}.Title`}
                   placeholder="اجزاء ثانویه"
                 />
               </Col>

@@ -1,12 +1,17 @@
 import { queryKeys } from '../../../constant/react-query-keys/index';
 import { useSetRecoilState } from 'recoil';
 
-import { TSuggestion } from 'types/suggestion/suggestion.types';
+import {
+  TSuggestion,
+  TSuggestionForm,
+} from 'types/suggestion/suggestion.types';
 import { getUserInfo } from 'services/general/user-info/userInfo.service';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import {
   addNewSuggestion as addNewSuggestionService,
+  addMaterialsSuggestion as addMaterialsSuggestionService,
+  addFileSuggestion as addFileSuggestionService,
   // TAddNewSuggestion,
   // TUpdateSuggestion,
   // TDeleteNewSuggestion,
@@ -19,7 +24,6 @@ import { submitLoadingState } from 'recoil-store/general/submitLoading';
 const { userInfo } = getUserInfo();
 
 export const useSubmitSuggestion = (id?: number) => {
-  console.log(userInfo);
   const queryClient = useQueryClient();
   const setLoading = useSetRecoilState(submitLoadingState);
 
@@ -36,6 +40,13 @@ export const useSubmitSuggestion = (id?: number) => {
     addNewSuggestionService
   );
 
+  const { mutateAsync: addMaterialsSuggestion } = useMutation(
+    addMaterialsSuggestionService
+  );
+
+  const { mutateAsync: addFileSuggestion } = useMutation(
+    addFileSuggestionService
+  );
   // const { mutateAsync: updateExistSuggestion } = useMutation(
   //   updateSuggestionService
   // );
@@ -49,32 +60,34 @@ export const useSubmitSuggestion = (id?: number) => {
   // const addList: TAddNewSuggestion = {} as TAddNewSuggestion;
   // const deleteList: TDeleteNewSuggestion[] = [];
 
-  const onSubmit = async (state: TSuggestion) => {
+  const onSubmit = async (state: TSuggestionForm) => {
     debugger;
-    console.log(state);
     const addList = {
+      Title: '12345',
       CompanyId: userInfo.companyID,
       EmployeeId: userInfo.employeeId,
       Material: state.Material,
-      PharmaceuticalFormId: 1,
-      OtherPharmaceuticalFormId: 2,
-      PharmaceuticalForm_Other: '',
-      OtherPharmaceuticalForm_Other: '',
+      PharmaceuticalFormId: state.PharmaceuticalFormId,
+      OtherPharmaceuticalFormId: state.OtherPharmaceuticalFormId,
+      PharmaceuticalForm_Other: state.PharmaceuticalForm_Other,
+      OtherPharmaceuticalForm_Other: state.OtherPharmaceuticalForm_Other,
       BrandName: state.BrandName,
       ManufacturerCompanyName: state.ManufacturerCompanyName,
       Consumable: state.Consumable,
-      TherapeuticFieldId: 1,
-      TherapeuticFieldComment: 'TherapeuticFieldComment1',
-      OfferReasonId: 1,
-      OfferReasonComment: 'OfferReasonComment1',
-      ProductAdvatage: 'ProductAdvatage1',
-      ProductWeaknesses: 'ProductWeaknesses1',
-      SimilarPharmaceuticalForm: true,
-      SimilarTherapeuticField: true,
-      SimilarConsumable: true,
-      Comment: 'Comment1',
+      TherapeuticFieldId: state.TherapeuticFieldId,
+      TherapeuticFieldComment: state.TherapeuticFieldComment,
+      OfferReasonId: { results: state.OfferReasonId }, // multi lookup field
+      OfferReasonComment: state.OfferReasonComment,
+      ProductAdvatage: state.ProductAdvatage,
+      ProductWeaknesses: state.ProductWeaknesses,
+      SimilarPharmaceuticalForm: state.SimilarPharmaceuticalForm,
+      SimilarTherapeuticField: state.SimilarTherapeuticField,
+      SimilarConsumable: state.SimilarTherapeuticField,
+      Comment: state.Comment,
     };
-    debugger;
+
+    const materials = state.Materials;
+    const file = state.File;
     // if (Suggestion)
     //   deleteList = costs.map((i) => {
     //     return { Id: i.Id };
@@ -141,7 +154,6 @@ export const useSubmitSuggestion = (id?: number) => {
     //       });
     //     },
     //     onError: (error) => {
-    //       console.log('deleteExistSuggestion', error);
     //     },
     //   });
     // if (updateList.length > 0)
@@ -152,15 +164,20 @@ export const useSubmitSuggestion = (id?: number) => {
     //       });
     //     },
     //     onError: (error) => {
-    //       console.log('updateExistSuggestion', error);
     //     },
     //   });
     // if (addList.length > 0)
     await addNewSuggestion(addList, {
-      onSuccess: () => {
+      onSuccess: (data) => {
         queryClient.invalidateQueries([queryKeys.getAllSuggestion], {
           exact: false,
         });
+        if (materials.length !== 0)
+          addMaterialsSuggestion({
+            Materials: materials,
+            SuggestionId: data.Id,
+          });
+        if (false) addFileSuggestion({ file: file, SuggestionId: data.Id });
       },
       onError: (error) => {
         console.log('addNewSuggestion', error);

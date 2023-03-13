@@ -1,9 +1,20 @@
+import { filePath, listName } from 'constant';
+import {
+  addFileToDocumentLibrary,
+  addListItem,
+  batchAddItemstoList,
+} from 'services/general/pnp/pnpjs';
+import { TMaterial, TSuggestion } from 'types/suggestion/suggestion.types';
 
-import { listName } from 'constant';
-import { addListItem } from 'services/general/pnp/pnpjs';
-import { TSuggestion } from 'types/suggestion/suggestion.types';
+export type TAddNewSuggestion = Omit<TSuggestion, 'OfferReasonId'> & {
+  OfferReasonId: { results: [number] };
+};
 
-export type TAddNewSuggestion = TSuggestion;
+export type TAddNewMaterialsSuggestion = {
+  Materials: TMaterial[];
+  SuggestionId: number;
+};
+export type TAddNewFileSuggestion = { file: any; SuggestionId: number };
 
 // Pick<
 // TSuggestion,
@@ -29,6 +40,42 @@ export type TDeleteNewSuggestion = TSuggestion;
 export const addNewSuggestion = async (payload: TAddNewSuggestion) => {
   const res = await addListItem(payload, listName.productSuggestion);
   return res;
+};
+
+export const addMaterialsSuggestion = async (
+  payload: TAddNewMaterialsSuggestion
+) => {
+  const data = payload.Materials.map((i) => {
+    return {
+      SuggestionId: payload.SuggestionId,
+      Title: i.Title,
+    };
+  });
+  debugger;
+  const res = await batchAddItemstoList(data, listName.materialDetails);
+  return res;
+};
+
+export const addFileSuggestion = async (payload: TAddNewFileSuggestion) => {
+  if (payload?.file.fileList !== undefined) {
+    // const data = {
+    //   folderRelativeUrl: filePath,
+    //   url: new Date().getTime().toString() + payload?.file.fileList[0].name,
+    //   content: payload?.file.fileList[0].originFileObj,
+    //   parameters: { Overwrite: true },
+    // };
+    // const getfile = await addFileToDocumentLibrary(data);
+    // const insertedItem = await getfile?.file
+    //   .select('ListItemAllFields/Id')
+    //   .expand('ListItemAllFields')
+    //   .get<{ ListItemAllFields: { Id: number } }>();
+    // updateListItem(
+    //   { GharardadHazineId: payload.SuggestionId },
+    //   insertedItem?.ListItemAllFields.Id!,
+    //   listName.suggestionDocument
+    // ).then(() => {
+    // });
+  }
 };
 
 // export const updateSuggestion = async (payload: TUpdateSuggestion[]) => {
