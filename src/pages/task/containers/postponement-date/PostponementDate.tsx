@@ -1,7 +1,7 @@
-import { DatePicker } from 'components/datepicker';
+import { DatePicker } from "components/datepicker";
 
 export const PostponementDate = () => {
-  const dateFormat = 'YYYY/MM/DD';
+  const dateFormat = "YYYY/MM/DD";
   return (
     <>
       <p>تاریخ تعویق</p>
