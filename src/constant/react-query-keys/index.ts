@@ -5,5 +5,6 @@ export const queryKeys = {
   getAllSuggestion: 'getAllSuggestion',
   getOfferReason: 'getOfferReason',
   getPriority: 'getPriority',
-  getHistoryOfActions: 'getAllLogs'
+  getHistoryOfActions: 'getAllLogs',
+  getConfirmationDocuments : 'getAllConfirmationDocuments'
 };
