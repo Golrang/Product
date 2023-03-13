@@ -1,3 +1,3 @@
 export const FileUpload = () => {
-    return <div>FileUpload</div>
-}
+  return <div>FileUpload</div>;
+};

@@ -1,3 +1,3 @@
 export const Prioritize = () => {
-    return <div>Prioritize</div>
-}
+  return <div>Prioritize</div>;
+};
