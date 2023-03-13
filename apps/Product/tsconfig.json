@@ -4,7 +4,8 @@
     "baseUrl": "./src",
     "paths": {
       "~/*": ["./*"]
-    }
+    },
+    // "types": ["vite/client"]
   },
   "include": ["src/**/*"],
   "exclude": ["dist", "build", "node_modules"]
