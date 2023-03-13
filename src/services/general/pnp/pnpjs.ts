@@ -83,7 +83,7 @@ export const batchAddItemstoList = async <T extends {}[]>(
   data: T,
   listName: string
 ) => {
-  let list = sp.web.lists.getByTitle(listName);
+  const list = sp.web.lists.getByTitle(listName);
   const entityTypeFullName = await list.getListItemEntityTypeFullName();
   const batch = sp.web.createBatch();
   for (let index = 0; index < data.length; index++) {
@@ -111,7 +111,7 @@ export const batchUpdateListItems = async <T extends ({} & { Id: number })[]>(
   }
   await batch
     .execute()
-    .then((result) => {
+    .then(() => {
       console.log('item added successfully');
     })
     .catch((err) => console.log(err));
@@ -121,13 +121,13 @@ export const batchDeleteListItems = async <T extends ({} & { Id: number })[]>(
   data: T,
   listName: string
 ) => {
-  let batch = sp.web.createBatch();
+  const batch = sp.web.createBatch();
   const list = sp.web.lists.getByTitle(listName);
   for (let index = 0; index < data.length; index++) {
     const element = data[index];
     list.items.getById(element.Id).inBatch(batch).delete();
   }
-  await batch.execute().then((result) => {
+  await batch.execute().then(() => {
     console.log('item deleted successfully');
   });
 };
