@@ -1,8 +1,8 @@
-import { Image } from 'antd';
-import { ICMenuUp } from 'icons/MenuUpIcon';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../assets/img/gig-logo-small.png';
+import { Image } from "antd";
+import { ICMenuUp } from "icons/MenuUpIcon";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../../assets/img/gig-logo-small.png";
 export const HeaderPanel = () => {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -13,7 +13,7 @@ export const HeaderPanel = () => {
         <div className="container px-4 mx-auto md:flex md:items-center">
           <div
             className={` md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0 !w-[100%] justify-end text-end
-                ${collapsed ? 'flex justify-end text-end' : 'hidden '}`}
+                ${collapsed ? "flex justify-end text-end" : "hidden "}`}
             dir="ltr"
             id="navbar-collapse"
           >
