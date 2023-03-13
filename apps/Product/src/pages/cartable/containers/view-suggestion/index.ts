@@ -1,1 +1,1 @@
-export * from './ViewSuggestion'
+export * from "./ViewSuggestion";

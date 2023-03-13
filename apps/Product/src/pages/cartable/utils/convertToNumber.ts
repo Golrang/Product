@@ -1,1 +1,1 @@
-export const convertToNumber = (input: string): number => +input
+export const convertToNumber = (input: string): number => +input;

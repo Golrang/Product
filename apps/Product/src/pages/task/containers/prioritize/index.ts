@@ -1,1 +1,1 @@
-export * from './Prioritize'
+export * from "./Prioritize";

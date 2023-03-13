@@ -1,1 +1,1 @@
-export * from './HistoryOfActions'
+export * from "./HistoryOfActions";

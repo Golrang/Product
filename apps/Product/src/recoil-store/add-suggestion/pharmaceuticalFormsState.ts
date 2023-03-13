@@ -1,4 +1,4 @@
-import { atom } from 'recoil';
+import { atom } from "recoil";
 
 export type TPharmaceuticalFormOtherState = {
   isOpen: boolean;
@@ -7,7 +7,7 @@ export type TPharmaceuticalFormOtherState = {
 
 export const pharmaceuticalFormOtherState = atom<TPharmaceuticalFormOtherState>(
   {
-    key: 'pharmaceuticalFormOtherState',
+    key: "pharmaceuticalFormOtherState",
     default: { isOpen: false },
   }
 );

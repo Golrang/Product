@@ -24,4 +24,4 @@ export type TSuggestion = {
   Modified: string; //تاریخ ایجاد
 };
 
-export type TKeyOfForm = keyof TSuggestion
+export type TKeyOfForm = keyof TSuggestion;

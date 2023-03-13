@@ -19,10 +19,11 @@
 // };
 
 export const getAllTherapeuticField = () => {
-    const data = [{Id:1, Title:'تقویت سیستم ایمنی'}, {Id:2, Title:'گوارش'}, {Id:3, Title:'تغذیه'}, {Id:4, Title:'سایر'}]
-      return data;
-    };
-
-
-
-
+  const data = [
+    { Id: 1, Title: "تقویت سیستم ایمنی" },
+    { Id: 2, Title: "گوارش" },
+    { Id: 3, Title: "تغذیه" },
+    { Id: 4, Title: "سایر" },
+  ];
+  return data;
+};

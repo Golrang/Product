@@ -19,6 +19,11 @@
 // };
 
 export const getAllPharmaceuticalForms = () => {
-    const data = [{Id:32, Title:'قرص'}, {Id:33, Title:'کپسول'}, {Id:34, Title:'شربت'}, {Id:35, Title:'سایر'}]
-      return data;
-    };
+  const data = [
+    { Id: 32, Title: "قرص" },
+    { Id: 33, Title: "کپسول" },
+    { Id: 34, Title: "شربت" },
+    { Id: 35, Title: "سایر" },
+  ];
+  return data;
+};

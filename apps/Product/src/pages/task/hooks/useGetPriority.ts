@@ -1,7 +1,7 @@
-import { useQuery } from '@tanstack/react-query';
-import { getPriority } from 'services/priority/priority.service';
-import { TPriority } from 'types/priority/priority.types';
-import { queryKeys } from 'constant/react-query-keys';
+import { useQuery } from "@tanstack/react-query";
+import { getPriority } from "services/priority/priority.service";
+import { TPriority } from "types/priority/priority.types";
+import { queryKeys } from "constant/react-query-keys";
 
 export const useGetPriority = () => {
   const { data: allPriority } = useQuery<

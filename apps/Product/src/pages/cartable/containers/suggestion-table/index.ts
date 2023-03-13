@@ -1,1 +1,1 @@
-export * from './SuggestionTable';
+export * from "./SuggestionTable";

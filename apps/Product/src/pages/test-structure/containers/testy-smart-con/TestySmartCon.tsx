@@ -1,3 +1,3 @@
 export const TestySmartCon = () => {
-  return <div>TestySmartCon</div>
-}
+  return <div>TestySmartCon</div>;
+};

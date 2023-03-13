@@ -1,15 +1,15 @@
-import { useFieldArray } from 'react-hook-form';
-import { Col, Row, Collapse } from 'antd';
+import { useFieldArray } from "react-hook-form";
+import { Col, Row, Collapse } from "antd";
 import {
   Button,
   FormInput,
   ICDelete,
   ICPlus,
-} from 'sharepoint-golrang-design-system';
+} from "sharepoint-golrang-design-system";
 
 export const Material = () => {
   const { fields, append, remove } = useFieldArray({
-    name: 'materials',
+    name: "materials",
   });
 
   const { Panel } = Collapse;

@@ -1,1 +1,1 @@
-export * from './PharmaceuticalFormsQuestion';
+export * from "./PharmaceuticalFormsQuestion";

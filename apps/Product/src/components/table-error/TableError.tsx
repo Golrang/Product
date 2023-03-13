@@ -1,4 +1,4 @@
-import { Title } from 'sharepoint-golrang-design-system';
+import { Title } from "sharepoint-golrang-design-system";
 // import { ICErrorOctagon } from 'sharepoint-golrang-design-system';
 
 export const TableError = () => {

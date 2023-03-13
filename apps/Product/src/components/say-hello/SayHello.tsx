@@ -1,3 +1,3 @@
 export const SayHello = () => {
-  return <div>SayHello</div>
-}
+  return <div>SayHello</div>;
+};

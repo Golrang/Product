@@ -1,5 +1,5 @@
-import { FormTextArea } from 'sharepoint-golrang-design-system';
-import { TKeyOfForm } from 'types/suggestion/suggestion.types';
+import { FormTextArea } from "sharepoint-golrang-design-system";
+import { TKeyOfForm } from "types/suggestion/suggestion.types";
 
 export const TherapeuticFieldComment = () => {
   return (

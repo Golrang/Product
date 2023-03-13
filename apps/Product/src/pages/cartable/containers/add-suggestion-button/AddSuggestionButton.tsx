@@ -1,11 +1,11 @@
 // import { ICPlus } from 'sharepoint-golrang-design-system';
-import { Button } from 'sharepoint-golrang-design-system';
+import { Button } from "sharepoint-golrang-design-system";
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 export default function AddSuggestionButton() {
   const navigate = useNavigate();
-  const onAddHandler = () => navigate('/add-Suggestion', { replace: true });
+  const onAddHandler = () => navigate("/add-Suggestion", { replace: true });
 
   return (
     <Button

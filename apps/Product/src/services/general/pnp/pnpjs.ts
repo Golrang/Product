@@ -1,13 +1,17 @@
-import sp from 'utils/pnp';
-import '@pnp/sp/webs';
-import '@pnp/sp/lists';
-import '@pnp/sp/items';
+/* eslint-disable no-console */
+import sp from "utils/pnp";
+import "@pnp/sp/webs";
+import "@pnp/sp/lists";
+import "@pnp/sp/items";
 // import '@pnp/sp/items/get-all'
-import '@pnp/sp/files';
-import '@pnp/sp/folders';
-import { TDocumentLibraryFile, TPnPParams } from './PnP.Types';
+import "@pnp/sp/files";
+import "@pnp/sp/folders";
+import { TDocumentLibraryFile, TPnPParams } from "./PnP.Types";
 
-export const addListItem = async <T extends {}>(data: T, listName: string) => {
+export const addListItem = async <T extends object>(
+  data: T,
+  listName: string
+) => {
   const result = await sp.web.lists
     .getByTitle(listName)
     .items.add(data)
@@ -83,7 +87,7 @@ export const batchAddItemstoList = async <T extends {}[]>(
   data: T,
   listName: string
 ) => {
-  let list = sp.web.lists.getByTitle(listName);
+  const list = sp.web.lists.getByTitle(listName);
   const entityTypeFullName = await list.getListItemEntityTypeFullName();
   const batch = sp.web.createBatch();
   for (let index = 0; index < data.length; index++) {
@@ -91,7 +95,7 @@ export const batchAddItemstoList = async <T extends {}[]>(
     list.items.inBatch(batch).add(element, entityTypeFullName);
   }
   await batch.execute().then((result) => {
-    console.log(' res', result);
+    console.log(" res", result);
   });
 };
 export const batchUpdateListItems = async <T extends ({} & { Id: number })[]>(
@@ -107,12 +111,12 @@ export const batchUpdateListItems = async <T extends ({} & { Id: number })[]>(
     list.items
       .getById(element.Id)
       .inBatch(batch)
-      .update(element, '*', entityTypeFullName);
+      .update(element, "*", entityTypeFullName);
   }
   await batch
     .execute()
-    .then((result) => {
-      console.log('item added successfully');
+    .then(() => {
+      console.log("item added successfully");
     })
     .catch((err) => console.log(err));
 };
@@ -121,14 +125,15 @@ export const batchDeleteListItems = async <T extends ({} & { Id: number })[]>(
   data: T,
   listName: string
 ) => {
-  let batch = sp.web.createBatch();
+  const batch = sp.web.createBatch();
   const list = sp.web.lists.getByTitle(listName);
   for (let index = 0; index < data.length; index++) {
     const element = data[index];
     list.items.getById(element.Id).inBatch(batch).delete();
   }
-  await batch.execute().then((result) => {
-    console.log('item deleted successfully');
+  await batch.execute().then(() => {
+    // eslint-disable-next-line no-console
+    console.log("item deleted successfully");
   });
 };
 

@@ -1,1 +1,1 @@
-export const getAllContractors = () => {}
+export const getAllContractors = () => {};

@@ -1,6 +1,6 @@
-import { FormSelect } from 'sharepoint-golrang-design-system';
-import { useGetOfferReason } from 'pages/add-suggestion/hooks/useGetOfferReason';
-import { TKeyOfForm } from 'types/suggestion/suggestion.types';
+import { FormSelect } from "sharepoint-golrang-design-system";
+import { useGetOfferReason } from "pages/add-suggestion/hooks/useGetOfferReason";
+import { TKeyOfForm } from "types/suggestion/suggestion.types";
 
 export const OfferReason = () => {
   const { allOfferReason } = useGetOfferReason();
@@ -13,7 +13,7 @@ export const OfferReason = () => {
       showSearch
       options={allOfferReason}
       filterOption={(input, option) =>
-        (option?.label ?? '').toString().includes(input)
+        (option?.label ?? "").toString().includes(input)
       }
     />
   );

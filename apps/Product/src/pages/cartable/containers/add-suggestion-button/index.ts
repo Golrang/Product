@@ -1,1 +1,1 @@
-export * from './AddSuggestionButton';
+export * from "./AddSuggestionButton";

@@ -1,4 +1,4 @@
 export type TOfferReason = {
-    Id: number;
-    Title: string
+  Id: number;
+  Title: string;
 };

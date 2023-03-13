@@ -1,13 +1,13 @@
-import { FormSelect, FormInput } from 'sharepoint-golrang-design-system';
-import { useGetPharmaceuticalForms } from '../../hooks/useGetPharmaceuticalForms';
-import { useWatch } from 'react-hook-form';
-import { TKeyOfForm } from 'types/suggestion/suggestion.types';
+import { FormSelect, FormInput } from "sharepoint-golrang-design-system";
+import { useGetPharmaceuticalForms } from "../../hooks/useGetPharmaceuticalForms";
+import { useWatch } from "react-hook-form";
+import { TKeyOfForm } from "types/suggestion/suggestion.types";
 
 export const OtherPharmaceuticalForms = () => {
   const { allPharmaceuticalForms } = useGetPharmaceuticalForms();
 
   const selectedPharmaceuticalForm: number = useWatch({
-    name: 'OtherPharmaceuticalFormId',
+    name: "OtherPharmaceuticalFormId",
   });
 
   return (
@@ -18,7 +18,7 @@ export const OtherPharmaceuticalForms = () => {
         showSearch
         options={allPharmaceuticalForms}
         filterOption={(input, option) =>
-          (option?.label ?? '').toString().includes(input)
+          (option?.label ?? "").toString().includes(input)
         }
       />
 

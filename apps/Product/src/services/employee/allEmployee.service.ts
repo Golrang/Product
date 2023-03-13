@@ -1,6 +1,6 @@
-import { getUserInfo } from 'services/general/user-info/userInfo.service';
-import { TEmployee } from 'types/employee/employee.types';
-import axios from 'utils/axiosBase';
+import { getUserInfo } from "services/general/user-info/userInfo.service";
+import { TEmployee } from "types/employee/employee.types";
+import axios from "utils/axiosBase";
 
 const { userInfo } = getUserInfo();
 

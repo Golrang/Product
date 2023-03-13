@@ -1,1 +1,1 @@
-export * from './TableError';
+export * from "./TableError";

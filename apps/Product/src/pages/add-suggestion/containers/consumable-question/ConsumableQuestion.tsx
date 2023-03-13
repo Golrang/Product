@@ -1,13 +1,13 @@
-import { FormRadio } from 'sharepoint-golrang-design-system';
+import { FormRadio } from "sharepoint-golrang-design-system";
 
 const data = [
   {
-    value: 'true',
-    label: 'بله',
+    value: "true",
+    label: "بله",
   },
   {
-    value: 'false',
-    label: 'خیر',
+    value: "false",
+    label: "خیر",
   },
 ];
 export const ConsumableQuestion = () => {

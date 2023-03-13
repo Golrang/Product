@@ -1,1 +1,1 @@
-export * from './ConsumableQuestion';
+export * from "./ConsumableQuestion";

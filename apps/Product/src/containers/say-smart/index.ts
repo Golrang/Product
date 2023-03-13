@@ -1,1 +1,1 @@
-export * from './SaySmart'
+export * from "./SaySmart";

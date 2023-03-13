@@ -1,3 +1,3 @@
 export const ViewProductSuggestion = () => {
-    return <div>ViewProductSuggestion</div>
-}
+  return <div>ViewProductSuggestion</div>;
+};

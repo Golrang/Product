@@ -1,5 +1,5 @@
 import React from "react";
 
 export const Task = () => {
-    return <div>Task</div>
-}
+  return <div>Task</div>;
+};

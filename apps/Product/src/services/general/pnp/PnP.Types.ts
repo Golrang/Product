@@ -1,4 +1,4 @@
-import { IAddUsingPathProps } from '@pnp/sp/files';
+import { IAddUsingPathProps } from "@pnp/sp/files";
 
 export type TPnPParams = {
   select: string;

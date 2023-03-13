@@ -1,5 +1,5 @@
-import { HeaderPanel } from 'layout/header/HeaderPanel';
-import { Outlet } from 'react-router-dom';
+import { HeaderPanel } from "layout/header/HeaderPanel";
+import { Outlet } from "react-router-dom";
 
 export const Main = () => {
   return (

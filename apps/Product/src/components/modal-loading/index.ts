@@ -1,1 +1,1 @@
-export * from './ModalLoading';
+export * from "./ModalLoading";

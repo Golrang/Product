@@ -1,4 +1,4 @@
-import { Button, FormUploader } from 'sharepoint-golrang-design-system';
+import { Button, FormUploader } from "sharepoint-golrang-design-system";
 
 export const UploadFile = () => {
   return (

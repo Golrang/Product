@@ -1,5 +1,5 @@
 export type TTableItems = {
-  key: any
-  row: number
-  span?: number
-}
+  key: any;
+  row: number;
+  span?: number;
+};

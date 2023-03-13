@@ -1,1 +1,1 @@
-export * from './TherapeuticFieldComment';
+export * from "./TherapeuticFieldComment";

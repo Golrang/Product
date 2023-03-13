@@ -1,11 +1,11 @@
-import { queryKeys } from './../../../constant/react-query-keys/index';
-import { message } from 'antd';
-import { useQuery } from '@tanstack/react-query';
-import { TSuggestionTable } from 'types/suggestion/suggestionTable.types';
-import { getAllProductSuggestion } from 'services/product-suggestion/allProductSuggestion.service';
-import { TSuggestion } from 'types/suggestion/suggestion.types';
-import { getAllEmployee } from 'services/employee/allEmployee.service';
-import { TEmployee } from 'types/employee/employee.types';
+import { queryKeys } from "./../../../constant/react-query-keys/index";
+import { message } from "antd";
+import { useQuery } from "@tanstack/react-query";
+import { TSuggestionTable } from "types/suggestion/suggestionTable.types";
+import { getAllProductSuggestion } from "services/product-suggestion/allProductSuggestion.service";
+import { TSuggestion } from "types/suggestion/suggestion.types";
+import { getAllEmployee } from "services/employee/allEmployee.service";
+import { TEmployee } from "types/employee/employee.types";
 
 export const useGetContractors = () => {
   //   const contractorSearch = useRecoilValue(contractorSearchState)
@@ -24,7 +24,7 @@ export const useGetContractors = () => {
     unknown,
     TSuggestionTable[],
     [string, string]
-  >([queryKeys.getAllSuggestion, ''], getAllProductSuggestion, {
+  >([queryKeys.getAllSuggestion, ""], getAllProductSuggestion, {
     refetchOnWindowFocus: false,
     suspense: true,
     select: (data) =>
@@ -37,9 +37,9 @@ export const useGetContractors = () => {
             (i) =>
               Number(item.EmployeeId) === i.EmployeeId &&
               i.CCompanyId === Number(item.CompanyId)
-          )?.FullName ?? '',
+          )?.FullName ?? "",
       })),
-    onError: () => message.error('خطایی در دریافت اطلاعات رخ داده است'),
+    onError: () => message.error("خطایی در دریافت اطلاعات رخ داده است"),
   });
 
   return {

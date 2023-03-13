@@ -1,10 +1,10 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { RouterProvider } from 'react-router-dom';
-import { ConfigProvider } from 'antd';
-import { RecoilRoot } from 'recoil';
-import FaIR from 'antd/locale/fa_IR';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { RouterProvider } from "react-router-dom";
+import { ConfigProvider } from "antd";
+import { RecoilRoot } from "recoil";
+import FaIR from "antd/locale/fa_IR";
 
-import { router } from 'routes/routes';
+import { router } from "routes/routes";
 
 const queryClient = new QueryClient();
 
@@ -13,7 +13,7 @@ function App() {
     <ConfigProvider
       theme={{
         token: {
-          fontFamily: 'IRANSansFaNum',
+          fontFamily: "IRANSansFaNum",
         },
       }}
       direction="rtl"

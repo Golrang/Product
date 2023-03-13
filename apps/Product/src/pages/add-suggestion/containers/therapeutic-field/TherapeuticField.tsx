@@ -1,6 +1,6 @@
-import { FormSelect } from 'sharepoint-golrang-design-system';
-import { useGetTherapeuticField } from 'pages/add-suggestion/hooks/useGetTherapeuticField';
-import { TKeyOfForm } from 'types/suggestion/suggestion.types';
+import { FormSelect } from "sharepoint-golrang-design-system";
+import { useGetTherapeuticField } from "pages/add-suggestion/hooks/useGetTherapeuticField";
+import { TKeyOfForm } from "types/suggestion/suggestion.types";
 
 export const TherapeuticField = () => {
   const { allTherapeuticField } = useGetTherapeuticField();
@@ -12,7 +12,7 @@ export const TherapeuticField = () => {
       showSearch
       options={allTherapeuticField}
       filterOption={(input, option) =>
-        (option?.label ?? '').toString().includes(input)
+        (option?.label ?? "").toString().includes(input)
       }
     />
   );

@@ -1,7 +1,7 @@
-import { JalaliDatePicker } from 'sharepoint-golrang-design-system';
+import { JalaliDatePicker } from "sharepoint-golrang-design-system";
 
 export const PostponementDate = () => {
-  const dateFormat = 'YYYY/MM/DD';
+  const dateFormat = "YYYY/MM/DD";
   return (
     <>
       <p>تاریخ تعویق</p>

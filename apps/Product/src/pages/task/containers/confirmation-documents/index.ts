@@ -1,1 +1,1 @@
-export * from './ConfirmationDocuments'
+export * from "./ConfirmationDocuments";
