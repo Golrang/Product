@@ -7,4 +7,4 @@ export const listName = {
   priority: "GPI_PS_Priority",
 };
 
-export const dateFormat = 'YYYY/MM/DD'
+export const dateFormat = "YYYY/MM/DD";

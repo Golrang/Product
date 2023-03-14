@@ -1,10 +1,10 @@
-import { useQuery } from '@tanstack/react-query';
-import { message } from 'antd';
-import { dateFormat } from 'constant';
-import dayjs from 'dayjs';
-import { TTableconfirmationDocuments } from 'types/task/confirmationDocuments.types';
-import { queryKeys } from 'constant/react-query-keys';
-import { getAllConfirmationDocuments } from 'services/task/allConfirmationDocuments.service';
+import { useQuery } from "@tanstack/react-query";
+import { message } from "antd";
+import { dateFormat } from "constant";
+import dayjs from "dayjs";
+import { TTableconfirmationDocuments } from "types/task/confirmationDocuments.types";
+import { queryKeys } from "constant/react-query-keys";
+import { getAllConfirmationDocuments } from "services/task/allConfirmationDocuments.service";
 
 export const useGetConfirmationDocuments = () => {
   const { data, error, isLoading } = useQuery(
@@ -19,17 +19,17 @@ export const useGetConfirmationDocuments = () => {
             return {
               key: item.Id?.toString() ?? 0,
               Id: item.Id,
-              Title: item?.Title ?? '',
-              Creator: item?.Creator ?? '',
+              Title: item?.Title ?? "",
+              Creator: item?.Creator ?? "",
               UploadDate: dayjs(item.UploadDate).format(dateFormat),
-              Download: item?.Download ?? '',
+              Download: item?.Download ?? "",
               row: index + 1,
             };
           }
         );
         return mappedData;
       },
-      onError: () => message.error('خطایی در دریافت اطلاعات رخ داده است'),
+      onError: () => message.error("خطایی در دریافت اطلاعات رخ داده است"),
     }
   );
 
