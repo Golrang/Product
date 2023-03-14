@@ -28,7 +28,7 @@ export const useGetHistoryOfActions = () => {
         });
         return mappedData;
       },
-      onError: () => message.error('خطایی در دریافت اطلاعات رخ داده است'),
+      onError: () => message.error("خطایی در دریافت اطلاعات رخ داده است"),
     }
   );
 
