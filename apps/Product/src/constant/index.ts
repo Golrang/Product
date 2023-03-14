@@ -6,3 +6,5 @@ export const listName = {
   offerReason: "GPI_PS_OfferReason",
   priority: "GPI_PS_Priority",
 };
+
+export const dateFormat = "YYYY/MM/DD";

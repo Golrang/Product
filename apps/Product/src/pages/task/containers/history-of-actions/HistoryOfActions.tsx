@@ -1,4 +1,3 @@
-import React from "react";
 import { Table, TColumn } from "sharepoint-golrang-design-system";
 import { TTableLog } from "types/task/historyOfActions.types";
 import { useGetHistoryOfActions } from "../../hooks/useGetHistoryOfActions";
