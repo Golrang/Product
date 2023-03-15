@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import { getPriority } from "services/priority/priority.service";
-import { TPriority } from "types/priority/priority.types";
+import { getOfferResult } from "services/offer-result/offerResult.service";
+import { TOfferResult } from "types/offer-result/offerResult.types";
 import { queryKeys } from "constant/react-query-keys";
 
-export const useGetPriority = () => {
-  const { data: allPriority } = useQuery<
-    TPriority[],
+export const useGetOfferResult = () => {
+  const { data: allResult } = useQuery<
+    TOfferResult[],
     unknown,
     { label: string; value: number }[]
-  >([queryKeys.getPriority], getPriority, {
+  >([queryKeys.getOfferResult], getOfferResult, {
     refetchOnWindowFocus: false,
     suspense: true,
     select: (items) =>
@@ -19,6 +19,6 @@ export const useGetPriority = () => {
   });
 
   return {
-    allPriority,
+    allResult,
   };
 };

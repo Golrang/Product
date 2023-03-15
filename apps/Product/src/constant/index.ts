@@ -6,7 +6,11 @@ export const listName = {
   materialDetails: "GPI_PS_MaterialDetail",
   suggestionDocument: "GPI_PS_SuggestionDocument",
   priority: "GPI_PS_Priority",
+  offerResult: "GPI_PS_OfferResult",
 };
+
+
+export const dateFormat = "YYYY/MM/DD";
 
 export const pharmaceuticalFormsOtherId = 8; //مقدار id سایر PharmaceuticalForms
 
