@@ -9,7 +9,6 @@ export const listName = {
   offerResult: "GPI_PS_OfferResult",
 };
 
-
 export const dateFormat = "YYYY/MM/DD";
 
 export const pharmaceuticalFormsOtherId = 8; //مقدار id سایر PharmaceuticalForms
