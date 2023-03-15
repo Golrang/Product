@@ -1,4 +1,4 @@
-import { Button, ICEdit, ICShow } from "sharepoint-golrang-design-system";
+import { Button, ICEdit } from "sharepoint-golrang-design-system";
 
 export const EditAndShowButton = () => {
   return (
@@ -16,7 +16,7 @@ export const EditAndShowButton = () => {
         className="!inline-flex !justify-center !items-center"
         //   onClick={onEditHandler}
       >
-        <ICShow className="w-4" />
+        {/* <ICShow className="w-4" /> */}
       </Button>
     </>
   );
