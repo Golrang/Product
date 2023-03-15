@@ -71,7 +71,7 @@ export type TSuggestionForm = Pick<
   | "Comment"
 > & {
   Materials: TMaterial[];
-  File: unknown;
+  File: any;
 };
 
 export type TKeyOfForm = keyof TSuggestionForm;

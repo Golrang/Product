@@ -12,5 +12,5 @@ export const pharmaceuticalFormsOtherId = 8; //مقدار id سایر Pharmaceut
 
 export const filePath =
   process.env.NODE_ENV == "development"
-    ? `/psstest/${listName.materialDetails}`
-    : `/productsuggestion/${listName.materialDetails}`;
+    ? `/psstest/${listName.suggestionDocument}`
+    : `/productsuggestion/${listName.suggestionDocument}`;
