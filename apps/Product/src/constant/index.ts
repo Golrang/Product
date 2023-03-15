@@ -5,6 +5,7 @@ export const listName = {
   therapeuticField: "GPI_PS_TherapeuticField ",
   offerReason: "GPI_PS_OfferReason",
   priority: "GPI_PS_Priority",
+  offerResult: "GPI_PS_OfferResult",
 };
 
 export const dateFormat = "YYYY/MM/DD";
