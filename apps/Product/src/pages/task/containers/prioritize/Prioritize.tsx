@@ -1,12 +1,13 @@
-import {useState} from "react";
-import {Col, Row} from "antd";
-import {Form, FormTextArea, Button} from "sharepoint-golrang-design-system";
-import {ViewProductSuggestion} from "../view-product-suggestion";
-import {HistoryOfActions} from "../history-of-actions";
-import {FileUpload} from "../file-upload";
-import {PostponementDate} from "../postponement-date";
-import {Priority} from "../priority";
-import {CheckBox} from "~/../../../packages/design-system/src/components/checkbox/CheckBox";
+import { useState } from "react";
+import { Col, Row } from "antd";
+import { Form, FormTextArea, Button } from "sharepoint-golrang-design-system";
+import { ViewProductSuggestion } from "../view-product-suggestion";
+import { HistoryOfActions } from "../history-of-actions";
+import { FileUpload } from "../file-upload";
+import { PostponementDate } from "../postponement-date";
+import { Priority } from "../priority";
+import { CheckBox } from "~/../../../packages/design-system/src/components/checkbox/CheckBox";
+import { OfferResultSelect } from "../offer-result-select";
 
 export const Prioritize = () => {
   const [checked, setChecked] = useState(false);
@@ -38,7 +39,9 @@ export const Prioritize = () => {
             </Col>
           </Row>
           <Row gutter={24} className="mb-5">
-            <Col md={24}></Col>
+            <Col md={24}>
+              <OfferResultSelect />
+            </Col>
           </Row>
           <Row gutter={24} className="mb-5">
             <Col md={12}>
@@ -54,12 +57,12 @@ export const Prioritize = () => {
                 label="توضیحات"
                 name=""
                 placeholder="توضیحات"
-                autoSize={{minRows: 4}}
+                autoSize={{ minRows: 4 }}
               />
             </Col>
           </Row>
           <Row gutter={24} className="mb-5">
-            <Col md={24}>
+            <Col md={6}>
               <FileUpload />
             </Col>
           </Row>
