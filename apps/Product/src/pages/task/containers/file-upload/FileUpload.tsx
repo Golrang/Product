@@ -1,5 +1,4 @@
-import {Button} from "antd";
-import {FormUploader, ICUpload} from "~/../../../packages/design-system/src";
+import { FormUploader, ICUpload } from "~/../../../packages/design-system/src";
 
 export const FileUpload = () => {
   return (
