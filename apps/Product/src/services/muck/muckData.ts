@@ -25,6 +25,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment1",
     Modified: "2023-03-20T13:29:58Z",
     Created: "2023-02-29T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -51,6 +53,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment2",
     Modified: "2023-01-23T13:06:08Z",
     Created: "2023-03-22T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -77,6 +81,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment3",
     Modified: "2023-04-13T13:06:08Z",
     Created: "2023-02-12T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -103,6 +109,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment4",
     Modified: "2023-02-23T13:06:08Z",
     Created: "2023-02-22T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -129,6 +137,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment5",
     Modified: "2023-02-23T13:06:08Z",
     Created: "2023-02-22T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -155,6 +165,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment6",
     Modified: "2023-02-23T13:06:08Z",
     Created: "2023-02-22T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -181,6 +193,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment7",
     Modified: "2023-02-23T13:06:08Z",
     Created: "2023-02-22T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -207,6 +221,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment8",
     Modified: "2023-02-23T13:06:08Z",
     Created: "2023-02-22T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -233,6 +249,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment9",
     Modified: "2023-02-23T13:06:08Z",
     Created: "2023-02-22T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 ];
 
