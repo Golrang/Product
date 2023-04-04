@@ -6,8 +6,8 @@ import { queryKeys } from "constant/react-query-keys";
 export const useGetPharmaceuticalForms = () => {
   const { data: allPharmaceuticalForms } = useQuery<
     TpharmaceuticalForm[],
-    any,
-    { label: any; value: any }[]
+    unknown,
+    { label: string; value: number }[]
   >([queryKeys.getPharmaceuticalForms], getAllPharmaceuticalForms, {
     refetchOnWindowFocus: false,
     suspense: true,
