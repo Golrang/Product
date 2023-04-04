@@ -13,8 +13,8 @@ export const useGetPharmaceuticalForms = () => {
     suspense: true,
     select: (items) =>
       items.map((item) => ({
-        label: item.Title,
-        value: item.Id,
+        label: item.Title ?? "",
+        value: item.Id ?? 0,
       })),
   });
 

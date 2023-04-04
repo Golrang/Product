@@ -17,7 +17,6 @@ import { addNewLogSuggestion as addNewLogSuggestionService } from "services/prod
 import { message } from "antd";
 import { submitLoadingState } from "recoil-store/general/submitLoading";
 import { updateSuggestionCode } from "~/services/product-suggestion/updateSuggestion.service";
-import dayjs from "dayjs";
 import { pharmaceuticalFormsOtherId } from "~/constant";
 
 const { userInfo } = getUserInfo();
@@ -80,11 +79,11 @@ export const useSubmitSuggestion = (id?: number) => {
     const materials = state.Materials;
     const file = state.File;
     const log = {
-      user: userInfo.userFarsiName,
-      ActionDate: dayjs(new Date()).toISOString(),
-      Step: "1",
-      Result: "okkkkk",
-      Description: "توضیحات",
+      Title: userInfo.userFarsiName,
+      ActionDate: new Date().toISOString(),
+      Step: "3",
+      Result: "ok",
+      Comment: "comment",
     };
 
     if (state.PharmaceuticalFormId === state.OtherPharmaceuticalFormId) {

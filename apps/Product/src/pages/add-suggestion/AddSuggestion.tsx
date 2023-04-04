@@ -20,7 +20,7 @@ import {
 } from "sharepoint-golrang-design-system";
 import { submitLoadingState } from "~/recoil-store/general/submitLoading";
 import * as yup from "yup";
-import { TFormSchema } from "~/../../../packages/design-system/src/components/form";
+import { TFormSchema } from "sharepoint-golrang-design-system/src/components/form";
 import { TSuggestionForm } from "../../types/suggestion/suggestion.types";
 
 yup.addMethod(yup.object, "uniqueProperty", function (propertyName, message) {
