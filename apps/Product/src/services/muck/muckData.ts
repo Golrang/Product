@@ -15,7 +15,7 @@ export const suggestions: TSuggestion[] = [
     Consumable: "Consumable1",
     TherapeuticFieldId: 1,
     TherapeuticFieldComment: "TherapeuticFieldComment1",
-    OfferReasonId: 1,
+    OfferReasonId: [1],
     OfferReasonComment: "OfferReasonComment1",
     ProductAdvatage: "ProductAdvatage1",
     ProductWeaknesses: "ProductWeaknesses1",
@@ -25,6 +25,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment1",
     Modified: "2023-03-20T13:29:58Z",
     Created: "2023-02-29T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -41,7 +43,7 @@ export const suggestions: TSuggestion[] = [
     Consumable: "Consumable2",
     TherapeuticFieldId: 2,
     TherapeuticFieldComment: "TherapeuticFieldComment2",
-    OfferReasonId: 2,
+    OfferReasonId: [2],
     OfferReasonComment: "OfferReasonComment2",
     ProductAdvatage: "ProductAdvatage2",
     ProductWeaknesses: "ProductWeaknesses2",
@@ -51,6 +53,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment2",
     Modified: "2023-01-23T13:06:08Z",
     Created: "2023-03-22T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -67,7 +71,7 @@ export const suggestions: TSuggestion[] = [
     Consumable: "Consumable3",
     TherapeuticFieldId: 3,
     TherapeuticFieldComment: "TherapeuticFieldComment3",
-    OfferReasonId: 3,
+    OfferReasonId: [3],
     OfferReasonComment: "OfferReasonComment3",
     ProductAdvatage: "ProductAdvatage3",
     ProductWeaknesses: "ProductWeaknesses3",
@@ -77,6 +81,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment3",
     Modified: "2023-04-13T13:06:08Z",
     Created: "2023-02-12T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -93,7 +99,7 @@ export const suggestions: TSuggestion[] = [
     Consumable: "Consumable4",
     TherapeuticFieldId: 3,
     TherapeuticFieldComment: "TherapeuticFieldComment4",
-    OfferReasonId: 2,
+    OfferReasonId: [2],
     OfferReasonComment: "OfferReasonComment4",
     ProductAdvatage: "ProductAdvatage4",
     ProductWeaknesses: "ProductWeaknesses4",
@@ -103,6 +109,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment4",
     Modified: "2023-02-23T13:06:08Z",
     Created: "2023-02-22T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -119,7 +127,7 @@ export const suggestions: TSuggestion[] = [
     Consumable: "Consumable5",
     TherapeuticFieldId: 2,
     TherapeuticFieldComment: "TherapeuticFieldComment5",
-    OfferReasonId: 1,
+    OfferReasonId: [1],
     OfferReasonComment: "OfferReasonComment5",
     ProductAdvatage: "ProductAdvatage5",
     ProductWeaknesses: "ProductWeaknesses5",
@@ -129,6 +137,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment5",
     Modified: "2023-02-23T13:06:08Z",
     Created: "2023-02-22T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -145,7 +155,7 @@ export const suggestions: TSuggestion[] = [
     Consumable: "Consumable6",
     TherapeuticFieldId: 2,
     TherapeuticFieldComment: "TherapeuticFieldComment6",
-    OfferReasonId: 1,
+    OfferReasonId: [1],
     OfferReasonComment: "OfferReasonComment6",
     ProductAdvatage: "ProductAdvatage6",
     ProductWeaknesses: "ProductWeaknesses6",
@@ -155,6 +165,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment6",
     Modified: "2023-02-23T13:06:08Z",
     Created: "2023-02-22T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -171,7 +183,7 @@ export const suggestions: TSuggestion[] = [
     Consumable: "Consumable7",
     TherapeuticFieldId: 1,
     TherapeuticFieldComment: "TherapeuticFieldComment7",
-    OfferReasonId: 1,
+    OfferReasonId: [1],
     OfferReasonComment: "OfferReasonComment7",
     ProductAdvatage: "ProductAdvatage7",
     ProductWeaknesses: "ProductWeaknesses7",
@@ -181,6 +193,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment7",
     Modified: "2023-02-23T13:06:08Z",
     Created: "2023-02-22T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -197,7 +211,7 @@ export const suggestions: TSuggestion[] = [
     Consumable: "Consumable8",
     TherapeuticFieldId: 2,
     TherapeuticFieldComment: "TherapeuticFieldComment8",
-    OfferReasonId: 2,
+    OfferReasonId: [2],
     OfferReasonComment: "OfferReasonComment8",
     ProductAdvatage: "ProductAdvatage8",
     ProductWeaknesses: "ProductWeaknesses8",
@@ -207,6 +221,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment8",
     Modified: "2023-02-23T13:06:08Z",
     Created: "2023-02-22T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 
   {
@@ -223,7 +239,7 @@ export const suggestions: TSuggestion[] = [
     Consumable: "Consumable9",
     TherapeuticFieldId: 3,
     TherapeuticFieldComment: "TherapeuticFieldComment9",
-    OfferReasonId: 5,
+    OfferReasonId: [5],
     OfferReasonComment: "OfferReasonComment9",
     ProductAdvatage: "ProductAdvatage9",
     ProductWeaknesses: "ProductWeaknesses9",
@@ -233,6 +249,8 @@ export const suggestions: TSuggestion[] = [
     Comment: "Comment9",
     Modified: "2023-02-23T13:06:08Z",
     Created: "2023-02-22T14:49:29Z",
+    ActionId: 3,
+    CurrentStepId: 10,
   },
 ];
 

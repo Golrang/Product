@@ -48,9 +48,10 @@ export const ViewProductSuggestion = () => {
           <Descriptions.Item label="توضیحات">
             {defaultValues?.TherapeuticFieldComment}
           </Descriptions.Item>
-          <Descriptions.Item label="علت پیشنهادی">
+          {/* <Descriptions.Item label="علت پیشنهادی">
             {defaultValues?.OfferReason?.Title}
-          </Descriptions.Item>
+          </Descriptions.Item> */}
+          {/* change by somaye */}
           <Descriptions.Item label="توضیحات">
             {defaultValues?.OfferReasonComment}
           </Descriptions.Item>

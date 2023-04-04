@@ -43,10 +43,14 @@ export const useViewProductSuggestion = () => {
               TherapeuticFieldComment: decodeEntities(
                 data[0].TherapeuticFieldComment
               ),
-              OfferReason: {
-                Id: data[0].OfferReason?.Id,
-                Title: data[0].OfferReason?.Title ?? "",
-              },
+              OfferReason: [
+                {
+                  Id: 1,
+                  // data[0].OfferReason?.Id,
+                  Title: "change by somaye",
+                  // data[0].OfferReason?.Title ?? "",
+                },
+              ], //change by somaye
               OfferReasonId: data[0].OfferReasonId,
               OfferReasonComment: decodeEntities(data[0].OfferReasonComment),
               ProductAdvatage: decodeEntities(data[0].ProductAdvatage),
@@ -57,6 +61,8 @@ export const useViewProductSuggestion = () => {
               Comment: decodeEntities(data[0].Comment),
               Created: data[0].Created,
               Modified: data[0].Modified,
+              ActionId: data[0].ActionId,
+              CurrentStepId: data[0].CurrentStepId,
             }
           : undefined;
       getEmployeeInfo(defaultValues).then((result) => {

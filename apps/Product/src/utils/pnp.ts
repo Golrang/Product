@@ -1,8 +1,8 @@
 import { sp } from "@pnp/sp/presets/all";
-
 const productSuggestionUrl =
   process.env.NODE_ENV == "development"
-    ? "http://localhost:8081/psstest"
+    ? // ? 'http://localhost:8081/productsuggestion'
+      "http://localhost:8081/psstest"
     : "https://sharepointmim.gig.services/productsuggestion/";
 sp.setup({
   sp: {

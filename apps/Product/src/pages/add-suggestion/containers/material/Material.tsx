@@ -31,7 +31,7 @@ export const Material = () => {
               <Col md={6}>
                 <FormInput
                   type="string"
-                  name={`material.${index}`}
+                  name={`Materials.${index}.Title`}
                   placeholder="اجزاء ثانویه"
                 />
               </Col>
