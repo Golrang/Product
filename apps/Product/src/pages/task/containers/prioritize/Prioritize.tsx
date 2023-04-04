@@ -1,11 +1,11 @@
-import {  useState  } from "react";
-import {  Col, Row  } from "antd";
-import {  Form, FormTextArea, Button  } from "sharepoint-golrang-design-system";
-import {  ViewProductSuggestion  } from "../view-product-suggestion";
-import {  HistoryOfActions  } from "../history-of-actions";
-import {  FileUpload  } from "../file-upload";
-import {  PostponementDate  } from "../postponement-date";
-import {  Priority  } from "../priority";
+import { useState } from "react";
+import { Col, Row } from "antd";
+import { Form, FormTextArea, Button } from "sharepoint-golrang-design-system";
+import { ViewProductSuggestion } from "../view-product-suggestion";
+import { HistoryOfActions } from "../history-of-actions";
+import { FileUpload } from "../file-upload";
+import { PostponementDate } from "../postponement-date";
+import { Priority } from "../priority";
 // import { CheckBox } from "~/../../../packages/design-system/src/components/checkbox/CheckBox";
 import { OfferResultSelect } from "../offer-result-select";
 
