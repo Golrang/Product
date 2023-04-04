@@ -6,11 +6,11 @@ import { HistoryOfActions } from "../history-of-actions";
 import { FileUpload } from "../file-upload";
 import { PostponementDate } from "../postponement-date";
 import { Priority } from "../priority";
-import { CheckBox } from "~/../../../packages/design-system/src/components/checkbox/CheckBox";
+// import { CheckBox } from "~/../../../packages/design-system/src/components/checkbox/CheckBox";
 import { OfferResultSelect } from "../offer-result-select";
 
 export const Prioritize = () => {
-  const [checked, setChecked] = useState(false);
+  const [checked] = useState(false);
 
   return (
     <>
@@ -19,13 +19,13 @@ export const Prioritize = () => {
           مرحله الویت بندی
         </span>
         <Row gutter={24} className="mb-5">
-          <Col>
+          {/* <Col>
             <CheckBox
               name="showProductCheckbox"
               defaultChecked={checked}
               onChange={() => setChecked(!checked)}
             />
-          </Col>
+          </Col> */}
         </Row>
         <Form onFinish={() => {}}>
           <Row gutter={24} className="mb-5">
