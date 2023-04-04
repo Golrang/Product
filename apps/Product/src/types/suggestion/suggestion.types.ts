@@ -1,3 +1,8 @@
+import { TStep } from "./../step/step.types";
+import { TOfferReason } from "../offer-reason/offerReason.types";
+import { TTherapeuticField } from "../therapeutic-field/therapeuticField.types";
+import { TpharmaceuticalForm } from "../pharmaceutical-form/pharmaceuticalForm.types";
+import { TAction } from "../action/action.types";
 export type TSuggestion = {
   Id?: number;
   Title?: string;
@@ -6,32 +11,18 @@ export type TSuggestion = {
   Material: string; //ماده موثره
   PharmaceuticalFormId: number; //شکل دارویی
   OtherPharmaceuticalFormId: number; //سایر اشکال دارویی
-  PharmaceuticalForm?: {
-    Id?: number;
-    Title: string;
-  };
-  OtherPharmaceuticalForm?: {
-    Id?: number;
-    Title: string;
-  };
+  PharmaceuticalForm?: TpharmaceuticalForm;
+  OtherPharmaceuticalForm?: TpharmaceuticalForm;
   PharmaceuticalForm_Other: string;
   OtherPharmaceuticalForm_Other: string;
   BrandName: string; //برند
   ManufacturerCompanyName: string; // شرکت سازنده
   Consumable: string; //مورد مصرف
   TherapeuticFieldId: number; //حوزه درمانی
-  TherapeuticField?: {
-    Id?: number;
-    Title: string;
-  };
+  TherapeuticField?: TTherapeuticField;
   TherapeuticFieldComment: string;
   OfferReasonId: [number]; //دلیل پیشنهاد
-  OfferReason?: [
-    {
-      Id?: number;
-      Title: string;
-    }
-  ];
+  OfferReason?: TOfferReason[];
   OfferReasonComment: string;
   ProductAdvatage: string; //مزیت محصول
   ProductWeaknesses: string; //معایب محصول
@@ -41,6 +32,10 @@ export type TSuggestion = {
   Comment: string; //توضیحات
   Created?: string; //تاریخ ایجاد
   Modified?: string; //تاریخ ایجاد
+  ActionId: number; //نوع عملیات
+  Action?: TAction;
+  CurrentStepId: number; //مرحله
+  CurrentStep?: TStep;
 };
 
 export type TMaterial = {
