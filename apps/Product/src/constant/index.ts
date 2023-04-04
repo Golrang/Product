@@ -7,6 +7,10 @@ export const listName = {
   suggestionDocument: "GPI_PS_SuggestionDocument",
   priority: "GPI_PS_Priority",
   offerResult: "GPI_PS_OfferResult",
+  logSuggestion: "GPI_PS_Logs",
+  action: "GPI_PS_Action",
+  step: "GPI_PS_Step",
+  flow: "GPI_PS_Flow",
 };
 
 export const dateFormat = "YYYY/MM/DD";
