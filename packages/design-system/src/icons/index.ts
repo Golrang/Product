@@ -17,4 +17,4 @@ export * from "./MinusIcon";
 export * from "./DoubleArrowDownIcon";
 export * from "./ClipboardDataIcon";
 export * from "./MenuUpIcon";
-export * from "./ViewIcon"
+export * from "./ViewIcon";

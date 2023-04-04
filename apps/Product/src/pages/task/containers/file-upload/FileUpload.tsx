@@ -1,4 +1,4 @@
-import { FormUploader, ICUpload } from "~/../../../packages/design-system/src";
+import { FormUploader, ICUpload } from "sharepoint-golrang-design-system";
 
 export const FileUpload = () => {
   return (

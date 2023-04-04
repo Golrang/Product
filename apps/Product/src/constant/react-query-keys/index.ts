@@ -8,4 +8,5 @@ export const queryKeys = {
   getOfferResult: "getOfferResult",
   getHistoryOfActions: "getAllLogs",
   getConfirmationDocuments: "getAllConfirmationDocuments",
+  getProductsSuggestion: "getProductsSuggestion",
 };
