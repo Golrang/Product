@@ -12,10 +12,13 @@ import { addNewSuggestion as addNewSuggestionService } from "services/product-su
 
 import { addMaterialsSuggestion as addMaterialsSuggestionService } from "services/product-suggestion/addMaterialsSuggestion.service";
 import { addFileSuggestion as addFileSuggestionService } from "services/product-suggestion/addFileSuggestion.service";
+import { addNewLogSuggestion as addNewLogSuggestionService } from "services/product-suggestion/addSuggestionLog.service";
 
 import { message } from "antd";
 import { submitLoadingState } from "recoil-store/general/submitLoading";
 import { updateSuggestionCode } from "~/services/product-suggestion/updateSuggestion.service";
+import dayjs from "dayjs";
+import { pharmaceuticalFormsOtherId } from "~/constant";
 
 const { userInfo } = getUserInfo();
 
@@ -43,6 +46,11 @@ export const useSubmitSuggestion = (id?: number) => {
   const { mutateAsync: addFileSuggestion } = useMutation(
     addFileSuggestionService
   );
+
+  const { mutateAsync: addLogSuggestion } = useMutation(
+    addNewLogSuggestionService
+  );
+
   const onSubmit = async (state: TSuggestionForm) => {
     const addList = {
       CompanyId: userInfo.companyID,
@@ -65,10 +73,45 @@ export const useSubmitSuggestion = (id?: number) => {
       SimilarTherapeuticField: state.SimilarTherapeuticField,
       SimilarConsumable: state.SimilarTherapeuticField,
       Comment: state.Comment,
+      ActionId: 3,
+      CurrentStepId: 10,
     };
 
     const materials = state.Materials;
     const file = state.File;
+    const log = {
+      user: userInfo.userFarsiName,
+      ActionDate: dayjs(new Date()).toISOString(),
+      Step: "1",
+      Result: "okkkkk",
+      Description: "توضیحات",
+    };
+
+    if (state.PharmaceuticalFormId === state.OtherPharmaceuticalFormId) {
+      return message.info(
+        "شکل دارویی با سایر اشکال دارویی نمی تواند همانند باشد"
+      );
+    }
+
+    if (
+      state.PharmaceuticalFormId === pharmaceuticalFormsOtherId &&
+      (state.PharmaceuticalForm_Other === "" ||
+        state.PharmaceuticalForm_Other === undefined)
+    ) {
+      return message.info(
+        "شکل دارویی سایر انتخاب شده است باید فیلد سایر شکل دارویی تکمیل شود."
+      );
+    }
+
+    if (
+      state.OtherPharmaceuticalFormId === pharmaceuticalFormsOtherId &&
+      (state.OtherPharmaceuticalForm_Other === "" ||
+        state.OtherPharmaceuticalForm_Other === undefined)
+    ) {
+      return message.info(
+        "اشکال دارویی سایر انتخاب شده است باید فیلد سایر اشکال دارویی تکمیل شود."
+      );
+    }
 
     setLoading(true);
 
@@ -85,6 +128,8 @@ export const useSubmitSuggestion = (id?: number) => {
           });
         if (file.fileList.length > 0)
           addFileSuggestion({ file: file, SuggestionId: data.Id });
+
+        addLogSuggestion(log);
       },
       onError: () => {},
     });
