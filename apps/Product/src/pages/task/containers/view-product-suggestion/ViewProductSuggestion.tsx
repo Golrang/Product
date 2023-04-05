@@ -62,13 +62,16 @@ export const ViewProductSuggestion = () => {
             {defaultValues?.ProductWeaknesses}
           </Descriptions.Item>
           <Descriptions.Item label="آیا محصول با فرم دارویی مشابه توسط شرکت تولید شده است؟">
-            {defaultValues?.SimilarPharmaceuticalForm.valueOf()}
+            {defaultValues?.SimilarPharmaceuticalForm && //change by somaye
+              defaultValues?.SimilarPharmaceuticalForm.valueOf()}
           </Descriptions.Item>
           <Descriptions.Item label="آیا محصول با حوزه درمانی مشابه توسط شرکت تولید شده است؟">
-            {defaultValues?.SimilarTherapeuticField.valueOf()}
+            {defaultValues?.SimilarTherapeuticField && //change by somaye
+              defaultValues?.SimilarTherapeuticField.valueOf()}
           </Descriptions.Item>
           <Descriptions.Item label="آیا محصول با مورد مصرف مشابه توسط شرکت تولید شده است؟">
-            {defaultValues?.SimilarConsumable.valueOf()}
+            {defaultValues?.SimilarConsumable && //change by somaye
+              defaultValues?.SimilarConsumable.valueOf()}
           </Descriptions.Item>
           <Descriptions.Item label="توضیحات">
             {defaultValues?.Comment}

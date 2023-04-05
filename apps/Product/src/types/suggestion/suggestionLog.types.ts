@@ -5,4 +5,5 @@ export type TSuggestionLog = {
   Step: string; //مرحله
   Result: string; //نتیجه
   Comment: string; //توضیحات
+  SuggestionId: number;
 };
