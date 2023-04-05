@@ -6,6 +6,7 @@ import { getAllProductSuggestion } from "services/product-suggestion/allProductS
 import { TSuggestion } from "types/suggestion/suggestion.types";
 import { getAllEmployee } from "services/employee/allEmployee.service";
 import { TEmployee } from "types/employee/employee.types";
+import { decodeEntities } from "utils/decodeHTMLEntities";
 
 export const useGetContractors = () => {
   //   const contractorSearch = useRecoilValue(contractorSearchState)
@@ -38,6 +39,7 @@ export const useGetContractors = () => {
               Number(item.EmployeeId) === i.EmployeeId &&
               i.CCompanyId === Number(item.CompanyId)
           )?.FullName ?? "",
+        Consumable: decodeEntities(item.Consumable),
       })),
     onError: () => message.error("خطایی در دریافت اطلاعات رخ داده است"),
   });
