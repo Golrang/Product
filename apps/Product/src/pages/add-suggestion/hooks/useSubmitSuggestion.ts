@@ -149,6 +149,14 @@ export const useSubmitSuggestion = (id?: number) => {
     }
 
     if (
+      state.PharmaceuticalFormId !== pharmaceuticalFormsOtherId &&
+      (state.PharmaceuticalForm_Other !== "" ||
+        state.PharmaceuticalForm_Other !== undefined)
+    ) {
+      addList.PharmaceuticalForm_Other = "";
+    }
+
+    if (
       state.OtherPharmaceuticalFormId === pharmaceuticalFormsOtherId &&
       (state.OtherPharmaceuticalForm_Other === "" ||
         state.OtherPharmaceuticalForm_Other === undefined)
@@ -158,6 +166,13 @@ export const useSubmitSuggestion = (id?: number) => {
       );
     }
 
+    if (
+      state.OtherPharmaceuticalFormId !== pharmaceuticalFormsOtherId &&
+      (state.OtherPharmaceuticalForm_Other !== "" ||
+        state.OtherPharmaceuticalForm_Other !== undefined)
+    ) {
+      addList.OtherPharmaceuticalForm_Other = "";
+    }
     setLoading(true);
     await addNewSuggestion(addList, {
       onSuccess: (data) => {
