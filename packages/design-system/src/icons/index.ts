@@ -18,3 +18,4 @@ export * from "./DoubleArrowDownIcon";
 export * from "./ClipboardDataIcon";
 export * from "./MenuUpIcon";
 export * from "./ViewIcon";
+export * from "./CheckIcon";

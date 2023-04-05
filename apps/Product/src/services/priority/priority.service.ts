@@ -9,6 +9,5 @@ export const getPriority = async (): Promise<TPriority[]> => {
     expand: "",
   });
 
-  debugger;
   return data;
 };

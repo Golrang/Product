@@ -2,7 +2,7 @@ import { useViewProductSuggestion } from "../../hooks/useViewProductSuggestion";
 import { Descriptions, Row, Col } from "antd";
 import { Form } from "sharepoint-golrang-design-system";
 import { ICPeople } from "sharepoint-golrang-design-system/src/icons/PeopleIcon";
-import { ICPlus } from "sharepoint-golrang-design-system/src/icons/PlusIcon";
+import { ICCheck } from "sharepoint-golrang-design-system/src/icons/CheckIcon";
 import { ICClose } from "sharepoint-golrang-design-system/src/icons/CloseIcon";
 
 export const ViewProductSuggestion = () => {
@@ -84,7 +84,7 @@ export const ViewProductSuggestion = () => {
                 {defaultValues?.TherapeuticFieldComment}
               </Descriptions.Item>
               <Descriptions.Item label="علت پیشنهادی">
-                {defaultValues?.OfferReason?.Title}
+                {defaultValues?.OfferReason?.[0]?.Title}
               </Descriptions.Item>
               <Descriptions.Item label="توضیحات">
                 {defaultValues?.OfferReasonComment}
@@ -97,21 +97,21 @@ export const ViewProductSuggestion = () => {
               </Descriptions.Item>
               <Descriptions.Item label="آیا محصول با فرم دارویی مشابه توسط شرکت تولید شده است">
                 {defaultValues?.SimilarPharmaceuticalForm ? (
-                  <ICPlus className="w-6 text-green-600" />
+                  <ICCheck className="w-6 text-green-600" />
                 ) : (
                   <ICClose className="w-6 text-red-600" />
                 )}
               </Descriptions.Item>
               <Descriptions.Item label="آیا محصول با حوزه درمانی مشابه توسط شرکت تولید شده است">
                 {defaultValues?.SimilarTherapeuticField ? (
-                  <ICPlus className="w-6 text-green-600" />
+                  <ICCheck className="w-6 text-green-600" />
                 ) : (
                   <ICClose className="w-6 text-red-600" />
                 )}
               </Descriptions.Item>
               <Descriptions.Item label="آیا محصول با مورد مصرف مشابه توسط شرکت تولید شده است">
                 {defaultValues?.SimilarConsumable ? (
-                  <ICPlus className="w-6 text-green-600" />
+                  <ICCheck className="w-6 text-green-600" />
                 ) : (
                   <ICClose className="w-6 text-red-600" />
                 )}

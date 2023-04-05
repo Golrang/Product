@@ -78,9 +78,7 @@ export const addFileToDocumentLibrary = async (
         fileInfo.parameters?.Overwrite
       );
     return result;
-  } catch (error) {
-    console.log({ error });
-  }
+  } catch (error) {}
 };
 
 export const batchAddItemstoList = async <T extends {}[]>(
@@ -94,9 +92,7 @@ export const batchAddItemstoList = async <T extends {}[]>(
     const element = data[index];
     list.items.inBatch(batch).add(element, entityTypeFullName);
   }
-  await batch.execute().then((result) => {
-    console.log(" res", result);
-  });
+  await batch.execute().then(() => {});
 };
 export const batchUpdateListItems = async <T extends ({} & { Id: number })[]>(
   data: T,
@@ -115,10 +111,8 @@ export const batchUpdateListItems = async <T extends ({} & { Id: number })[]>(
   }
   await batch
     .execute()
-    .then(() => {
-      console.log("item added successfully");
-    })
-    .catch((err) => console.log(err));
+    .then(() => {})
+    .catch(() => {});
 };
 
 export const batchDeleteListItems = async <T extends ({} & { Id: number })[]>(
@@ -131,10 +125,7 @@ export const batchDeleteListItems = async <T extends ({} & { Id: number })[]>(
     const element = data[index];
     list.items.getById(element.Id).inBatch(batch).delete();
   }
-  await batch.execute().then(() => {
-    // eslint-disable-next-line no-console
-    console.log("item deleted successfully");
-  });
+  await batch.execute().then(() => {});
 };
 
 export const getUsersByGroupId = async (id: number) =>
