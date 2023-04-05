@@ -1,9 +1,9 @@
-import {TableError} from "components/table-error";
-import {Table} from "sharepoint-golrang-design-system";
-import {TColumn} from "sharepoint-golrang-design-system";
-import {TSuggestionTable} from "types/suggestion/suggestionTable.types";
+import { TableError } from "components/table-error";
+import { Table } from "sharepoint-golrang-design-system";
+import { TColumn } from "sharepoint-golrang-design-system";
+import { TSuggestionTable } from "types/suggestion/suggestionTable.types";
 import dayjs from "dayjs";
-import {useGetContractors} from "pages/cartable/hooks/useCartable";
+import { useGetContractors } from "pages/cartable/hooks/useCartable";
 
 const columnsForCheck: TColumn<TSuggestionTable>[] = [
   {
@@ -52,8 +52,7 @@ const columnsForCheck: TColumn<TSuggestionTable>[] = [
 ];
 
 export const CheckSuggestionsTable = () => {
-  const {data, error} = useGetContractors();
+  const { data, error } = useGetContractors();
   if (error || !data) return <TableError />;
   return <Table columns={columnsForCheck} dataSource={data} bordered />;
 };
-
