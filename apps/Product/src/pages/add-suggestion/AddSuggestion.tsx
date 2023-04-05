@@ -16,12 +16,12 @@ import {
   Form,
   FormInput,
   FormTextArea,
-  // TFormSchema
 } from "sharepoint-golrang-design-system";
 import { submitLoadingState } from "~/recoil-store/general/submitLoading";
 import * as yup from "yup";
 import { TFormSchema } from "sharepoint-golrang-design-system/src/components/form";
 import { TSuggestionForm } from "../../types/suggestion/suggestion.types";
+import { addSuggestionTemporaryState } from "~/recoil-store/add-suggestion/addSuggestionTemporaryState";
 
 yup.addMethod(yup.object, "uniqueProperty", function (propertyName, message) {
   return this.test("unique", message, function (value) {
@@ -68,7 +68,6 @@ const schema = yup.object<
       | "Title"
       | "OtherPharmaceuticalForm_Other"
       | "PharmaceuticalForm_Other"
-      | "OfferReasonId" //refactor
     >
   >
 >({
@@ -105,14 +104,20 @@ const schema = yup.object<
     .boolean()
     .required("سوال حوزه درمانی الزامی است"),
   TherapeuticFieldId: yup.number().required("حوزه درمانی الزامی است"),
-  // OfferReasonId: yup.array().required("دلیل پیشنهاد الزامی است"),
+  OfferReasonId: yup
+    .array()
+    .of(yup.number())
+    .required("دلیل پیشنهاد الزامی است"),
   File: yup.object().required("فایل الزامی است"),
 });
+const schemaTemporary = yup.object<any>({}); //ثبت موقت
 
 export const AddSuggestion = () => {
   const { onSubmit } = useSubmitSuggestion();
   const [isLoading, setLoading] = useRecoilState(submitLoadingState);
-
+  const [isTemporary, setIsTemporary] = useRecoilState(
+    addSuggestionTemporaryState
+  );
   const onCancelHandler = () => {
     return;
   };
@@ -135,7 +140,11 @@ export const AddSuggestion = () => {
       <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
         مشخصات محصول
       </span>
-      <Form name="AddSuggestionForm" onFinish={onSubmit} schema={schema}>
+      <Form
+        name="AddSuggestionForm"
+        onFinish={onSubmit}
+        schema={isTemporary ? schemaTemporary : schema}
+      >
         <Row gutter={24} className="mb-5">
           <Col md={12} sm={24}>
             <FormInput<TKeyOfForm>
@@ -256,7 +265,7 @@ export const AddSuggestion = () => {
           </Col>
         </Row>
         <Button
-          className="!inline-flex !items-center"
+          className="!inline-flex !items-center btn-danger btn"
           key="cancel"
           onClick={onCancelHandler}
           disabled={isLoading}
@@ -269,8 +278,23 @@ export const AddSuggestion = () => {
           key="submit"
           htmlType="submit"
           disabled={isLoading}
+          onClick={() => {
+            setIsTemporary(false);
+          }}
         >
           ثبت
+        </Button>
+
+        <Button
+          className="!inline-flex !items-center "
+          key="submit"
+          htmlType="submit"
+          disabled={isLoading}
+          onClick={() => {
+            setIsTemporary(true);
+          }}
+        >
+          ثبت موقت
         </Button>
       </Form>
     </>
