@@ -3,8 +3,7 @@ import { Table } from "sharepoint-golrang-design-system";
 import { TColumn } from "sharepoint-golrang-design-system";
 import { TSuggestionTable } from "types/suggestion/suggestionTable.types";
 import dayjs from "dayjs";
-import { useGetContractors } from "pages/cartable/hooks/useCartable";
-import { getUserInfo } from "services/general/user-info/userInfo.service";
+import { useGetSuggestion } from "pages/cartable/hooks/useCartable";
 
 const columnsForAll: TColumn<TSuggestionTable>[] = [
   {
@@ -16,8 +15,8 @@ const columnsForAll: TColumn<TSuggestionTable>[] = [
   },
   {
     title: "کدپیشنهاد",
-    dataIndex: "Id",
-    key: "Id",
+    dataIndex: "Title",
+    key: "Title",
   },
   {
     title: "پیشنهاد دهنده ",
@@ -53,14 +52,7 @@ const columnsForAll: TColumn<TSuggestionTable>[] = [
 ];
 
 export const AllSuggestionsTable = () => {
-  const { userInfo } = getUserInfo();
-  const { data, error } = useGetContractors();
+  const { data, error } = useGetSuggestion();
   if (error || !data) return <TableError />;
-  return (
-    <Table
-      columns={columnsForAll}
-      dataSource={data?.filter((i) => i.EmployeeId !== userInfo.employeeId)}
-      bordered
-    />
-  );
+  return <Table columns={columnsForAll} dataSource={data} bordered />;
 };
