@@ -9,6 +9,7 @@ export const queryKeys = {
   getHistoryOfActions: "getAllLogs",
   getConfirmationDocuments: "getAllConfirmationDocuments",
   getProductsSuggestion: "getProductsSuggestion",
+  getUsersByGroupId: "getUsersByGroupId",
   getAllAction: "getAllAction",
   getAllStep: "getAllStep",
 };

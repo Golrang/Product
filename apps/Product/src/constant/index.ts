@@ -21,3 +21,9 @@ export const filePath =
   process.env.NODE_ENV == "development"
     ? `/psstest/${listName.suggestionDocument}`
     : `/productsuggestion/${listName.suggestionDocument}`;
+
+export const groupIds = {
+  developBusGroup: 19, // گروه توسعه کسب و کار - رئیس
+  developExpertGroup: 17, // گروه توسعه کسب و کار - کارشناس
+  EvaluationStudiesGroup: 18, // گروه مطالعات ارزیابی علمی-اقتصادی
+};

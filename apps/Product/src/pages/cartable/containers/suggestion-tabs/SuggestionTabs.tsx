@@ -1,69 +1,60 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { AndroidOutlined, AppleOutlined } from "@ant-design/icons";
 import { Tabs } from "antd";
-import { SuggestionTable } from "../suggestion-table";
+import { MySuggestionsTable } from "../suggestion-table/mySuggestionsTable";
 import { TableLoading } from "components/table-loading";
-import { useGetContractors } from "pages/cartable/hooks/useCartable";
-import { columns } from "../suggestion-table/suggestionTableColumn";
-import { getUserInfo } from "services/general/user-info/userInfo.service";
+import { AllSuggestionsTable } from "../suggestion-table/allSuggestionsTable";
+import { CheckSuggestionsTable } from "../suggestion-table/checkSuggestionsTable";
 
-const { userInfo } = getUserInfo();
 export const SuggestionTabs = () => {
-  const { data, error } = useGetContractors();
-  const { columnsForMe, columnsForCheck, columnsForAll } = columns();
-  const tabData = [
-    {
-      title: "پیشنهادات من",
-      icon: AppleOutlined,
-      column: columnsForMe,
-      datatable: data?.filter(
-        (i) =>
-          i.EmployeeId === userInfo.employeeId &&
-          i.CompanyId === userInfo.companyID
-      ),
-      eroros: error,
-    }, //for me
-    {
-      title: "بررسی پیشنهادات",
-      icon: AndroidOutlined,
-      column: columnsForCheck,
-      datatable: data?.filter((i) => i.EmployeeId !== userInfo.employeeId),
-      eroros: error,
-    }, //for check
-    {
-      title: "همه پیشنهادات",
-      icon: AppleOutlined,
-      column: columnsForAll,
-      datatable: data,
-      eroros: error,
-    }, //for all
-  ];
   return (
     <>
       <Tabs
-        defaultActiveKey="3"
-        items={tabData.map((data, i) => {
-          const id = String(i + 1);
-
-          return {
+        defaultActiveKey="1"
+        items={[
+          {
             label: (
               <span>
-                <data.icon />
-                {data.title}
+                <AppleOutlined />
+                پیشنهادات من
               </span>
             ),
-            key: id,
+            key: "1",
             children: (
               <Suspense fallback={<TableLoading />}>
-                <SuggestionTable
-                  datatable={data.datatable}
-                  errors={data.eroros}
-                  columns={data.column}
-                />
+                <MySuggestionsTable />
               </Suspense>
             ),
-          };
-        })}
+          },
+          {
+            label: (
+              <span>
+                <AndroidOutlined />
+                بررسی پیشنهادات
+              </span>
+            ),
+            key: "2",
+            children: (
+              <Suspense fallback={<TableLoading />}>
+                <CheckSuggestionsTable />
+              </Suspense>
+            ),
+          },
+          {
+            label: (
+              <span>
+                <AppleOutlined />
+                همه پیشنهادات
+              </span>
+            ),
+            key: "3",
+            children: (
+              <Suspense fallback={<TableLoading />}>
+                <AllSuggestionsTable />
+              </Suspense>
+            ),
+          },
+        ]}
       />
     </>
   );
