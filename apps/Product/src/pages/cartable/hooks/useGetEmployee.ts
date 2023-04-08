@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { TEmployee } from "types/employee/employee.types";
 import { getAllEmployee } from "services/employee/allEmployee.service";
 
-export const useGetContractors = () => {
+export const useGetEmployee = () => {
   const { data, error } = useQuery<
     { data: TEmployee[] },
     any,

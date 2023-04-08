@@ -23,7 +23,16 @@ export const filePath =
     : `/productsuggestion/${listName.suggestionDocument}`;
 
 export const groupIds = {
-  developBusGroup: 19, // گروه توسعه کسب و کار - رئیس
+  developHeadGroup: 19, // گروه توسعه کسب و کار - رئیس
   developExpertGroup: 17, // گروه توسعه کسب و کار - کارشناس
-  EvaluationStudiesGroup: 18, // گروه مطالعات ارزیابی علمی-اقتصادی
+  evaluationStudiesGroup: 18, // گروه مطالعات ارزیابی علمی-اقتصادی
+};
+
+export const allSteps = {
+  recommender: 8, //پیشنهاد دهنده
+  developmentExpert: 9, //توسعه کسب و کار- کارشناس
+  developmentExpertHead: 10, //توسعه کسب و کار - رئیس
+  evaluationStudies: 11, //مطالعات ارزیابی علمی - اقتصادی
+  archive: 12, //آرشیو
+  end: 13, //پایان
 };

@@ -9,8 +9,8 @@ export const getAllProductSuggestion =
       listName.productSuggestion,
       {
         filter: "",
-        select: "*",
-        expand: "",
+        select: "* ,CurrentStep/Title ,Action/Title",
+        expand: "CurrentStep ,Action",
       }
     );
     return res;

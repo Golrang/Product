@@ -3,7 +3,7 @@ import { Table } from "sharepoint-golrang-design-system";
 import { TColumn } from "sharepoint-golrang-design-system";
 import { TSuggestionTable } from "types/suggestion/suggestionTable.types";
 import dayjs from "dayjs";
-import { useGetContractors } from "pages/cartable/hooks/useCartable";
+import { useGetSuggestion } from "pages/cartable/hooks/useCartable";
 import { getUserInfo } from "services/general/user-info/userInfo.service";
 
 const columnsForMe: TColumn<TSuggestionTable>[] = [
@@ -16,8 +16,8 @@ const columnsForMe: TColumn<TSuggestionTable>[] = [
   },
   {
     title: "کدپیشنهاد",
-    dataIndex: "Id",
-    key: "Id",
+    dataIndex: "Title",
+    key: "Title",
   },
   {
     title: "تاریخ ثبت پیشنهاد",
@@ -43,7 +43,7 @@ const columnsForMe: TColumn<TSuggestionTable>[] = [
 
 export const MySuggestionsTable = () => {
   const { userInfo } = getUserInfo();
-  const { data, error } = useGetContractors();
+  const { data, error } = useGetSuggestion();
   if (error || !data) return <TableError />;
   return (
     <Table
