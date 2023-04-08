@@ -45,12 +45,10 @@ export const useViewProductSuggestion = () => {
               ),
               OfferReason: [
                 {
-                  Id: 1,
-                  // data[0].OfferReason?.Id,
-                  Title: "change by somaye",
-                  // data[0].OfferReason?.Title ?? "",
+                  Id: data[0]?.OfferReason?.[0]?.Id,
+                  Title: data[0]?.OfferReason?.[0]?.Title,
                 },
-              ], //change by somaye
+              ],
               OfferReasonId: data[0].OfferReasonId,
               OfferReasonComment: decodeEntities(data[0].OfferReasonComment),
               ProductAdvatage: decodeEntities(data[0].ProductAdvatage),
