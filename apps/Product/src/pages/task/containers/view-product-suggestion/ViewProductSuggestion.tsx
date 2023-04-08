@@ -9,6 +9,7 @@ export const ViewProductSuggestion = () => {
   const { defaultValues } = useViewProductSuggestion();
   const onSubmit = () => {};
   const onFinish = () => {};
+  
   return (
     <div className="border p-4 shadow shadow-indigo-500/40 hover:shadow-indigo-500/40 rounded-lg">
       <Form
