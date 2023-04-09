@@ -4,7 +4,7 @@ export const getUserInfo = () => {
       ? {
           companyID: "445" ?? "",
           workPlaceId: "4" ?? "",
-          userEmail: "safavi.somaye@golrang.com" ?? "",
+          userEmail: "Safavi.Somaye@Golrang.com" ?? "",
           userFarsiName: "سیده سمیه صفوی" ?? "",
           userNameId: "1278" ?? "",
           employeeId: "9866" ?? "",

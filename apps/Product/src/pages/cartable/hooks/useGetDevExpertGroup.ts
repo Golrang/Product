@@ -2,11 +2,36 @@ import { getUsersByGroupId } from "~/services/GroupUsers/getGroupUsers";
 import { useQuery } from "@tanstack/react-query";
 import { queryKeys } from "~/constant/react-query-keys";
 import { TUserGroup } from "~/types/userGroup/userGroup.types";
+import { groupIds } from "~/constant";
 
-export const useGetDevExpertGroup = (id: number) => {
+export const useGetDevExpertHeadGroup = () => {
   const { data } = useQuery<TUserGroup[]>(
-    [queryKeys.getUsersByGroupId],
-    () => getUsersByGroupId(id),
+    [queryKeys.getDevExpertHeadGroup],
+    () => getUsersByGroupId(groupIds.developHeadGroup),
+    {
+      refetchOnWindowFocus: false,
+      suspense: true,
+    }
+  );
+  return { data };
+};
+
+export const useGetDevExpertGroup = () => {
+  const { data } = useQuery<TUserGroup[]>(
+    [queryKeys.getDevExpertGroup],
+    () => getUsersByGroupId(groupIds.developExpertGroup),
+    {
+      refetchOnWindowFocus: false,
+      suspense: true,
+    }
+  );
+  return { data };
+};
+
+export const useGetEvaluationStudiesGroup = () => {
+  const { data } = useQuery<TUserGroup[]>(
+    [queryKeys.getEvaluationStudiesGroup],
+    () => getUsersByGroupId(groupIds.evaluationStudiesGroup),
     {
       refetchOnWindowFocus: false,
       suspense: true,
