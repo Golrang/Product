@@ -44,12 +44,10 @@ const columnsForAll: TColumn<TSuggestionTable>[] = [
   },
 
   {
-    title: 'عملیات',
-    align: 'center',
+    title: "عملیات",
+    align: "center",
     width: 110,
-    render: (_, record: TSuggestion) => (
-      <ViewSuggestion id={record.Id ?? 0} />
-    ),
+    render: (_, record: TSuggestion) => <ViewSuggestion id={record.Id ?? 0} />,
   },
 ];
 

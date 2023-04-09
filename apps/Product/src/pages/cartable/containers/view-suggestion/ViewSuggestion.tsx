@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import { useViewProductSuggestion } from "../../../task/hooks/useViewProductSuggestion";
 import { Descriptions, Row, Col } from "antd";
 import { Form } from "sharepoint-golrang-design-system";
@@ -8,8 +8,8 @@ import { ICClose } from "sharepoint-golrang-design-system/src/icons/CloseIcon";
 import { Suspense } from "react";
 
 export const ViewSuggestion = () => {
-  const location = useLocation();
-  const { id } = location.state;
+  // const location = useLocation();
+  // const { id } = location.state;
   const { defaultValues } = useViewProductSuggestion();
   const onSubmit = () => {};
   const onFinish = () => {};
@@ -48,7 +48,7 @@ export const ViewSuggestion = () => {
                           گلرنگ سیستم
                         </Descriptions.Item>
                         <Descriptions.Item label="شناسه درخواست">
-                          {id}
+                          {defaultValues?.Title}
                         </Descriptions.Item>
                       </Descriptions>
                     </div>

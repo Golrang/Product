@@ -10,6 +10,8 @@ import { TUserGroup } from "~/types/userGroup/userGroup.types";
 import { getUserInfo } from "~/services/general/user-info/userInfo.service";
 import { TStep } from "~/types/step/step.types";
 import { allSteps } from "~/constant";
+import { TSuggestion } from "~/types/suggestion/suggestion.types";
+import { ViewSuggestion } from "../view-suggestion-button";
 
 const columnsForCheck: TColumn<TSuggestionTable>[] = [
   {
@@ -47,14 +49,12 @@ const columnsForCheck: TColumn<TSuggestionTable>[] = [
     render: (text: string) => dayjs(text).format("YYYY/MM/DD"),
   },
 
-  // {
-  //   title: 'عملیات',
-  //   align: 'center',
-  //   width: 110,
-  //   render: (_, record: TActivateUser) => (
-  //     <EditSuggestionEdit id={record.Id ?? 0} />
-  //   ),
-  // },
+  {
+    title: "عملیات",
+    align: "center",
+    width: 110,
+    render: (_, record: TSuggestion) => <ViewSuggestion id={record.Id ?? 0} />,
+  },
 ];
 
 export const CheckSuggestionsTable = () => {
