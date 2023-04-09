@@ -5,6 +5,8 @@ import { TSuggestionTable } from "types/suggestion/suggestionTable.types";
 import dayjs from "dayjs";
 import { useGetSuggestion } from "pages/cartable/hooks/useCartable";
 import { getUserInfo } from "services/general/user-info/userInfo.service";
+import { TSuggestion } from "~/types/suggestion/suggestion.types";
+import { ViewSuggestion } from "../view-suggestion-button";
 
 const columnsForMe: TColumn<TSuggestionTable>[] = [
   {
@@ -31,14 +33,12 @@ const columnsForMe: TColumn<TSuggestionTable>[] = [
     key: "Consumable",
   },
 
-  // {
-  //   title: 'عملیات',
-  //   align: 'center',
-  //   width: 110,
-  //   render: (_, record: TActivateUser) => (
-  //     <EditSuggestionEdit id={record.Id ?? 0} />
-  //   ),
-  // },
+  {
+    title: "عملیات",
+    align: "center",
+    width: 110,
+    render: (_, record: TSuggestion) => <ViewSuggestion id={record.Id ?? 0} />,
+  },
 ];
 
 export const MySuggestionsTable = () => {

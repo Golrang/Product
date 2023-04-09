@@ -3,6 +3,8 @@ import { Table } from "sharepoint-golrang-design-system";
 import { TColumn } from "sharepoint-golrang-design-system";
 import { TSuggestionTable } from "types/suggestion/suggestionTable.types";
 import dayjs from "dayjs";
+import { TSuggestion } from "~/types/suggestion/suggestion.types";
+import { ViewSuggestion } from "../view-suggestion-button";
 import { useGetSuggestion } from "pages/cartable/hooks/useCartable";
 
 const columnsForAll: TColumn<TSuggestionTable>[] = [
@@ -41,14 +43,12 @@ const columnsForAll: TColumn<TSuggestionTable>[] = [
     render: (text: string) => dayjs(text).format("YYYY/MM/DD"),
   },
 
-  // {
-  //   title: 'عملیات',
-  //   align: 'center',
-  //   width: 110,
-  //   render: (_, record: TActivateUser) => (
-  //     <EditSuggestionEdit id={record.Id ?? 0} />
-  //   ),
-  // },
+  {
+    title: "عملیات",
+    align: "center",
+    width: 110,
+    render: (_, record: TSuggestion) => <ViewSuggestion id={record.Id ?? 0} />,
+  },
 ];
 
 export const AllSuggestionsTable = () => {
