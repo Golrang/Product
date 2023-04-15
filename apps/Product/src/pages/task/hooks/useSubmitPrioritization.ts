@@ -49,7 +49,7 @@ export const useSubmitPrioritization = (stepId: number, id?: number) => {
   const onSubmit = async (state: TPrioritizationForm) => {
     const newData = {
       Title: "",
-      SuggestionId: id!,
+      SuggestionId: id ?? 0,
       PriorityId: state.PriorityId,
       PostponementDate: state.PostponementDate
         ? dayjs(state.PostponementDate).format(dateFormat)
@@ -68,7 +68,7 @@ export const useSubmitPrioritization = (stepId: number, id?: number) => {
       Step: flowstep?.CurrentStep.Title ?? "",
       Result: flowstep?.Action?.Title ?? "",
       Comment: state.Comment ? state.Comment : "",
-      SuggestionId: id!,
+      SuggestionId: id ?? 0,
     };
 
     const suggestionUpdate = {
@@ -100,10 +100,10 @@ export const useSubmitPrioritization = (stepId: number, id?: number) => {
           addFilePrioritization({
             file: file,
             PrioritizationId: data.Id,
-            SuggestionId: id!,
+            SuggestionId: id ?? 0,
           });
 
-        if (suggestionUpdate) updateSuggestionStep(id!, suggestionUpdate);
+        if (suggestionUpdate && id) updateSuggestionStep(id, suggestionUpdate);
 
         if (log) addLogSuggestion(log);
       },
