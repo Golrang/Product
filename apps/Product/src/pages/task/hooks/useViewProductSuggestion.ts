@@ -16,6 +16,7 @@ export const useViewProductSuggestion = () => {
         data && data[0]
           ? {
               Id: data[0].Id,
+              Title: data[0].Title,
               CompanyId: data[0].CompanyId,
               EmployeeId: data[0].EmployeeId,
               Material: data[0].Material,
