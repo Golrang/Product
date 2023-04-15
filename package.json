@@ -14,15 +14,17 @@
   },
   "devDependencies": {
     "eslint-config-custom": "*",
-    "turbo": "latest",
-    "prettier": "latest",
     "husky": "^8.0.0",
-    "lint-staged": "^13.0.3"
+    "lint-staged": "^13.0.3",
+    "prettier": "latest",
+    "turbo": "latest"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "zaman": "^2.0.4"
+  },
   "packageManager": "yarn@3.0.0",
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [

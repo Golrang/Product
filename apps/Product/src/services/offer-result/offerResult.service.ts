@@ -9,6 +9,5 @@ export const getOfferResult = async (): Promise<TOfferResult[]> => {
     expand: "",
   });
 
-  debugger;
   return data;
 };

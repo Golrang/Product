@@ -1,28 +1,24 @@
 import { useQuery } from "@tanstack/react-query";
 import { message } from "antd";
-import { getAllLogs } from "services/task/allLogs.service";
-import { TTableLog } from "types/task/historyOfActions.types";
+import { getLogBySuggestionId } from "services/task/allLogs.service";
 import { queryKeys } from "constant/react-query-keys";
 import dayjs from "dayjs";
+import { TTableSuggestionLog } from "~/types/suggestion/suggestionLog.types";
 
-export const useGetHistoryOfActions = () => {
+export const useGetHistoryOfActionsById = (id: number) => {
   const { data, error, isLoading } = useQuery(
     [queryKeys.getHistoryOfActions],
-    getAllLogs,
+    () => getLogBySuggestionId(id),
     {
       refetchOnWindowFocus: false,
-      suspense: true,
+      // suspense: true,
       select: (data) => {
-        const mappedData: TTableLog[] = data.map((item, index) => {
+        const mappedData: TTableSuggestionLog[] = data.map((item, index) => {
           return {
-            key: item.Id?.toString() ?? 0,
-            Id: item.Id,
-            Actioner: item?.Actioner ?? "",
-            ActionDate: dayjs(item.ActionDate).format("YYYY/MM/DD"),
-            Step: item?.Step ?? "",
-            Result: item?.Result ?? "",
-            Description: item?.Description ?? "",
+            ...item,
+            key: item.Id,
             row: index + 1,
+            ActionDate: dayjs(item.ActionDate).format("YYYY/MM/DD"),
           };
         });
         return mappedData;

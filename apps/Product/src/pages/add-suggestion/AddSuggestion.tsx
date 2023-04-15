@@ -110,6 +110,7 @@ const schema = yup.object<
     .required("دلیل پیشنهاد الزامی است"),
   File: yup.object().required("فایل الزامی است"),
 });
+
 const schemaTemporary = yup.object<any>({}); //ثبت موقت
 
 export const AddSuggestion = () => {
@@ -265,7 +266,7 @@ export const AddSuggestion = () => {
           </Col>
         </Row>
         <Button
-          className="!inline-flex !items-center btn-danger btn"
+          className="!inline-flex !items-center btn-ghost-danger btn"
           key="cancel"
           onClick={onCancelHandler}
           disabled={isLoading}
@@ -282,7 +283,7 @@ export const AddSuggestion = () => {
             setIsTemporary(false);
           }}
         >
-          ثبت
+          ثبت نهایی
         </Button>
 
         <Button

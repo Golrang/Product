@@ -1,15 +1,19 @@
-import { JalaliDatePicker } from "sharepoint-golrang-design-system";
+import { DatePicker } from "zaman";
+import { Form } from "antd";
 
 export const PostponementDate = () => {
-  const dateFormat = "YYYY/MM/DD";
   return (
-    <>
-      <p>تاریخ تعویق</p>
-      <JalaliDatePicker
-        placeholder="تاریخ تعویق"
-        format={dateFormat}
-        name="PostponementDate"
+    <Form.Item label="تاریخ تعویق" name="PostponementDate">
+      <DatePicker
+      //  disabled={ActionId !== Actions.adjournment}
       />
-    </>
+    </Form.Item>
+    // { ActionId }: { ActionId: number }
+    // <FormJalaliDatePicker
+    //   name="PostponementDate"
+    //   label="تاریخ تعویق"
+    //   format={dateFormat}
+    //   disabled={ActionId !== Actions.adjournment}
+    // />
   );
 };
