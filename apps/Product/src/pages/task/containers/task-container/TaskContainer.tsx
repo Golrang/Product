@@ -37,9 +37,7 @@ const TaskContainer = ({ id }: { id: number }) => {
                 checked ? "opacity-100" : "opacity-0"
               } transition-opacity ease-in-out duration-500 `}
             >
-              {checked && (
-                <ViewProductSuggestion  />
-              )}
+              {checked && <ViewProductSuggestion />}
             </Col>
           </Row>
 
