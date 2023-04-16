@@ -2,7 +2,7 @@ import { listName } from "constant";
 import { addListItem } from "services/general/pnp/pnpjs";
 import { TSuggestion } from "types/suggestion/suggestion.types";
 
-export type TAddNewSuggestion = Omit<TSuggestion, "OfferReasonId"> & {
+export type TAddNewSuggestion = Omit<TSuggestion, "OfferReasonId" | "Id"> & {
   OfferReasonId: { results: (number | undefined)[] };
 };
 

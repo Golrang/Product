@@ -1,15 +1,16 @@
 import { FormSelect } from "sharepoint-golrang-design-system";
-import { TKeyOfForm } from "types/priority/priority.types";
 import { useGetPriority } from "../../hooks/useGetPriority";
-export const Priority = () => {
+import { TKeyOfFormPrioritization } from "~/types/prioritization/prioritization.types";
+import { Actions } from "~/constant";
+export const Priority = ({ ActionId }: { ActionId: number }) => {
   const { allPriority } = useGetPriority();
   return (
     <>
-      <FormSelect<TKeyOfForm>
-        name="Title"
+      <FormSelect<TKeyOfFormPrioritization>
+        name="PriorityId"
         label="اولویت"
-        mode="multiple"
         showSearch
+        disabled={ActionId !== Actions.confirmation}
         options={allPriority}
         filterOption={(input, option) =>
           (option?.label ?? "").toString().includes(input)

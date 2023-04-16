@@ -10,7 +10,7 @@ export const useGetPriority = () => {
     { label: string; value: number }[]
   >([queryKeys.getPriority], getPriority, {
     refetchOnWindowFocus: false,
-    suspense: true,
+    // suspense: true,
     select: (items) =>
       items.map((item) => ({
         label: item.Title,

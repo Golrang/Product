@@ -12,7 +12,7 @@ export const useGetConfirmationDocuments = () => {
     getAllConfirmationDocuments,
     {
       refetchOnWindowFocus: false,
-      suspense: true,
+      // suspense: true,
       select: (data) => {
         const mappedData: TTableconfirmationDocuments[] = data.map(
           (item, index) => {

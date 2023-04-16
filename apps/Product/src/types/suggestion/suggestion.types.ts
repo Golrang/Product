@@ -4,7 +4,7 @@ import { TTherapeuticField } from "../therapeutic-field/therapeuticField.types";
 import { TpharmaceuticalForm } from "../pharmaceutical-form/pharmaceuticalForm.types";
 import { TAction } from "../action/action.types";
 export type TSuggestion = {
-  Id?: number;
+  Id: number;
   Title?: string;
   CompanyId?: string;
   EmployeeId?: string;
@@ -34,7 +34,7 @@ export type TSuggestion = {
   Modified?: string; //تاریخ ایجاد
   ActionId?: number; //نوع عملیات
   Action?: TAction;
-  CurrentStepId?: number; //مرحله
+  CurrentStepId: number; //مرحله
   CurrentStep?: TStep;
 };
 
