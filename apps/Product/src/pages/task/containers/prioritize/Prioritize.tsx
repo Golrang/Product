@@ -7,7 +7,7 @@ import { HistoryOfActions } from "../history-of-actions";
 import { TSuggestion } from "~/types/suggestion/suggestion.types";
 import { useSubmitPrioritization } from "../../hooks/useSubmitPrioritization";
 import * as yup from "yup";
-import { TFormSchema } from "~/../../../packages/design-system/src/components/form";
+import { TFormSchema } from "sharepoint-golrang-design-system/src/components/form";
 import { TPrioritizationForm } from "~/types/prioritization/prioritization.types";
 import { useRecoilState } from "recoil";
 import { submitLoadingState } from "~/recoil-store/general/submitLoading";
@@ -62,7 +62,7 @@ export const Prioritize = ({ suggestion }: { suggestion: TSuggestion }) => {
               checked ? "opacity-100" : "opacity-0"
             } transition-opacity ease-in-out duration-500 `}
           >
-            {checked && <ViewProductSuggestion suggestionId={suggestion.Id} />}
+            {checked && <ViewProductSuggestion />}
           </Col>
         </Row>
 

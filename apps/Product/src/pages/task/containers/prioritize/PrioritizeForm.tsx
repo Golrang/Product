@@ -7,6 +7,8 @@ import { OfferResultSelect } from "../offer-result-select";
 import { TSuggestion } from "~/types/suggestion/suggestion.types";
 import { useNavigate } from "react-router-dom";
 import { useWatch } from "react-hook-form";
+import { useResetRecoilState } from "recoil";
+import { taskState } from "~/recoil-store/task";
 
 const PrioritizeForm = ({
   suggestion,
@@ -16,7 +18,11 @@ const PrioritizeForm = ({
   isLoading: boolean;
 }) => {
   const navigate = useNavigate();
-  const onBackHandler = () => navigate("/cartable", { replace: true });
+  const resetTaskId = useResetRecoilState(taskState);
+  const onBackHandler = () => {
+    resetTaskId();
+    navigate("/cartable", { replace: true });
+  };
   const ActionId = useWatch({ name: "ActionId" });
 
   return (
@@ -31,7 +37,7 @@ const PrioritizeForm = ({
           <Priority ActionId={ActionId} />
         </Col>
         <Col md={12}>
-          <PostponementDate />
+          <PostponementDate ActionId={ActionId} />
         </Col>
       </Row>
       <Row gutter={24} className="mb-5">

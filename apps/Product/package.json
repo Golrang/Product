@@ -25,7 +25,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "antd": "^5.3.0",
-    "antd-jalali": "^1.0.3",
+    "antd-jalali": "^0.9.4",
     "axios": "^1.1.4",
     "concurrently": "^7.6.0",
     "dayjs": "^1.11.7",
