@@ -23,7 +23,6 @@
     "node": ">=14.0.0"
   },
   "dependencies": {
-    "zaman": "^2.0.4"
   },
   "packageManager": "yarn@3.0.0",
   "lint-staged": {
