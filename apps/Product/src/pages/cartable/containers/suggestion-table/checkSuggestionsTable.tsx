@@ -12,6 +12,7 @@ import { TStep } from "~/types/step/step.types";
 import { allSteps } from "~/constant";
 import { TSuggestion } from "~/types/suggestion/suggestion.types";
 import { ViewSuggestion } from "../view-suggestion-button";
+import { CheckSuggestion } from "../check-suggestion-button";
 
 const columnsForCheck: TColumn<TSuggestionTable>[] = [
   {
@@ -53,7 +54,14 @@ const columnsForCheck: TColumn<TSuggestionTable>[] = [
     title: "عملیات",
     align: "center",
     width: 110,
-    render: (_, record: TSuggestion) => <ViewSuggestion id={record.Id ?? 0} />,
+    render: (_, record: TSuggestion) => {
+      return (
+        <>
+          <ViewSuggestion id={record.Id ?? 0} />
+          <CheckSuggestion id={record.Id} />
+        </>
+      );
+    },
   },
 ];
 

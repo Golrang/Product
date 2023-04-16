@@ -62,7 +62,7 @@ export const Prioritize = ({ suggestion }: { suggestion: TSuggestion }) => {
               checked ? "opacity-100" : "opacity-0"
             } transition-opacity ease-in-out duration-500 `}
           >
-            {checked && <ViewProductSuggestion />}
+            {checked && <ViewProductSuggestion suggestionId={suggestion.Id} />}
           </Col>
         </Row>
 
