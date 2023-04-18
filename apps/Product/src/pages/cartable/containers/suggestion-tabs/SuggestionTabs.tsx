@@ -10,37 +10,19 @@ export const SuggestionTabs = () => {
         defaultActiveKey="1"
         items={[
           {
-            label: (
-              <span>
-                پیشنهادات من
-              </span>
-            ),
+            label: <span>پیشنهادات من</span>,
             key: "1",
-            children: (
-              <MySuggestionsTable />
-            ),
+            children: <MySuggestionsTable />,
           },
           {
-            label: (
-              <span>
-                بررسی پیشنهادات
-              </span>
-            ),
+            label: <span>بررسی پیشنهادات</span>,
             key: "2",
-            children: (
-              <CheckSuggestionsTable />
-            ),
+            children: <CheckSuggestionsTable />,
           },
           {
-            label: (
-              <span>
-                همه پیشنهادات
-              </span>
-            ),
+            label: <span>همه پیشنهادات</span>,
             key: "3",
-            children: (
-              <AllSuggestionsTable />
-            ),
+            children: <AllSuggestionsTable />,
           },
         ]}
       />
