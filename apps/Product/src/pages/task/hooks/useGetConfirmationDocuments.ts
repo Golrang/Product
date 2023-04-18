@@ -12,7 +12,6 @@ export const useGetConfirmationDocuments = (id: number) => {
     () => getProductSuggestionFile(id),
     {
       refetchOnWindowFocus: false,
-      suspense: true,
       select: (data) => {
         const mappedData: TTableconfirmationDocuments[] = data
           .filter(
@@ -29,19 +28,21 @@ export const useGetConfirmationDocuments = (id: number) => {
                   : item.PrioritizationId !== null
                   ? "مستند اولویت بندی پیشنهاد"
                   : "",
-              Download: [
-                {
-                  uid: item.Id,
-                  name: item?.File?.Name,
-                  status: "done",
-                  url:
-                    productSuggestionUrl +
-                    "/" +
-                    listName.suggestionDocument +
-                    "/" +
-                    item?.File?.Name,
-                },
-              ],
+              Download: item.File
+                ? [
+                    {
+                      uid: item.Id,
+                      name: item.File.Name,
+                      status: "done",
+                      url:
+                        productSuggestionUrl +
+                        "/" +
+                        listName.suggestionDocument +
+                        "/" +
+                        item?.File?.Name,
+                    },
+                  ]
+                : [],
             };
           });
         return mappedData;

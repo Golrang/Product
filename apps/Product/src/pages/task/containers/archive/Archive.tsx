@@ -6,13 +6,9 @@ import {
   Uploader,
   Button,
 } from "sharepoint-golrang-design-system";
-// import { ViewProductSuggestion } from "../view-product-suggestion";
 import { Priority } from "../priority";
-// import { ConfirmationDocuments } from "../confirmation-documents";
-// import { HistoryOfActions } from "../history-of-actions";
 
 export default function Archive() {
-  // const [isCheckedProduct, setisCheckedProduct] = useState(false);
   const [isCheckedPriority, setisCheckedPriority] = useState(false);
 
   const save = () => {};
@@ -24,19 +20,6 @@ export default function Archive() {
         <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
           مرحله آرشیو شده
         </span>
-        {/* <FormCheckBox
-          className="float-right"
-          name="product"
-          label=""
-          onClick={() => {
-            isCheckedProduct == true
-              ? setisCheckedProduct(false)
-              : setisCheckedProduct(true);
-          }}
-        >
-          مشاهده پیشنهاد محصول
-        </FormCheckBox>
-        {isCheckedProduct && <ViewProductSuggestion />} */}
         <FormCheckBox
           className="float-right"
           name="priority"

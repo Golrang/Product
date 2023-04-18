@@ -9,7 +9,7 @@ import { Col, Row } from "antd";
 import { ViewProductSuggestion } from "../view-product-suggestion";
 import { useState } from "react";
 import { HistoryOfActions } from "../history-of-actions";
-// import { ConfirmationDocuments } from "../confirmation-documents";
+import { ConfirmationDocuments } from "../confirmation-documents";
 // import { CheckBox } from "sharepoint-golrang-design-system/src/components/checkbox";
 
 const TaskContainer = ({ id }: { id: number }) => {
@@ -63,10 +63,10 @@ const TaskContainer = ({ id }: { id: number }) => {
             </Row>
           )}
 
-          {/* <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
+          <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
             مستندات تایید
           </span>
-          <ConfirmationDocuments suggestionId={suggestion[0].Id} /> */}
+          <ConfirmationDocuments suggestionId={suggestion[0].Id} />
         </>
       )}
     </>

@@ -10,7 +10,6 @@ export const useGetOfferReason = () => {
     { label: string; value: number }[]
   >([queryKeys.getOfferReason], getAllOfferReason, {
     refetchOnWindowFocus: false,
-    suspense: true,
     select: (items) =>
       items.map((item) => ({
         label: item?.Title ?? "",

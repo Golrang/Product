@@ -10,7 +10,6 @@ export const useGetPharmaceuticalForms = () => {
     { label: string; value: number }[]
   >([queryKeys.getPharmaceuticalForms], getAllPharmaceuticalForms, {
     refetchOnWindowFocus: false,
-    suspense: true,
     select: (items) =>
       items.map((item) => ({
         label: item.Title ?? "",

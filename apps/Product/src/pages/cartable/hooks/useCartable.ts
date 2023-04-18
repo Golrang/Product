@@ -13,7 +13,6 @@ export const useGetSuggestion = () => {
     getAllEmployee,
     {
       refetchOnWindowFocus: false,
-      suspense: true,
     }
   );
   const { data, error } = useQuery<
@@ -23,7 +22,6 @@ export const useGetSuggestion = () => {
     [string, string]
   >([queryKeys.getAllSuggestion, ""], getAllProductSuggestion, {
     refetchOnWindowFocus: false,
-    suspense: true,
     select: (data) =>
       data.map((item, index) => ({
         ...item,
