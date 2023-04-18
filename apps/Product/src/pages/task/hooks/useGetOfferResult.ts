@@ -10,7 +10,6 @@ export const useGetOfferResult = () => {
     { label: string; value: number }[]
   >([queryKeys.getOfferResult], getOfferResult, {
     refetchOnWindowFocus: false,
-    suspense: true,
     select: (items) =>
       items.map((item) => ({
         label: item.Title,

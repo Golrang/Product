@@ -7,7 +7,6 @@ import { getAllStep } from "~/services/step/allStep.service";
 export const useGetStep = () => {
   const { data } = useQuery<TStep[]>([queryKeys.getAllStep], getAllStep, {
     refetchOnWindowFocus: false,
-    suspense: true,
     onError: () => message.error("خطایی در دریافت اطلاعات رخ داده است"),
   });
   return { data };

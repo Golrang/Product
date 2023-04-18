@@ -10,7 +10,6 @@ export const useGetTherapeuticField = () => {
     { label: string; value: number }[]
   >([queryKeys.getTherapeuticField], getAllTherapeuticField, {
     refetchOnWindowFocus: false,
-    suspense: true,
     select: (items) =>
       items.map((item) => ({
         label: item.Title ?? "",

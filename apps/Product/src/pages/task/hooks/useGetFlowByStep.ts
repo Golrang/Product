@@ -11,7 +11,6 @@ export const useGetFlowByStep = (stepId: number) => {
     { label: string; value: number }[]
   >([queryKeys.getFlowByCurrent], () => getFlowByCurrent(stepId), {
     refetchOnWindowFocus: false,
-    // suspense: true,
     select: (items) =>
       items.map((item) => ({
         label: item.Action?.Title ? item.Action?.Title : "",

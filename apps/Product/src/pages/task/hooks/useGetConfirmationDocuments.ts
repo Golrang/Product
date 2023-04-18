@@ -1,32 +1,50 @@
 import { useQuery } from "@tanstack/react-query";
 import { message } from "antd";
-import { dateFormat } from "constant";
-import dayjs from "dayjs";
+import { listName } from "constant";
 import { TTableconfirmationDocuments } from "types/task/confirmationDocuments.types";
 import { queryKeys } from "constant/react-query-keys";
-import { getAllConfirmationDocuments } from "services/task/allConfirmationDocuments.service";
+import { getProductSuggestionFile } from "~/services/product-suggestion/getProductSuggestionFile.service";
+import { productSuggestionUrl } from "~/utils/pnp";
 
-export const useGetConfirmationDocuments = () => {
+export const useGetConfirmationDocuments = (id: number) => {
   const { data, error, isLoading } = useQuery(
     [queryKeys.getConfirmationDocuments],
-    getAllConfirmationDocuments,
+    () => getProductSuggestionFile(id),
     {
       refetchOnWindowFocus: false,
-      // suspense: true,
       select: (data) => {
-        const mappedData: TTableconfirmationDocuments[] = data.map(
-          (item, index) => {
+        const mappedData: TTableconfirmationDocuments[] = data
+          .filter(
+            (i) => i.EvaluationStudiesId !== null || i.PrioritizationId !== null
+          )
+          .map((item, index) => {
             return {
-              key: item.Id?.toString() ?? 0,
-              Id: item.Id,
-              Title: item?.Title ?? "",
-              Creator: item?.Creator ?? "",
-              UploadDate: dayjs(item.UploadDate).format(dateFormat),
-              Download: item?.Download ?? "",
+              ...item,
               row: index + 1,
+              key: item.Id,
+              Title:
+                item.EvaluationStudiesId !== null
+                  ? "مستند بررسی پیشنهاد محصول"
+                  : item.PrioritizationId !== null
+                  ? "مستند اولویت بندی پیشنهاد"
+                  : "",
+              Download: item.File
+                ? [
+                    {
+                      uid: item.Id,
+                      name: item.File.Name,
+                      status: "done",
+                      url:
+                        productSuggestionUrl +
+                        "/" +
+                        listName.suggestionDocument +
+                        "/" +
+                        item?.File?.Name,
+                    },
+                  ]
+                : [],
             };
-          }
-        );
+          });
         return mappedData;
       },
       onError: () => message.error("خطایی در دریافت اطلاعات رخ داده است"),

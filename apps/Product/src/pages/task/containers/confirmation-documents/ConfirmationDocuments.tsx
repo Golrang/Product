@@ -3,7 +3,9 @@ import { TTableconfirmationDocuments } from "types/task/confirmationDocuments.ty
 import { useGetConfirmationDocuments } from "../../hooks/useGetConfirmationDocuments";
 import { TableError } from "components/table-error";
 import { TableLoading } from "components/table-loading";
-import { Button } from "antd";
+import { Upload } from "antd";
+import dayjs from "dayjs";
+import { dateFormat } from "~/constant";
 
 const columns: TColumn<TTableconfirmationDocuments>[] = [
   {
@@ -11,31 +13,32 @@ const columns: TColumn<TTableconfirmationDocuments>[] = [
     dataIndex: "Title",
     key: "Title",
   },
-  {
-    title: "ایجاد کننده",
-    dataIndex: "Creator",
-    key: "Creator",
-  },
+  // {
+  //   title: "ایجاد کننده",
+  //   dataIndex: "Creator",
+  //   key: "Creator",
+  // },
   {
     title: "تاریخ بارگذاری",
-    dataIndex: "UploadDate",
-    key: "UploadDate",
+    dataIndex: "Created",
+    key: "Created",
+    render: (text: string) => dayjs(text).format(dateFormat),
   },
 
   {
     title: "دانلود",
     dataIndex: "Download",
     key: "Download",
-    render: (text: string) => (
-      <a href="#" download="#">
-        <Button>{text}</Button>
-      </a>
-    ),
+    render: (text: any) => <Upload defaultFileList={text} disabled></Upload>,
   },
 ];
 
-export const ConfirmationDocuments = () => {
-  const { data, error, isLoading } = useGetConfirmationDocuments();
+export const ConfirmationDocuments = ({
+  suggestionId,
+}: {
+  suggestionId: number;
+}) => {
+  const { data, error, isLoading } = useGetConfirmationDocuments(suggestionId);
   if (isLoading) {
     return <TableLoading />;
   }

@@ -10,7 +10,6 @@ export const useGetEmployee = () => {
     { label: any; value: any }[]
   >([queryKeys.allEmployee], getAllEmployee, {
     refetchOnWindowFocus: false,
-    suspense: true,
     select: (items) =>
       items.data.map((item) => ({
         label: `${item.FullName} / ${item.CEmployeeNumber}`,

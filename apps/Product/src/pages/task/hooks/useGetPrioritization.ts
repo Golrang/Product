@@ -10,7 +10,6 @@ export const useGetPrioritization = () => {
     getAllPrioritization,
     {
       refetchOnWindowFocus: false,
-      suspense: true,
       onError: () => message.error("خطایی در دریافت اطلاعات رخ داده است"),
     }
   );

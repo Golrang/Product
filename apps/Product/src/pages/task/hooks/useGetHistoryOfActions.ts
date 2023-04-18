@@ -11,7 +11,6 @@ export const useGetHistoryOfActionsById = (id: number) => {
     () => getLogBySuggestionId(id),
     {
       refetchOnWindowFocus: false,
-      // suspense: true,
       select: (data) => {
         const mappedData: TTableSuggestionLog[] = data.map((item, index) => {
           return {
