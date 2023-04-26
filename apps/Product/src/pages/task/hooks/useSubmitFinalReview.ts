@@ -1,36 +1,38 @@
-import dayjs from "dayjs";
 import { message } from "antd";
 import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
 import { useSetRecoilState } from "recoil";
 import { getUserInfo } from "~/services/general/user-info/userInfo.service";
-import { TPrioritizationForm } from "~/types/prioritization/prioritization.types";
 import { queryKeys } from "~/constant/react-query-keys";
 
-import { addNewPrioritization as addNewPrioritizationService } from "services/prioritization/prioritizationSave.service";
+import { updateResultOfSuggestionFinalReview as updateResultOfSuggestionService } from "services/result-of-suggestion/resultOfSuggestionUpdate.service";
 
-import { addFilePrioritization as addFilePrioritizationService } from "services/prioritization/addFilePrioritization.service";
+import { addFileFinalReview as addFileFinalReviewService } from "services/final-review/addFileFinalReview.service";
+
 import { addNewLogSuggestion as addNewLogSuggestionService } from "services/product-suggestion/addSuggestionLog.service";
 import { updateSuggestionStep } from "services/product-suggestion/updateSuggestion.service";
 
 import { submitLoadingState } from "~/recoil-store/general/submitLoading";
-import { Actions, dateFormat } from "~/constant";
 import { TFlow } from "~/types/flow/flow.types";
 import { getFlowByCurrent } from "~/services/flow/getFlowByCurrent.service";
 import { useNavigate } from "react-router-dom";
-
+import { TPrioritizationForm } from "~/types/prioritization/prioritization.types";
 const { userInfo } = getUserInfo();
 
-export const useSubmituseSubmitFinalReview = (stepId: number, id?: number) => {
+export const useSubmituseSubmitFinalReview = (
+  stepId: number,
+  id: number,
+  resultSuggestionId?: number
+) => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const setLoading = useSetRecoilState(submitLoadingState);
 
-  const { mutateAsync: addNewPrioritization } = useMutation(
-    addNewPrioritizationService
+  const { mutateAsync: updateResultOfSuggestion } = useMutation(
+    updateResultOfSuggestionService
   );
 
-  const { mutateAsync: addFilePrioritization } = useMutation(
-    addFilePrioritizationService
+  const { mutateAsync: addFileFinalReview } = useMutation(
+    addFileFinalReviewService
   );
 
   const { mutateAsync: addLogSuggestion } = useMutation(
@@ -45,17 +47,11 @@ export const useSubmituseSubmitFinalReview = (stepId: number, id?: number) => {
       onError: () => message.error("خطایی در دریافت اطلاعات رخ داده است"),
     }
   );
-
   const onSubmit = async (state: TPrioritizationForm) => {
     const newData = {
-      Title: "",
-      SuggestionId: id ?? 0,
-      PriorityId: state.PriorityId,
-      PostponementDate: state.PostponementDate
-        ? dayjs(state.PostponementDate).format(dateFormat)
-        : null,
-      Comment: state.Comment,
+      Id: resultSuggestionId ?? 0,
       ActionId: state.ActionId,
+      Comment_FinalReview: state.Comment,
     };
 
     const file = state.File;
@@ -76,34 +72,27 @@ export const useSubmituseSubmitFinalReview = (stepId: number, id?: number) => {
       CurrentStepId: flowstep?.NextStepId ?? 0,
     };
 
-    if (
-      state.ActionId === Actions.confirmation &&
-      state.PriorityId === undefined
-    ) {
-      return message.info("اولویت بندی وارد نشده است.");
-    }
-
-    if (
-      state.ActionId === Actions.adjournment &&
-      state.PostponementDate === undefined
-    ) {
-      return message.info("تاریخ تعویق  وارد نشده است.");
-    }
     setLoading(true);
-    await addNewPrioritization(newData, {
-      onSuccess: (data) => {
+    await updateResultOfSuggestion(newData, {
+      onSuccess: () => {
         queryClient.invalidateQueries([queryKeys.getAllSuggestion], {
           exact: false,
         });
 
-        if (file !== undefined && file.fileList.length > 0)
-          addFilePrioritization({
+        if (
+          file !== undefined &&
+          file.fileList.length > 0 &&
+          resultSuggestionId
+        )
+          addFileFinalReview({
             file: file,
-            PrioritizationId: data.Id,
-            SuggestionId: id ?? 0,
+            FinalReviewId: resultSuggestionId,
+            SuggestionId: id,
           });
 
-        if (suggestionUpdate && id) updateSuggestionStep(id, suggestionUpdate);
+        if (suggestionUpdate && id) {
+          updateSuggestionStep(id, suggestionUpdate);
+        }
 
         if (log) addLogSuggestion(log);
       },

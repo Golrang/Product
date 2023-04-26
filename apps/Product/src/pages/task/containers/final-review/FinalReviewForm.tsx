@@ -2,7 +2,6 @@ import { Col, Row } from "antd";
 import { FormTextArea, Button } from "sharepoint-golrang-design-system";
 import { FileUpload } from "../file-upload";
 import { PostponementDate } from "../postponement-date";
-// import { Priority } from "../priority";
 import { OfferResultSelect } from "../offer-result-select";
 import { TSuggestion } from "~/types/suggestion/suggestion.types";
 import { useNavigate } from "react-router-dom";

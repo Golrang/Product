@@ -21,3 +21,22 @@ export const updateResultOfSuggestion = async (
   );
   return res;
 };
+
+export type TAddNewResultOfSuggestionFinal = Pick<
+  TResultOfSuggestion,
+  "Id" | "ActionId" | "Comment_FinalReview"
+>;
+export const updateResultOfSuggestionFinalReview = async (
+  payload: TAddNewResultOfSuggestionFinal
+) => {
+  const data = {
+    Comment_FinalReview: payload.Comment_FinalReview,
+    ActionId: payload.ActionId,
+  };
+  const res = await updateListItem(
+    data,
+    payload.Id,
+    listName.resultOfSuggestion
+  );
+  return res;
+};
