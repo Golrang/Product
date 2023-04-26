@@ -1,16 +1,20 @@
 import { FormSelect } from "sharepoint-golrang-design-system";
-import { TKeyOfForm } from "types/offer-result/offerResult.types";
-import { useGetOfferResult } from "../../hooks/useGetOfferResult";
-export const OfferResultSelect = () => {
-  const { allResult } = useGetOfferResult();
+import { useGetFlowByStep } from "../../hooks/useGetFlowByStep";
+import { TKeyOfFormPrioritization } from "~/types/prioritization/prioritization.types";
+
+export const OfferResultSelect = ({
+  CurrentStepId,
+}: {
+  CurrentStepId: number;
+}) => {
+  const { data: flowAction } = useGetFlowByStep(CurrentStepId);
   return (
     <>
-      <FormSelect<TKeyOfForm>
-        name="Title"
+      <FormSelect<TKeyOfFormPrioritization>
+        name="ActionId"
         label="نتایج"
-        mode="multiple"
         showSearch
-        options={allResult}
+        options={flowAction}
         filterOption={(input, option) =>
           (option?.label ?? "").toString().includes(input)
         }

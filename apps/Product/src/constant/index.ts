@@ -11,6 +11,8 @@ export const listName = {
   action: "GPI_PS_Action",
   step: "GPI_PS_Step",
   flow: "GPI_PS_Flow",
+  prioritization: "GPI_PS_Prioritization",
+  evaluationStudies: "GPI_PS_EvaluationStudies",
 };
 
 export const dateFormat = "YYYY/MM/DD";
@@ -35,4 +37,14 @@ export const allSteps = {
   evaluationStudies: 11, //مطالعات ارزیابی علمی - اقتصادی
   archive: 12, //آرشیو
   end: 13, //پایان
+};
+
+export const Actions = {
+  temporaryRegistration: 1, //"ثبت موقت"
+  saveSuggestion: 2, //ثبت پیشنهاد
+  confirmation: 3, //تایید
+  needToReconsider: 4, //نیاز به بررسی مجدد
+  archive: 5, // آرشیو
+  adjournment: 6, //تعویق
+  returnToThePrioritizationStage: 7, //بازگشت به مرحله اولویت بندی
 };

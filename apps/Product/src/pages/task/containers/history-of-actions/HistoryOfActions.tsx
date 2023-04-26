@@ -1,15 +1,15 @@
 import { Table, TColumn } from "sharepoint-golrang-design-system";
-import { TTableLog } from "types/task/historyOfActions.types";
-import { useGetHistoryOfActions } from "../../hooks/useGetHistoryOfActions";
 import { TableError } from "components/table-error";
 import { TableLoading } from "components/table-loading";
 import dayjs from "dayjs";
+import { TTableSuggestionLog } from "~/types/suggestion/suggestionLog.types";
+import { useGetHistoryOfActionsById } from "../../hooks/useGetHistoryOfActions";
 
-const columns: TColumn<TTableLog>[] = [
+const columns: TColumn<TTableSuggestionLog>[] = [
   {
     title: "اقدام کننده",
-    dataIndex: "Actioner",
-    key: "Actioner",
+    dataIndex: "Title",
+    key: "Title",
   },
   {
     title: "تاریخ اقدام",
@@ -31,13 +31,17 @@ const columns: TColumn<TTableLog>[] = [
 
   {
     title: "توضیحات",
-    dataIndex: "Description",
-    key: "Description",
+    dataIndex: "Comment",
+    key: "Comment",
   },
 ];
 
-export const HistoryOfActions = () => {
-  const { data, error, isLoading } = useGetHistoryOfActions();
+export const HistoryOfActions = ({
+  suggestionId,
+}: {
+  suggestionId: number;
+}) => {
+  const { data, error, isLoading } = useGetHistoryOfActionsById(suggestionId);
   if (isLoading) {
     return <TableLoading />;
   }

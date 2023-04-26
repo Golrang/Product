@@ -9,6 +9,8 @@ import {
 } from "./hooks/useGetDevExpertGroup";
 import { useGetSuggestion } from "./hooks/useCartable";
 import { useGetStep } from "./hooks/useGetStep";
+import { useGetFlow } from "./hooks/useGetFlow";
+import { useGetAction } from "./hooks/useGetAction";
 
 export const Cartable = () => {
   useGetDevExpertHeadGroup();
@@ -16,6 +18,8 @@ export const Cartable = () => {
   useGetEvaluationStudiesGroup();
   useGetSuggestion();
   useGetStep();
+  useGetFlow();
+  useGetAction();
   return (
     <>
       <Row className="mb-2" dir="rtl">

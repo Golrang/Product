@@ -10,7 +10,6 @@ export const useGetDevExpertHeadGroup = () => {
     () => getUsersByGroupId(groupIds.developHeadGroup),
     {
       refetchOnWindowFocus: false,
-      suspense: true,
     }
   );
   return { data };
@@ -22,7 +21,6 @@ export const useGetDevExpertGroup = () => {
     () => getUsersByGroupId(groupIds.developExpertGroup),
     {
       refetchOnWindowFocus: false,
-      suspense: true,
     }
   );
   return { data };
@@ -34,7 +32,6 @@ export const useGetEvaluationStudiesGroup = () => {
     () => getUsersByGroupId(groupIds.evaluationStudiesGroup),
     {
       refetchOnWindowFocus: false,
-      suspense: true,
     }
   );
   return { data };

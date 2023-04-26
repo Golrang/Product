@@ -1,4 +1,3 @@
-// import { useLocation } from "react-router-dom";
 import { useViewProductSuggestion } from "../../../task/hooks/useViewProductSuggestion";
 import { Descriptions, Row, Col } from "antd";
 import { Form } from "sharepoint-golrang-design-system";
@@ -8,8 +7,6 @@ import { ICClose } from "sharepoint-golrang-design-system/src/icons/CloseIcon";
 import { Suspense } from "react";
 
 export const ViewSuggestion = () => {
-  // const location = useLocation();
-  // const { id } = location.state;
   const { defaultValues } = useViewProductSuggestion();
   const onSubmit = () => {};
   const onFinish = () => {};

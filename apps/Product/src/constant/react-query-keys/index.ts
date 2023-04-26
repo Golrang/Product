@@ -11,7 +11,11 @@ export const queryKeys = {
   getProductsSuggestion: "getProductsSuggestion",
   getAllAction: "getAllAction",
   getAllStep: "getAllStep",
+  getAllFlow: "getAllFlow",
+  getFlowByCurrent: "getFlowByCurrent",
   getDevExpertHeadGroup: "getDevExpertHeadGroup",
   getDevExpertGroup: "getDevExpertGroup",
   getEvaluationStudiesGroup: "getEvaluationStudiesGroup",
+  getAllSuggestionById: "getAllSuggestionById",
+  getAllPrioritization: "getAllPrioritization",
 };

@@ -121,8 +121,8 @@ export const useSubmitSuggestion = (id?: number) => {
         ? state.SimilarTherapeuticField
         : null,
       Comment: state.Comment ? state.Comment : "",
-      ActionId: actions && (isTemporary ? actions[0].Id : actions[1].Id),
-      CurrentStepId: steps && (isTemporary ? steps[0].Id : steps[1].Id),
+      ActionId: actions ? (isTemporary ? actions[0].Id : actions[1].Id) : 0,
+      CurrentStepId: steps ? (isTemporary ? steps[0].Id : steps[1].Id) : 0,
     };
 
     const materials = state.Materials;

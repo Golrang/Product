@@ -1,9 +1,9 @@
-import { ViewProductSuggestion } from "./containers/view-product-suggestion";
+import { useRecoilValue } from "recoil";
+import { taskState } from "~/recoil-store/task";
+import TaskContainer from "./containers/task-container/TaskContainer";
 
 export const Task = () => {
-  return (
-    <>
-      <ViewProductSuggestion />
-    </>
-  );
+  const { id } = useRecoilValue(taskState);
+  if (isNaN(id) === false) return <TaskContainer id={id} />;
+  return null;
 };

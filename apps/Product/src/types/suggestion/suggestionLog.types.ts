@@ -1,3 +1,5 @@
+import { TTableItems } from "../table/table.types";
+
 export type TSuggestionLog = {
   Id: number;
   Title: string; //اقدام کننده
@@ -7,3 +9,5 @@ export type TSuggestionLog = {
   Comment: string; //توضیحات
   SuggestionId: number;
 };
+
+export type TTableSuggestionLog = TSuggestionLog & TTableItems;
