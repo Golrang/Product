@@ -4,7 +4,7 @@ import { TResultOfSuggestion } from "~/types/result-of-suggestion/resultOfSugges
 
 export type TAddNewResultOfSuggestion = Pick<
   TResultOfSuggestion,
-  "Id" | "ActionId" |"Evaluation_Num"
+  "Id" | "ActionId" | "Evaluation_Num"
 >;
 
 export const updateResultOfSuggestion = async (
