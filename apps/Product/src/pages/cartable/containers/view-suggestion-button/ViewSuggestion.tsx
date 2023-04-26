@@ -10,13 +10,15 @@ export const ViewSuggestion = ({ id }: { id: number }) => {
 
   return (
     <>
-      <Button
-        shape="circle"
-        className="!inline-flex !justify-center !items-center"
-        onClick={onEditHandler}
-      >
-        <ICView className="w-4" />
-      </Button>
+      <div className="flex justify-center items-center table-report__action w-56">
+        <Button
+          className="flex items-center ml-3 text-theme-16 border-none	shadow-none	"
+          onClick={onEditHandler}
+        >
+          <ICView className="w-4 h-4 ml-2" />
+          مشاهده
+        </Button>
+      </div>
     </>
   );
 };
