@@ -128,175 +128,182 @@ export const AddSuggestion = () => {
     };
   }, [setLoading]);
   return (
-    <>
-      <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
-        پیشنهاد دهنده
-      </span>
-      <Row gutter={24}>
-        <Col md={24} sm={24}>
-          <Recommender />
-        </Col>
-      </Row>
-      <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
-        مشخصات محصول
-      </span>
-      <Form
-        name="AddSuggestionForm"
-        onFinish={onSubmit}
-        schema={isTemporary ? schemaTemporary : schema}
-      >
-        <Row gutter={24} className="mb-5">
-          <Col md={12} sm={24}>
-            <FormInput<TKeyOfForm>
-              name="Material"
-              type="text"
-              label="نام ماده یا مواد موثره"
-              placeholder="ماده موثره اصلی"
-            />
-          </Col>
-
-          <Col md={24} sm={24}>
-            <Material />
-          </Col>
-        </Row>
-        <Divider />
-        <Row gutter={24}>
-          <Col md={12} sm={24}>
-            <PharmaceuticalForms />
-          </Col>
-          <Col md={12} sm={24}>
-            <OtherPharmaceuticalForms />
-          </Col>
-        </Row>
-        <Divider />
-        <Row gutter={24}>
-          <Col md={12} sm={24}>
-            <FormInput<TKeyOfForm>
-              label="نام برند اصلی"
-              name="BrandName"
-              placeholder="نام برند اصلی"
-            />
-          </Col>
-          <Col md={12} sm={24}>
-            <FormInput<TKeyOfForm>
-              label="نام شرکت سازنده"
-              name="ManufacturerCompanyName"
-              placeholder="نام شرکت سازنده"
-            />
-          </Col>
-        </Row>
-        <Divider />
+    <div className="!inline-flex !items-center justify-center	">
+      <div className="w-[75%] rounded-lg shadow-lg p-5 bg-white">
+        <span className="w-[100%] border-t-2 border-solid border-theme-3 inline-block text-center mb-5 mt-5 rounded-lg p-1 text-white bg-theme-3">
+          پیشنهاد دهنده
+        </span>
         <Row gutter={24}>
           <Col md={24} sm={24}>
-            <FormTextArea<TKeyOfForm>
-              label="مورد مصرف"
-              name="Consumable"
-              placeholder="مورد مصرف"
-              autoSize={{ minRows: 4 }}
-            />
+            <Recommender />
           </Col>
         </Row>
-        <Row gutter={24}>
-          <Col md={12} sm={24}>
-            <TherapeuticField />
-          </Col>
-        </Row>
-        <Row gutter={24}>
-          <Col md={24} sm={24}>
-            <TherapeuticFieldComment />
-          </Col>
-        </Row>
-        <Divider />
-        <Row gutter={24}>
-          <Col md={24} sm={24}>
-            <OfferReason />
-          </Col>
-
-          <Col md={24} sm={24}>
-            <FormTextArea<TKeyOfForm>
-              label="توضیحات"
-              name="OfferReasonComment"
-              placeholder="توضیحات علت پیشنهاد"
-              autoSize={{ minRows: 4 }}
-            />
-          </Col>
-        </Row>
-        <Divider />
-        <Row gutter={24}>
-          <Col md={24} sm={24}>
-            <FormTextArea<TKeyOfForm>
-              label="مزیت محصول پیشنهادی نسبت به محصول موجود در بازار"
-              name="ProductAdvatage"
-              placeholder="مزیت محصول پیشنهادی نسبت به محصول موجود در بازار"
-              autoSize={{ minRows: 4 }}
-            />
-          </Col>
-        </Row>
-        <Row gutter={24}>
-          <Col sm={24}>
-            <FormTextArea<TKeyOfForm>
-              label="نقاط ضعف احتمالی محصول پیشنهادی نسبت به محصول موجود در بازار"
-              name="ProductWeaknesses"
-              placeholder="نقاط ضعف احتمالی محصول پیشنهادی نسبت به محصول موجود در بازار"
-              autoSize={{ minRows: 4 }}
-            />
-          </Col>
-        </Row>
-        <Row gutter={24}>
-          <Col sm={24}>
-            <Questions />
-          </Col>
-        </Row>
-        <Divider />
-        <Row gutter={24}>
-          <Col sm={24}>
-            <FormTextArea<TKeyOfForm>
-              label="توضیحات"
-              name="Comment"
-              placeholder="توضیحات"
-              autoSize={{ minRows: 4 }}
-            />
-          </Col>
-        </Row>
-        <Divider />
-        <Row gutter={24}>
-          <Col md={4}>
-            <UploadFile />
-          </Col>
-        </Row>
-        <Button
-          className="!inline-flex !items-center btn-danger btn"
-          key="cancel"
-          onClick={onCancelHandler}
-          disabled={isLoading}
+        <span className="w-[100%] border-t-2 border-solid border-theme-3 text-center inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-theme-3">
+          مشخصات محصول
+        </span>
+        <Form
+          name="AddSuggestionForm"
+          onFinish={onSubmit}
+          className="validate-form"
+          schema={isTemporary ? schemaTemporary : schema}
         >
-          انصراف
-        </Button>
+          <Row gutter={24} className="mb-5">
+            <Col md={12} sm={24}>
+              <FormInput<TKeyOfForm>
+                name="Material"
+                type="text"
+                label="نام ماده یا مواد موثره"
+                placeholder="ماده موثره اصلی"
+              />
+            </Col>
 
-        <Button
-          className="!inline-flex !items-center "
-          key="submit"
-          htmlType="submit"
-          disabled={isLoading}
-          onClick={() => {
-            setIsTemporary(false);
-          }}
-        >
-          ثبت
-        </Button>
+            <Col md={24} sm={24}>
+              <Material />
+            </Col>
+          </Row>
+          <Divider />
+          <Row gutter={24}>
+            <Col md={12} sm={24}>
+              <PharmaceuticalForms />
+            </Col>
+            <Col md={12} sm={24}>
+              <OtherPharmaceuticalForms />
+            </Col>
+          </Row>
+          <Divider />
+          <Row gutter={24}>
+            <Col md={12} sm={24}>
+              <FormInput<TKeyOfForm>
+                label="نام برند اصلی"
+                name="BrandName"
+                placeholder="نام برند اصلی"
+              />
+            </Col>
+            <Col md={12} sm={24}>
+              <FormInput<TKeyOfForm>
+                label="نام شرکت سازنده"
+                name="ManufacturerCompanyName"
+                placeholder="نام شرکت سازنده"
+              />
+            </Col>
+          </Row>
+          <Divider />
+          <Row gutter={24}>
+            <Col md={24} sm={24}>
+              <FormTextArea<TKeyOfForm>
+                label="مورد مصرف"
+                name="Consumable"
+                placeholder="مورد مصرف"
+                autoSize={{ minRows: 4 }}
+              />
+            </Col>
+          </Row>
+          <Row gutter={24}>
+            <Col md={12} sm={24}>
+              <TherapeuticField />
+            </Col>
+          </Row>
+          <Row gutter={24}>
+            <Col md={24} sm={24}>
+              <TherapeuticFieldComment />
+            </Col>
+          </Row>
+          <Divider />
+          <Row gutter={24}>
+            <Col md={24} sm={24}>
+              <OfferReason />
+            </Col>
 
-        <Button
-          className="!inline-flex !items-center "
-          key="submit"
-          htmlType="submit"
-          disabled={isLoading}
-          onClick={() => {
-            setIsTemporary(true);
-          }}
-        >
-          ثبت موقت
-        </Button>
-      </Form>
-    </>
+            <Col md={24} sm={24}>
+              <FormTextArea<TKeyOfForm>
+                label="توضیحات"
+                name="OfferReasonComment"
+                placeholder="توضیحات علت پیشنهاد"
+                autoSize={{ minRows: 4 }}
+              />
+            </Col>
+          </Row>
+          <Divider />
+          <Row gutter={24}>
+            <Col md={24} sm={24}>
+              <FormTextArea<TKeyOfForm>
+                label="مزیت محصول پیشنهادی نسبت به محصول موجود در بازار"
+                name="ProductAdvatage"
+                placeholder="مزیت محصول پیشنهادی نسبت به محصول موجود در بازار"
+                autoSize={{ minRows: 4 }}
+              />
+            </Col>
+          </Row>
+          <Row gutter={24}>
+            <Col sm={24}>
+              <FormTextArea<TKeyOfForm>
+                label="نقاط ضعف احتمالی محصول پیشنهادی نسبت به محصول موجود در بازار"
+                name="ProductWeaknesses"
+                placeholder="نقاط ضعف احتمالی محصول پیشنهادی نسبت به محصول موجود در بازار"
+                autoSize={{ minRows: 4 }}
+              />
+            </Col>
+          </Row>
+          <Row gutter={24}>
+            <Col sm={24}>
+              <Questions />
+            </Col>
+          </Row>
+          <Divider />
+          <Row gutter={24}>
+            <Col sm={24}>
+              <FormTextArea<TKeyOfForm>
+                label="توضیحات"
+                name="Comment"
+                placeholder="توضیحات"
+                autoSize={{ minRows: 4 }}
+              />
+            </Col>
+          </Row>
+          <Row gutter={24}>
+            <Col md={4}>
+              <UploadFile />
+            </Col>
+          </Row>
+          <Divider />
+          <Row gutter={24}>
+            <Col md={24} className="!inline-flex !items-center justify-center	">
+              <Button
+                className=" btn-dark-suggestion w-24"
+                key="cancel"
+                onClick={onCancelHandler}
+                disabled={isLoading}
+              >
+                انصراف
+              </Button>
+
+              <Button
+                className=" btn-success-suggestion w-24"
+                key="submit"
+                htmlType="submit"
+                disabled={isLoading}
+                onClick={() => {
+                  setIsTemporary(false);
+                }}
+              >
+                ثبت
+              </Button>
+
+              <Button
+                className=" btn-primary-suggestion w-24"
+                key="submit"
+                htmlType="submit"
+                disabled={isLoading}
+                onClick={() => {
+                  setIsTemporary(true);
+                }}
+              >
+                ثبت موقت
+              </Button>
+            </Col>
+          </Row>
+        </Form>
+      </div>
+    </div>
   );
 };
