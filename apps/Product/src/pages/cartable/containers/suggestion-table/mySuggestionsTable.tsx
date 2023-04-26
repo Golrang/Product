@@ -1,6 +1,5 @@
 import { TableError } from "components/table-error";
-import { Table } from "sharepoint-golrang-design-system";
-import { TColumn } from "sharepoint-golrang-design-system";
+import { Table, TColumn } from "sharepoint-golrang-design-system";
 import { TSuggestionTable } from "types/suggestion/suggestionTable.types";
 import dayjs from "dayjs";
 import { useGetSuggestion } from "pages/cartable/hooks/useCartable";
@@ -53,7 +52,6 @@ export const MySuggestionsTable = () => {
           i.EmployeeId === userInfo.employeeId &&
           i.CompanyId === userInfo.companyID
       )}
-      bordered
     />
   );
 };

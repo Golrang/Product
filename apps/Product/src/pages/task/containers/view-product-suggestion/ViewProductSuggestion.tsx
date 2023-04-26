@@ -25,7 +25,7 @@ export const ViewProductSuggestion = () =>
           <Row gutter={24}>
             <Col md={8} sm={24}>
               <div className="Recommender ">
-                <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5  rounded-lg p-1 text-white bg-indigo-300">
+                <span className="w-[100%] border-t-2 border-solid border-theme-3 inline-block mb-5 text-center rounded-lg p-1 text-white bg-theme-3">
                   پیشنهاد دهنده
                 </span>
                 <Row gutter={24}>
@@ -56,7 +56,7 @@ export const ViewProductSuggestion = () =>
             </Col>
             <Col md={16} sm={24}>
               <div className="ProductInformation">
-                <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 rounded-lg p-1 text-white bg-indigo-300">
+                <span className="w-[100%] border-t-2 border-solid border-theme-3 inline-block mb-5 rounded-lg p-1 text-center text-white bg-theme-3">
                   مشخصات محصول
                 </span>
                 <Descriptions column={3}>

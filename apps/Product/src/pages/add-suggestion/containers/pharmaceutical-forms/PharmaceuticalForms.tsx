@@ -15,6 +15,7 @@ export const PharmaceuticalForms = () => {
         name="PharmaceuticalFormId"
         label="شکل دارویی"
         showSearch
+        className="tail-select w-full"
         options={allPharmaceuticalForms}
         filterOption={(input, option) =>
           (option?.label ?? "").toString().includes(input)

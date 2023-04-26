@@ -126,7 +126,6 @@ export const CheckSuggestionsTable = () => {
     <Table
       columns={columnsForCheck}
       dataSource={data.filter((i) => steps.includes(i.CurrentStepId))}
-      bordered
     />
   );
 };
