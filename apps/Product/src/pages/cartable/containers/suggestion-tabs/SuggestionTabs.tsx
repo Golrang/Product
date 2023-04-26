@@ -10,6 +10,7 @@ export const SuggestionTabs = () => {
   return (
     <>
       <Tabs
+        className="chat__tabs nav nav-tabs justify-center"
         defaultActiveKey="1"
         items={[
           {
