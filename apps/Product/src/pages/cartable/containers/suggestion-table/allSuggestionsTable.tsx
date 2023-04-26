@@ -54,5 +54,5 @@ const columnsForAll: TColumn<TSuggestionTable>[] = [
 export const AllSuggestionsTable = () => {
   const { data, error } = useGetSuggestion();
   if (error || !data) return <TableError />;
-  return <Table columns={columnsForAll} dataSource={data} bordered />;
+  return <Table columns={columnsForAll} dataSource={data} />;
 };
