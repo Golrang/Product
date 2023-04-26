@@ -8,9 +8,16 @@ import { submitLoadingState } from "~/recoil-store/general/submitLoading";
 import { useSubmitEvaluationStudies } from "../../hooks/useSubmitEvaluationStudies";
 import EvaluationForm from "./EvaluationForm";
 import { TEvaluationStudiesForm } from "~/types/evaluation-studies/evaluationStudies.types";
+import { useGetResultOfSuggestionById } from "../../hooks/useGetResultOfSuggestion";
+import { Col } from "antd";
 
 const schema = yup.object<
-  TFormSchema<Omit<TEvaluationStudiesForm, "SuggestionId">>
+  TFormSchema<
+    Omit<
+      TEvaluationStudiesForm,
+      "SuggestionId" | "ResultOfSuggestionId" | "CompanyId" | "EmployeeId"
+    >
+  >
 >({
   Comment: yup.string().required("توضیحات الزامی است"),
   ActionId: yup.number().required("نتیجه الزامی است"),
@@ -24,9 +31,11 @@ export const EvaluationStudies = ({
 }) => {
   const [isLoading, setLoading] = useRecoilState(submitLoadingState);
 
+  const { resultSuggestion } = useGetResultOfSuggestionById(suggestion.Id);
   const { onSubmit } = useSubmitEvaluationStudies(
     suggestion.CurrentStepId,
-    suggestion.Id
+    suggestion.Id,
+    resultSuggestion?.[0]
   );
 
   useEffect(() => {
@@ -41,9 +50,21 @@ export const EvaluationStudies = ({
         <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
           مرحله مطالعات ارزیابی علمی -اقتصادی
         </span>
-        <Form onFinish={onSubmit} schema={schema}>
-          <EvaluationForm suggestion={suggestion} isLoading={isLoading} />
-        </Form>
+        {resultSuggestion && (
+          <>
+            <Col md={6} sm={12}>
+              <span>
+                اولویت:
+                {resultSuggestion[0].PriorityId}
+              </span>
+            </Col>
+
+            {/* <Input value={resultSuggestion[0].PriorityId} disabled /> */}
+            <Form onFinish={onSubmit} schema={schema}>
+              <EvaluationForm suggestion={suggestion} isLoading={isLoading} />
+            </Form>
+          </>
+        )}
       </div>
     </>
   );

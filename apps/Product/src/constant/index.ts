@@ -13,6 +13,7 @@ export const listName = {
   flow: "GPI_PS_Flow",
   prioritization: "GPI_PS_Prioritization",
   evaluationStudies: "GPI_PS_EvaluationStudies",
+  resultOfSuggestion: "GPI_PS_ResultOfSuggestion",
 };
 
 export const dateFormat = "YYYY/MM/DD";

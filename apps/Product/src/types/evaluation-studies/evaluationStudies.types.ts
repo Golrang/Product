@@ -4,6 +4,9 @@ export type TEvaluationStudies = {
   SuggestionId: number;
   Comment: string;
   ActionId: number;
+  ResultOfSuggestionId: number;
+  CompanyId: string;
+  EmployeeId: string;
 };
 
 export type TEvaluationStudiesForm = Omit<

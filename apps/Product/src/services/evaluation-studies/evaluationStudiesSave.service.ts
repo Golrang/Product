@@ -4,6 +4,8 @@ import { TEvaluationStudies } from "~/types/evaluation-studies/evaluationStudies
 
 export type TAddNewEvaluationStudies = Omit<TEvaluationStudies, "Id">;
 
+
+
 export const addNewEvaluationStudies = async (
   payload: TAddNewEvaluationStudies
 ) => {
