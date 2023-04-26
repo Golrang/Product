@@ -146,8 +146,9 @@ export const AddSuggestion = () => {
           name="AddSuggestionForm"
           onFinish={onSubmit}
           className="validate-form"
-          schema={isTemporary ? schemaTemporary : schema}>
-                      <Row gutter={24} className="mb-5">
+          schema={isTemporary ? schemaTemporary : schema}
+        >
+          <Row gutter={24} className="mb-5">
             <Col md={12} sm={24}>
               <FormInput<TKeyOfForm>
                 name="Material"
@@ -213,75 +214,75 @@ export const AddSuggestion = () => {
             <Col md={24} sm={24}>
               <OfferReason />
             </Col>
-            </Row>
-        <Row gutter={24}>
-          <Col md={12} sm={24}>
-            <TherapeuticField />
-          </Col>
-        </Row>
-        <Row gutter={24}>
-          <Col md={24} sm={24}>
-            <TherapeuticFieldComment />
-          </Col>
-        </Row>
-        <Divider />
-        <Row gutter={24}>
-          <Col md={24} sm={24}>
-            <OfferReason />
-          </Col>
+          </Row>
+          <Row gutter={24}>
+            <Col md={12} sm={24}>
+              <TherapeuticField />
+            </Col>
+          </Row>
+          <Row gutter={24}>
+            <Col md={24} sm={24}>
+              <TherapeuticFieldComment />
+            </Col>
+          </Row>
+          <Divider />
+          <Row gutter={24}>
+            <Col md={24} sm={24}>
+              <OfferReason />
+            </Col>
 
-          <Col md={24} sm={24}>
-            <FormTextArea<TKeyOfForm>
-              label="توضیحات"
-              name="OfferReasonComment"
-              placeholder="توضیحات علت پیشنهاد"
-              autoSize={{ minRows: 4 }}
-            />
-          </Col>
-        </Row>
-        <Divider />
-        <Row gutter={24}>
-          <Col md={24} sm={24}>
-            <FormTextArea<TKeyOfForm>
-              label="مزیت محصول پیشنهادی نسبت به محصول موجود در بازار"
-              name="ProductAdvatage"
-              placeholder="مزیت محصول پیشنهادی نسبت به محصول موجود در بازار"
-              autoSize={{ minRows: 4 }}
-            />
-          </Col>
-        </Row>
-        <Row gutter={24}>
-          <Col sm={24}>
-            <FormTextArea<TKeyOfForm>
-              label="نقاط ضعف احتمالی محصول پیشنهادی نسبت به محصول موجود در بازار"
-              name="ProductWeaknesses"
-              placeholder="نقاط ضعف احتمالی محصول پیشنهادی نسبت به محصول موجود در بازار"
-              autoSize={{ minRows: 4 }}
-            />
-          </Col>
-        </Row>
-        <Row gutter={24}>
-          <Col sm={24}>
-            <Questions />
-          </Col>
-        </Row>
-        <Divider />
-        <Row gutter={24}>
-          <Col sm={24}>
-            <FormTextArea<TKeyOfForm>
-              label="توضیحات"
-              name="Comment"
-              placeholder="توضیحات"
-              autoSize={{ minRows: 4 }}
-            />
-          </Col>
-        </Row>
-        <Row gutter={24}>
-          <Col md={4}>
-            <UploadFile />
-          </Col>
-        </Row>
-        <Divider />
+            <Col md={24} sm={24}>
+              <FormTextArea<TKeyOfForm>
+                label="توضیحات"
+                name="OfferReasonComment"
+                placeholder="توضیحات علت پیشنهاد"
+                autoSize={{ minRows: 4 }}
+              />
+            </Col>
+          </Row>
+          <Divider />
+          <Row gutter={24}>
+            <Col md={24} sm={24}>
+              <FormTextArea<TKeyOfForm>
+                label="مزیت محصول پیشنهادی نسبت به محصول موجود در بازار"
+                name="ProductAdvatage"
+                placeholder="مزیت محصول پیشنهادی نسبت به محصول موجود در بازار"
+                autoSize={{ minRows: 4 }}
+              />
+            </Col>
+          </Row>
+          <Row gutter={24}>
+            <Col sm={24}>
+              <FormTextArea<TKeyOfForm>
+                label="نقاط ضعف احتمالی محصول پیشنهادی نسبت به محصول موجود در بازار"
+                name="ProductWeaknesses"
+                placeholder="نقاط ضعف احتمالی محصول پیشنهادی نسبت به محصول موجود در بازار"
+                autoSize={{ minRows: 4 }}
+              />
+            </Col>
+          </Row>
+          <Row gutter={24}>
+            <Col sm={24}>
+              <Questions />
+            </Col>
+          </Row>
+          <Divider />
+          <Row gutter={24}>
+            <Col sm={24}>
+              <FormTextArea<TKeyOfForm>
+                label="توضیحات"
+                name="Comment"
+                placeholder="توضیحات"
+                autoSize={{ minRows: 4 }}
+              />
+            </Col>
+          </Row>
+          <Row gutter={24}>
+            <Col md={4}>
+              <UploadFile />
+            </Col>
+          </Row>
+          <Divider />
           <Row gutter={24}>
             <Col md={24} className="!inline-flex !items-center justify-center	">
               <Button
