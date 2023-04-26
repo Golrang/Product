@@ -53,6 +53,7 @@ export const useSubmitSuggestion = (id?: number) => {
     }
   );
 
+  // console.log(steps, "steps");
   const selectedSuggestions = selectedSuggestionsQuery?.find(
     (item) => item.Id === id
   );
@@ -182,7 +183,7 @@ export const useSubmitSuggestion = (id?: number) => {
         const log = {
           Title: userInfo.userFarsiName,
           ActionDate: new Date().toISOString(),
-          Step: steps ? (isTemporary ? steps[0].Title : steps[1].Title) : "",
+          Step: steps ? steps[0].Title : "",
           Result: actions
             ? isTemporary
               ? actions[0].Title

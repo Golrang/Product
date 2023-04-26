@@ -3,19 +3,19 @@ import { Form } from "sharepoint-golrang-design-system";
 import { TSuggestion } from "~/types/suggestion/suggestion.types";
 import * as yup from "yup";
 import { TFormSchema } from "sharepoint-golrang-design-system/src/components/form";
+import { TPrioritizationForm } from "~/types/prioritization/prioritization.types";
 import { useRecoilState } from "recoil";
 import { submitLoadingState } from "~/recoil-store/general/submitLoading";
-import { useSubmitEvaluationStudies } from "../../hooks/useSubmitEvaluationStudies";
-import EvaluationForm from "./EvaluationForm";
-import { TEvaluationStudiesForm } from "~/types/evaluation-studies/evaluationStudies.types";
+import FinalReviewForm from "./FinalReviewForm";
 import { useGetResultOfSuggestionById } from "../../hooks/useGetResultOfSuggestion";
+import { useSubmituseSubmitFinalReview } from "../../hooks/useSubmitFinalReview";
 import { Col } from "antd";
 
 const schema = yup.object<
   TFormSchema<
     Omit<
-      TEvaluationStudiesForm,
-      "SuggestionId" | "ResultOfSuggestionId" | "CompanyId" | "EmployeeId"
+      TPrioritizationForm,
+      "SuggestionId" | "PriorityId" | "PostponementDate"
     >
   >
 >({
@@ -24,18 +24,13 @@ const schema = yup.object<
   File: yup.object().required("فایل الزامی است"),
 });
 
-export const EvaluationStudies = ({
-  suggestion,
-}: {
-  suggestion: TSuggestion;
-}) => {
+export const FinalReview = ({ suggestion }: { suggestion: TSuggestion }) => {
   const [isLoading, setLoading] = useRecoilState(submitLoadingState);
-
   const { resultSuggestion } = useGetResultOfSuggestionById(suggestion.Id);
-  const { onSubmit } = useSubmitEvaluationStudies(
+  const { onSubmit } = useSubmituseSubmitFinalReview(
     suggestion.CurrentStepId,
     suggestion.Id,
-    resultSuggestion?.[0]
+    resultSuggestion?.[0]?.Id
   );
 
   useEffect(() => {
@@ -48,7 +43,7 @@ export const EvaluationStudies = ({
     <>
       <div className="max w-full rounded overflow-hidden shadow-lg p-5">
         <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
-          مرحله مطالعات ارزیابی علمی -اقتصادی
+          مرحله بررسی نهایی
         </span>
         {resultSuggestion && (
           <>
@@ -58,10 +53,8 @@ export const EvaluationStudies = ({
                 {resultSuggestion[0].PriorityId}
               </span>
             </Col>
-
-            {/* <Input value={resultSuggestion[0].PriorityId} disabled /> */}
             <Form onFinish={onSubmit} schema={schema}>
-              <EvaluationForm suggestion={suggestion} isLoading={isLoading} />
+              <FinalReviewForm suggestion={suggestion} isLoading={isLoading} />
             </Form>
           </>
         )}

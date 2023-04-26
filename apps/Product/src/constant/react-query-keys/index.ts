@@ -18,4 +18,6 @@ export const queryKeys = {
   getEvaluationStudiesGroup: "getEvaluationStudiesGroup",
   getAllSuggestionById: "getAllSuggestionById",
   getAllPrioritization: "getAllPrioritization",
+  getAllResultOfSuggestion: "getAllResultOfSuggestion",
+  getResultOfSuggestionById: "getResultOfSuggestionById",
 };

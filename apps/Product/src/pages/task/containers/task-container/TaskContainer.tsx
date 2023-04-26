@@ -3,13 +3,13 @@ import { ModalLoading } from "~/components/modal-loading";
 import { TableError } from "~/components/table-error";
 import { Prioritize } from "../prioritize";
 import { EvaluationStudies } from "../evaluation-studies";
-import Archive from "../archive/Archive";
 import { useTask } from "../../hooks/useTask";
 import { Col, Row } from "antd";
 import { ViewProductSuggestion } from "../view-product-suggestion";
 import { useState } from "react";
 import { HistoryOfActions } from "../history-of-actions";
 import { ConfirmationDocuments } from "../confirmation-documents";
+import { FinalReview } from "../final-review";
 // import { CheckBox } from "sharepoint-golrang-design-system/src/components/checkbox";
 
 const TaskContainer = ({ id }: { id: number }) => {
@@ -47,7 +47,7 @@ const TaskContainer = ({ id }: { id: number }) => {
           ) : suggestion[0].CurrentStepId === allSteps.evaluationStudies ? (
             <EvaluationStudies suggestion={suggestion[0]} />
           ) : suggestion[0].CurrentStepId === allSteps.developmentExpertHead ? (
-            <Archive />
+            <FinalReview suggestion={suggestion[0]} />
           ) : (
             ""
           )}
