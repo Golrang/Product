@@ -1,11 +1,15 @@
 import { Button, ICView } from "sharepoint-golrang-design-system";
 import { useNavigate } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import { taskState } from "~/recoil-store/task";
 
 export const ViewSuggestion = ({ id }: { id: number }) => {
   const navigate = useNavigate();
+  const setTaskId = useSetRecoilState(taskState);
 
   const onEditHandler = () => {
-    navigate("/view-Suggestion", { replace: true, state: { id } });
+    setTaskId({ id: id });
+    navigate("/view-Suggestion", { replace: true });
   };
 
   return (
