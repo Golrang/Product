@@ -131,17 +131,13 @@ export const AddSuggestion = () => {
   return (
     <div className="!inline-flex !items-center justify-center	">
       <div className="w-[75%] rounded-lg shadow-lg p-5 bg-white">
-        <span className="w-[100%] border-t-2 border-solid border-theme-3 inline-block text-center mb-5 mt-5 rounded-lg p-1 text-white bg-theme-3">
-          پیشنهاد دهنده
-        </span>
+        <span className="form-header">پیشنهاد دهنده</span>
         <Row gutter={24}>
           <Col md={24} sm={24}>
             <Recommender />
           </Col>
         </Row>
-        <span className="w-[100%] border-t-2 border-solid border-theme-3 text-center inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-theme-3">
-          مشخصات محصول
-        </span>
+        <span className="form-header">مشخصات محصول</span>
         <Form
           name="AddSuggestionForm"
           onFinish={onSubmit}

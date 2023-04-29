@@ -17,9 +17,7 @@ export default function Archive() {
   return (
     <>
       <Form onFinish={() => {}}>
-        <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
-          مرحله آرشیو شده
-        </span>
+        <span className="form-header">مرحله آرشیو شده</span>
         <FormCheckBox
           className="float-right"
           name="priority"

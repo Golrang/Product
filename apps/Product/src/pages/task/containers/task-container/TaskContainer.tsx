@@ -52,9 +52,7 @@ const TaskContainer = ({ id }: { id: number }) => {
             ""
           )}
 
-          <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
-            تاریخچه اقدامات
-          </span>
+          <span className="form-header">تاریخچه اقدامات</span>
           {suggestion && (
             <Row gutter={24} className="mb-5">
               <Col md={24}>
@@ -63,9 +61,7 @@ const TaskContainer = ({ id }: { id: number }) => {
             </Row>
           )}
 
-          <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
-            مستندات تایید
-          </span>
+          <span className="form-header">مستندات تایید</span>
           <ConfirmationDocuments suggestionId={suggestion[0].Id} />
         </>
       )}

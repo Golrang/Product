@@ -25,9 +25,7 @@ export const ViewProductSuggestion = () =>
           <Row gutter={24}>
             <Col md={8} sm={24}>
               <div className="Recommender ">
-                <span className="w-[100%] border-t-2 border-solid border-theme-3 inline-block mb-5 text-center rounded-lg p-1 text-white bg-theme-3">
-                  پیشنهاد دهنده
-                </span>
+                <span className="form-header">پیشنهاد دهنده</span>
                 <Row gutter={24}>
                   <Col md={8} sm={24}>
                     <ICPeople className="border rounded-full w-3/4 mt-10 shadow shadow-indigo-500/40 text-gray-500" />
@@ -56,9 +54,7 @@ export const ViewProductSuggestion = () =>
             </Col>
             <Col md={16} sm={24}>
               <div className="ProductInformation">
-                <span className="w-[100%] border-t-2 border-solid border-theme-3 inline-block mb-5 rounded-lg p-1 text-center text-white bg-theme-3">
-                  مشخصات محصول
-                </span>
+                <span className="form-header">مشخصات محصول</span>
                 <Descriptions column={3}>
                   <Descriptions.Item label="نام ماده یا مواد موثره">
                     {defaultValues?.Material}
