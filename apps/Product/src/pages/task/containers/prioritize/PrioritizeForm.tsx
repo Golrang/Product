@@ -28,15 +28,13 @@ const PrioritizeForm = ({
   return (
     <>
       <Row gutter={24} className="mb-5">
-        <Col md={24}>
+        <Col md={5}>
           <OfferResultSelect CurrentStepId={suggestion.CurrentStepId} />
         </Col>
-      </Row>
-      <Row gutter={24} className="mb-5">
-        <Col md={12}>
+        <Col md={5}>
           <Priority ActionId={ActionId} />
         </Col>
-        <Col md={12}>
+        <Col md={5}>
           <PostponementDate ActionId={ActionId} />
         </Col>
       </Row>
@@ -59,7 +57,7 @@ const PrioritizeForm = ({
 
       <Row gutter={24} className="mb-5 flex justify-center items-center">
         <Button
-          className="!inline-flex !items-center btn-danger btn"
+          className="btn-dark-suggestion w-24"
           key="cancel"
           onClick={onBackHandler}
           disabled={isLoading}
@@ -68,7 +66,7 @@ const PrioritizeForm = ({
         </Button>
 
         <Button
-          className="!inline-flex !items-center "
+          className="btn-success-suggestion w-24"
           key="submit"
           htmlType="submit"
           disabled={isLoading}

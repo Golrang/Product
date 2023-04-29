@@ -23,8 +23,8 @@ const EvaluationForm = ({
 
   return (
     <>
-      <Row gutter={24} className="mb-5">
-        <Col md={24}>
+      <Row gutter={24} className="my-5">
+        <Col md={5}>
           <OfferResultSelect CurrentStepId={suggestion.CurrentStepId} />
         </Col>
       </Row>
@@ -48,7 +48,7 @@ const EvaluationForm = ({
 
       <Row gutter={24} className="mb-5 flex justify-center items-center">
         <Button
-          className="!inline-flex !items-center btn-danger btn"
+          className="btn-dark-suggestion w-24"
           key="cancel"
           onClick={onBackHandler}
           disabled={isLoading}
@@ -57,7 +57,7 @@ const EvaluationForm = ({
         </Button>
 
         <Button
-          className="!inline-flex !items-center "
+          className="btn-success-suggestion w-24"
           key="submit"
           htmlType="submit"
           disabled={isLoading}
