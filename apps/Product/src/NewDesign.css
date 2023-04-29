@@ -9782,7 +9782,7 @@ body {
 
 .text-theme-9 {
   --tw-text-opacity: 1;
-  color: rgba(145, 199, 20, var(--tw-text-opacity));
+  color: rgba(145, 199, 20, var(--tw-text-opacity)) !important;
 }
 
 .text-primary-3,
@@ -9843,7 +9843,7 @@ body {
 
 .text-theme-16 {
   --tw-text-opacity: 1;
-  color: rgba(96, 127, 150, var(--tw-text-opacity));
+  color: rgba(96, 127, 150, var(--tw-text-opacity)) !important;
 }
 
 .text-theme-22 {

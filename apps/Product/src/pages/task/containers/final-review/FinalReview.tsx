@@ -41,10 +41,8 @@ export const FinalReview = ({ suggestion }: { suggestion: TSuggestion }) => {
 
   return (
     <>
-      <div className="max w-full rounded overflow-hidden shadow-lg p-5">
-        <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
-          مرحله بررسی نهایی
-        </span>
+      <div className="max w-full rounded overflow-hidden shadow-lg bg-white p-5">
+        <span className="form-header">مرحله بررسی نهایی</span>
         {resultSuggestion && (
           <>
             <Col md={6} sm={12}>

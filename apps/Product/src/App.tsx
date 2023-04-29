@@ -3,6 +3,7 @@ import { RouterProvider } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import { RecoilRoot } from "recoil";
 import FaIR from "antd/locale/fa_IR";
+import "./app.css";
 
 import { router } from "routes/routes";
 

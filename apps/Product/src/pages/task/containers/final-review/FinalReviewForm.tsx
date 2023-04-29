@@ -26,19 +26,19 @@ const FinalReviewForm = ({
 
   return (
     <>
-      <Row gutter={24} className="mb-5">
-        <Col md={24}>
+      <Row gutter={24} className="my-5">
+        <Col md={5}>
           <OfferResultSelect CurrentStepId={suggestion.CurrentStepId} />
         </Col>
-      </Row>
-      <Row gutter={24} className="mb-5">
-        {/* <Col md={12}>
-          <Priority ActionId={ActionId} />
-        </Col> */}
-        <Col md={12}>
+        <Col md={5}>
           <PostponementDate ActionId={ActionId} />
         </Col>
       </Row>
+      {/* <Row gutter={24} className="mb-5">
+        <Col md={12}>
+          <Priority ActionId={ActionId} />
+        </Col>
+      </Row> */}
       <Row gutter={24} className="mb-5">
         <Col md={24}>
           <FormTextArea
@@ -58,7 +58,7 @@ const FinalReviewForm = ({
 
       <Row gutter={24} className="mb-5 flex justify-center items-center">
         <Button
-          className="!inline-flex !items-center btn-danger btn"
+          className="btn-dark-suggestion w-24 ml-3"
           key="cancel"
           onClick={onBackHandler}
           disabled={isLoading}
@@ -67,7 +67,7 @@ const FinalReviewForm = ({
         </Button>
 
         <Button
-          className="!inline-flex !items-center "
+          className="btn-success-suggestion w-24"
           key="submit"
           htmlType="submit"
           disabled={isLoading}

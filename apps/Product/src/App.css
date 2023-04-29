@@ -262,13 +262,8 @@ a {
 }
 
 .ant-btn-default:hover {
-  opacity: 0.8;
-  color: white !important;
   border: none !important;
-}
-
-.table-report__action > button:hover {
-  color: rgba(96, 127, 150, var(--tw-text-opacity)) !important;
+  opacity: .6;
 }
 
 .table-report__action:before {

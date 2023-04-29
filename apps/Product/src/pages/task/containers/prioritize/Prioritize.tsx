@@ -38,10 +38,8 @@ export const Prioritize = ({ suggestion }: { suggestion: TSuggestion }) => {
 
   return (
     <>
-      <div className="max w-full rounded overflow-hidden shadow-lg p-5">
-        <span className="w-[100%] border-t-2 border-solid border-indigo-200 inline-block mb-5 mt-5 rounded-lg p-1 text-white bg-indigo-300">
-          مرحله الویت بندی
-        </span>
+      <div className="max w-full rounded overflow-hidden shadow-lg p-5 bg-white">
+        <span className="form-header">مرحله الویت بندی</span>
         <Form onFinish={onSubmit} schema={schema}>
           <PrioritizeForm suggestion={suggestion} isLoading={isLoading} />
         </Form>

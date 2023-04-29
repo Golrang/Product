@@ -1,10 +1,14 @@
-import { Button, FormUploader } from "sharepoint-golrang-design-system";
+import { FormUploader } from "sharepoint-golrang-design-system";
 
 export const FileUpload = () => {
   return (
     <>
-      <FormUploader name="File" label="بارگذاری فایل" maxCount={1}>
-        <Button>Choose File</Button>
+      <FormUploader name="File" label="بارگذاری فایل" maxCount={4}>
+        <div className="dz-message dropzone" data-dz-message>
+          <div className="text-gray-600 text-center">
+            فایل خود را بکشید و رها کنید
+          </div>
+        </div>
       </FormUploader>
     </>
   );

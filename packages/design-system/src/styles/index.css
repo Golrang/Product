@@ -170,23 +170,35 @@ html {
     @apply btn-secondary  w-24 mr-1 mb-2 flex items-center justify-center;
   }
   .btn-primary-suggestion {
-    @apply btn-primary mr-1 mb-2 flex items-center justify-center;
+    @apply btn-primary mr-1 mb-2 flex items-center justify-center	 hover:!text-white ;
   }
   .btn-warning-suggestion {
-    @apply btn btn-rounded btn-warning-soft w-24 mr-1 mb-2;
+    @apply btn btn-rounded btn-warning-soft w-24 mr-1 mb-2 hover:!text-white;
   }
   .btn-danger-suggestion {
-    @apply btn btn-rounded btn-danger-soft w-24 mr-1 mb-2;
+    @apply btn btn-rounded btn-danger-soft w-24 mr-1 mb-2 hover:!text-white;
   }
   .btn-dark-suggestion {
-    @apply btn-dark  mr-1 mb-2 flex items-center justify-center;
+    @apply btn-dark  mr-1 mb-2 flex items-center justify-center hover:!text-white;
   }
   .btn-success-suggestion {
-    @apply btn-success mr-1 mb-2 flex items-center justify-center;
+    @apply btn-success mr-1 mb-2 flex items-center justify-center hover:!text-white;
+  }
+  .form-header{
+    @apply w-[100%] border-t-2 border-solid border-theme-3 inline-block mb-5 mt-5 rounded-lg p-1 text-white text-center bg-theme-3;
   }
 }
 
 @layer utilities {
+  .bg-theme-3 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(46, 81, 187, var(--tw-bg-opacity));
+  }
+  .border-theme-3 {
+    --tw-border-opacity: 1;
+    border-color: rgba(46, 81, 187, var(--tw-border-opacity));
+  }
+
   .sq {
     aspect-ratio: 1 / 1;
   }
@@ -196,6 +208,7 @@ html {
     --tw-text-opacity: 1;
     color: rgba(255, 255, 255, var(--tw-text-opacity));
   }
+
   .btn-primary,
   .dark .btn-primary {
     --tw-border-opacity: 1;
@@ -207,6 +220,7 @@ html {
     background-color: rgba(237, 242, 247, var(--tw-bg-opacity));
     color: rgba(113, 128, 150, var(--tw-text-opacity));
   }
+
 
   .btn-secondary,
   .dark .btn-secondary {
@@ -227,6 +241,7 @@ html {
     --tw-text-opacity: 1;
     color: rgba(255, 255, 255, var(--tw-text-opacity));
   }
+
 
   .btn-success,
   .dark .btn-success {

@@ -14,11 +14,11 @@ export const CheckSuggestion = ({ id }: { id: number }) => {
   return (
     <>
       <Button
-        shape="circle"
-        className="!inline-flex !justify-center !items-center"
+        className="flex items-center ml-3 text-theme-9 border-none	shadow-none"
         onClick={onEditHandler}
       >
-        <ICEdit className="w-4" />
+        <ICEdit className="w-3 h-3 ml-1" />
+        ویرایش
       </Button>
     </>
   );
