@@ -57,8 +57,10 @@ const columnsForCheck: TColumn<TSuggestionTable>[] = [
     render: (_, record: TSuggestion) => {
       return (
         <>
-          <ViewSuggestion id={record.Id ?? 0} />
-          <CheckSuggestion id={record.Id} />
+          <div className="flex justify-center items-center table-report__action w-56">
+            <ViewSuggestion id={record.Id ?? 0} />
+            <CheckSuggestion id={record.Id} />
+          </div>
         </>
       );
     },
