@@ -46,5 +46,5 @@ export const HistoryOfActions = ({
     return <TableLoading />;
   }
   if (error || !data) return <TableError />;
-  return <Table columns={columns} dataSource={data} bordered />;
+  return <Table columns={columns} dataSource={data} />;
 };
