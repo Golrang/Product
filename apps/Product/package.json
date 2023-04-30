@@ -11,7 +11,8 @@
     "server": "concurrently --kill-others \"yarn proxy\" \"yarn dev\"",
     "lint:check": "eslint src --ext ts,tsx",
     "lint:fix": "eslint src --fix --ext ts,tsx",
-    "lint": "eslint src --max-warnings=0 --ext ts,tsx"
+    "lint": "eslint src --max-warnings=0 --ext ts,tsx",
+    "test": "vitest"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.11",
@@ -40,24 +41,26 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "eslint-config-custom": "*",
     "@babel/eslint-parser": "^7.19.1",
     "@hookform/devtools": "^4.3.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.14",
+    "eslint-config-custom": "*",
+    "happy-dom": "^9.10.1",
     "hermes-eslint": "^0.9.0",
     "lint-staged": "^13.1.2",
     "postcss": "^8.4.21",
     "prettier": "2.8.4",
     "sp-rest-proxy": "^3.3.5",
     "tailwindcss": "^3.2.7",
+    "ts-config": "*",
     "typescript": "4.9.5",
     "vite": "^4.1.4",
     "vite-plugin-imp": "^2.3.1",
     "vite-plugin-style-import": "^2.0.0",
     "vite-plugin-svgr": "^2.4.0",
     "vite-tsconfig-paths": "^4.0.5",
-    "ts-config": "*"
+    "vitest": "^0.30.1"
   }
 }
