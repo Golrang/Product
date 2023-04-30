@@ -16,7 +16,7 @@ export function SayHello() {
     setIsLoading(true);
     await fetch("https://jsonplaceholder.typicode.com/postssdfsdfsdf")
       .then((res: any) => res.json())
-      .then((posts) => setPosts(posts as Post[]));
+      .then((posts: any) => setPosts(posts as Post[]));
 
     setIsLoading(false);
   };

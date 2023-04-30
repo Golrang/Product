@@ -55,7 +55,7 @@ describe("suite", () => {
   // Reset handlers after each test `important for test isolation`
   afterEach(() => server.resetHandlers());
 
-  it("hook", () => {
+  it("hook test", () => {
     const { result } = renderHook(() => useSay());
     expect(result.current.isOpen).toBe(false);
     act(() => result.current.toggle());
