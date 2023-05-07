@@ -1,21 +1,18 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { TDropdownButton } from "./drop-down-button.types";
-import { DropdownButton } from "./DropdownButton";
+import { StoryFn, Meta } from '@storybook/react';
+import { TDropdownButton } from './drop-down-button.types';
+import { DropdownButton } from './DropdownButton';
 
 export default {
-  title: "Components/DropdownButton",
+  title: 'Components/DropdownButton',
   component: DropdownButton,
-} as ComponentMeta<typeof DropdownButton>;
+} as Meta<typeof DropdownButton>;
 
-const Template: ComponentStory<typeof DropdownButton> = (
-  args: TDropdownButton
-) => <DropdownButton {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  label: "DropdownButton",
-  // children: [
-  //   { key: 1, label: "Yes" },
-  //   { key: 2, label: "No" },
-  // ],
+export const Default = {
+  args: {
+    label: 'DropdownButton',
+    // children: [
+    //   { key: 1, label: "Yes" },
+    //   { key: 2, label: "No" },
+    // ],
+  },
 };

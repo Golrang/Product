@@ -1,15 +1,12 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from '@storybook/react';
 
-import { ICUpload } from "./UploadIcon";
+import { ICUpload } from './UploadIcon';
 
 export default {
-  title: "icons/UploadIcon",
+  title: 'icons/UploadIcon',
   component: ICUpload,
-} as ComponentMeta<typeof ICUpload>;
+} as Meta<typeof ICUpload>;
 
-const template: ComponentStory<typeof ICUpload> = (args) => (
-  <ICUpload {...args} />
-);
-
-export const Primary = template.bind({});
-Primary.args = { className: "w-4 text-green-500" };
+export const Primary = {
+  args: { className: 'w-4 text-green-500' },
+};
